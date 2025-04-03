@@ -1,0 +1,102 @@
+.table {
+    border-collapse: collapse;
+    font-family: $defaultFont;
+    margin: 12px 0 16px 0;
+    max-width: 100%;
+    table-layout: fixed; // needed to make tables have columns according to first row's column coontent
+    width: 100%;
+
+    th,
+    thead tr,
+    tfoot tr {
+        background-color: rgba(var(--color-interface-headerfooter), 1);
+    }
+
+    td, th {
+        border-bottom: 1px solid rgba(var(--color-border), 1);
+        font-size: $ms0-fontSize;
+        overflow: hidden;
+        padding: 6px 0 6px 6px;
+        text-align: left;
+        text-overflow: ellipsis;
+
+        &:first-child {
+            padding-left: 24px;
+        }
+
+        &:last-child {
+            padding-right: 24px;
+            width: auto;
+        }
+
+        .th__description,
+        .td__description {
+            color: rgba(var(--color-font-secondary), 1);
+            font-size: $ms-1-fontSize;
+        }
+    }
+
+    // this property is necessary for other frameworks which set a default border-top for
+    // headline cells, such as Twitter Bootstrap
+    td,
+    th {
+        border-top: 0 transparent;
+    }
+
+    &.table--small {
+        td, th {
+            padding: 6px 0 6px 12px;
+        }
+    }
+
+    &.table--leading {
+        tbody {
+            border-top: 1px solid rgba(var(--color-border), 1);
+
+            tr > td:first-child {
+                font-family: $defaultFont;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &.table--alternate {
+        tbody tr:nth-child(odd) {
+            background-color: rgba(var(--color-interface-secondary), 1);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(var(--color-primary-light), 0.15);
+        }
+    }
+}
+
+.scrollableTableWrapper {
+    overflow: auto;
+    max-width: 100%;
+    background:
+        linear-gradient(to right, rgba(var(---color-interface), 1) 30%, rgba(var(--color-interface), 0)),
+        linear-gradient(to right, rgba(var(--color-interface), 0), rgba(var(--color-interface), 1) 70%) 0 100%,
+        radial-gradient(farthest-side at 0% 50%, rgba(var(--color-shadow), .35), rgba(var(--color-shadow), 0)),
+        radial-gradient(farthest-side at 100% 50%, rgba(var(--color-shadow), .35), rgba(var(--color-shadow), 0)) 0 100%;
+    background-repeat: no-repeat;
+
+    background-color: rgba(var(--color-interface), 1);
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-position: 0 0, 100%, 0 0, 100%;
+    background-attachment: local, local, scroll, scroll;
+
+    table,
+    .table {
+        table-layout: auto !important; // needed so that all table variants can be used within a scrollable table wrapper
+    }
+}
+
+//removeIf(sassHandover)
+// style native elements when forced defaults
+&.#{$forceDefaultClass} {
+    table {
+        @extend .table;
+    }
+}
+//endRemoveIf(sassHandover)

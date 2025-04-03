@@ -1,0 +1,150 @@
+.dialog--confirm {
+    .dialog__background {
+        // needed because otherwise cannot be styled with forced bg-color-helper classes
+        border-top-width: 8px !important;
+        border-left-width: 0 !important;
+        border-right-width: 0 !important;
+        border-bottom-width: 0 !important;
+
+        position: relative;
+
+        .dialog__title {
+            display: none;
+        }
+    }
+
+    &,
+    &.confirm--warning {
+        .dialog__background {
+            border-top: 8px solid rgba(var(--color-warning), 1);
+        }
+
+        .dialog__content {
+            min-height: 16px; // just in case a confirm is empty (missing localization, ...) so it does not collapse
+            @include iconUxt-filled(exclamationDiamond);
+
+            &:before {
+                color: rgba(var(--color-warning), 1);
+            }
+        }
+
+        .confirm__icon {
+            display: none; // just in case somebody wants to show an arbitrary icon in a default confirm
+        }
+    }
+
+    &.confirm--alert,
+    &.confirm--error {
+        .dialog__background {
+            border-top: 8px solid rgba(var(--color-error), 1);
+        }
+
+        .dialog__content {
+            @include iconUxt-filled(errorAlert);
+
+            &:before {
+                color: rgba(var(--color-error), 1);
+            }
+        }
+    }
+
+    &.confirm--info {
+        .dialog__background {
+            border-top: 8px solid rgba(var(--color-primary-light), 1);
+        }
+
+        .dialog__content {
+            @include iconUxt-filled(attention);
+
+            &:before {
+                color: rgba(var(--color-primary-light), 1);
+            }
+        }
+    }
+
+    &.confirm--custom {
+        .dialog__content {
+            &:before {
+                display: none;
+            }
+        }
+
+        .confirm__icon {
+            color: rgba(var(--color-base600), 1);
+            font-size: 64px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 65px;
+
+            @include breakpoint($xs) {
+                display: block;
+                height: 64px;
+                margin-bottom: 0;
+                padding-top: 24px;
+                padding-left: 24px;
+
+                position: static;
+                bottom: auto;
+                left: auto;
+                top: auto;
+            }
+        }
+    }
+
+    .dialog__content {
+        color: rgba(var(--color-font), 1);
+        padding: 24px;
+        margin-left: 88px;
+
+        @include breakpoint($xs) {
+            margin-left: 0;
+            padding-top: 24px;
+        }
+
+        &:before {
+            font-size: 64px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 65px;
+
+            @include breakpoint($xs) {
+                display: block;
+                margin-bottom: 12px;
+
+                position: static;
+                bottom: auto;
+                left: auto;
+                top: auto;
+            }
+        }
+
+        .confirm__headline,
+        h1 {
+            color: rgba(var(--color-font), 1);
+            font-family: $defaultFont;
+            font-size: $ms3-fontSize;
+            line-height: $ms3-lineHeight;
+            margin-bottom: 8px;
+        }
+    }
+}

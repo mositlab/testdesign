@@ -1,0 +1,326 @@
+.tabs--primary,
+.tabs--secondary {
+    list-style: none;
+
+    .tab__nav {
+
+        > ul,
+        > div {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &.has-alignment-right {
+        .tab__nav {
+
+            > ul,
+            > div {
+                border-left: 1px solid rgba(var(--color-border), 1);
+                border-right: none;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .tab__item {
+        display: flex;
+        margin: 0;
+
+        a {
+            display: flex;
+            font-family: $defaultFont;
+            font-size: $ms0-fontSize;
+            font-weight: bold;
+            line-height: calc($ms0-fontSize/7*12);
+            padding: 9px 24px;
+            text-decoration: none;
+
+            .iconUxt {
+                font-size: $iconSizeL;
+                padding-right: 4px;
+            }
+        }
+    }
+
+    .tab__content {
+        padding: 16px;
+
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.tabs--primary {
+    background-color: transparent;
+
+    .tab__nav {
+        > ul {
+            background-color: rgba(var(--color-base900), 1);
+            border-right: 1px solid rgba(var(--color-border), 1);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-top: 1px solid rgba(var(--color-border), 1);
+        }
+    }
+
+    .tab__content {
+        background-color: rgba(var(--color-interface-highlight), 1);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border: 1px solid rgba(var(--color-border), 1);
+    }
+
+    .tab__item {
+        margin-top: -1px;
+
+        &:first-child > a {
+            border-left: 1px solid rgba(var(--color-border), 1);
+            border-top-left-radius: 4px;
+        }
+
+        a {
+            background-color: rgba(var(--color-base900), 1);
+            border-right: 1px solid rgba(var(--color-border), 1);
+            border-top: 1px solid rgba(var(--color-border), 1);
+            box-sizing: border-box;
+            color: rgba(var(--color-primary), 1);
+            float: left; // needed for IE 11
+
+            &:hover {
+                background-color: rgba(var(--color-primary-light), 0.15);
+                color: rgba(var(--color-primary), 1);
+            }
+
+            &.is-activated {
+                background: rgba(var(--color-interface-highlight), 1);
+                border-bottom: 1px solid rgba(var(--color-interface-highlight), 1);
+                color: rgba(var(--color-font), 1);
+                margin-bottom: -1px;
+
+                &:hover {
+                    border-bottom: 1px solid transparent;
+                }
+            }
+
+            &:active {
+                background: rgba(var(--color-interface-highlight), 1);
+                color: rgba(var(--color-font), 1);
+            }
+
+            &:focus-visible {
+                box-shadow: inset 0 0 0 2px rgba(var(--color-primary-light), 1);
+                position: relative;
+
+                // IE11 does not support outline-offset, hence the feature query
+                outline: 0;
+
+                @supports (outline-offset: -2px) {
+                    box-shadow: none;
+                    outline-offset: -2px;
+                    outline: 2px solid rgba(var(--color-primary-light), 1);
+                }
+            }
+
+            &.is-disabled,
+            &.is-disabled:hover {
+                color: rgba(var(--color-font-disabled), 1);
+                background-color: rgba(var(--color-base900), 1);
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // different possible breakpoints for single col tabs
+    @mixin singleColPrimary($breakpoint) {
+        @include breakpoint($breakpoint) {
+            .tab__nav {
+                > ul {
+                    border-right-width: 0;
+                }
+            }
+
+            .tab__item {
+                display: block;
+                width: 100%;
+
+                &:first-child > a {
+                    border-top-left-radius: 0;
+                }
+
+                a {
+                    border-left: 1px solid rgba(var(--color-border), 1);
+                    float: none;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    & {
+        @include singleColPrimary($xs);
+    }
+
+    &.tabs--small {
+        @include singleColPrimary($sm);
+    }
+
+    &.tabs--medium {
+        @include singleColPrimary($md);
+    }
+
+    &.tabs--large {
+        @include singleColPrimary($lg);
+    }
+
+
+
+    &.tabs--frameless {
+        .tab__nav {
+            > ul {
+                background-color: transparent;
+                border-top: none;
+                border-right: none;
+                padding: 0 0 0 40px;
+
+                @include breakpoint($xs) {
+                    padding: 0 32px 0 32px;
+                }
+            }
+        }
+
+        .tab__item {
+            margin-top: -1px;
+
+            &:last-child > a {
+                //border-left: 1px solid $base800;
+                border-top-right-radius: 4px;
+            }
+        }
+
+        .tab__content {
+            border: 0;
+            border-top: 1px solid rgba(var(--color-border), 1);
+            padding: 16px 40px;
+        }
+
+        &.tabs--small {
+            .tab__nav > ul {
+                @include breakpoint($sm) {
+                    padding: 0 32px 0 32px;
+                }
+            }
+        }
+
+        &.tabs--medium {
+            .tab__nav > ul {
+                @include breakpoint($md) {
+                    padding: 0 32px 0 32px;
+                }
+            }
+        }
+
+        &.tabs--large {
+            .tab__nav > ul {
+                @include breakpoint($lg) {
+                    padding: 0 32px 0 32px;
+                }
+            }
+        }
+    }
+
+}
+
+.tabs--secondary {
+    .tab__item a {
+        border-bottom: 1px solid rgba(var(--color-border), 1);
+        box-sizing: border-box;
+        color: rgba(var(--color-primary), 1);
+
+        &.is-activated {
+            border-bottom: 2px solid rgba(var(--color-base200), 1);
+            color: rgba(var(--color-font), 1);
+        }
+
+        &:active {
+            border-bottom: 2px solid rgba(var(--color-base200), 1);
+            color: rgba(var(--color-font), 1);
+        }
+
+        // todo: replace dotted focus states with finalized states
+        &:focus-visible {
+            border-bottom-color: transparent !important;
+            box-shadow: inset 0 0 0 2px rgba(var(--color-primary-light), 1);
+
+            // IE11 does not support outline-offset, hence the feature query
+            outline: 0;
+
+            @supports (outline-offset: -2px) {
+                box-shadow: none;
+                outline-offset: -2px;
+                outline: 2px solid rgba(var(--color-primary-light), 1);
+            }
+        }
+
+        &:hover {
+            border-bottom: 2px solid rgba(var(--color-primary), 1);
+            color: rgba(var(--color-primary), 1);
+        }
+
+        &.is-disabled,
+        &.is-disabled:hover {
+            border-bottom: 1px solid rgba(var(--color-border), 1);
+            color: rgba(var(--color-font-disabled), 1);
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    // different possible breakpoints for single col secondary tabs
+    @mixin singleColSecondary($breakpoint) {
+        @include breakpoint($breakpoint) {
+            .tab__item {
+                display: block;
+                width: 100%;
+
+                a {
+                    border-bottom-width: 2px;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+    & {
+        @include singleColSecondary($xs);
+    }
+
+    &.tabs--small {
+        @include singleColSecondary($sm);
+    }
+
+    &.tabs--medium {
+        @include singleColSecondary($md);
+    }
+
+    &.tabs--large {
+        @include singleColSecondary($lg);
+    }
+}
+
+.main__region {
+
+    // in context of detail view area
+    > .tabs--frameless,
+    > .tab__content--frameless {
+        margin-left: -32px;
+        margin-right: -32px;
+    }
+}

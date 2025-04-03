@@ -1,0 +1,158 @@
+.emptyState {
+    // watch out when modifying these styles since the call to action pattern is extending these - changes here might be reflected also there
+    background-color: rgba(var(--color-base900), 1);
+    border: 1px solid rgba(var(--color-border), 1);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 24px 48px 24px;
+    position: relative;
+
+    & + .emptyState {
+        margin-top: 16px;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+        top: 0;
+        max-width: 400px;
+        width: 40%;
+
+        background-image: url(../assets/images/emptyStateSimple.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 10px 10px;
+    }
+
+    &:after {
+        right: 0;
+        left: auto;
+        transform: scaleX(-1);
+    }
+
+    // to make sure the :after and :before pseudo elements don't overlap the content
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__visual {
+        margin: 0 auto;
+
+        .iconUxt {
+            font-size: $iconSizeXXL;
+
+            &:before {
+                color: rgba(var(--color-base450), 1);
+            }
+        }
+    }
+
+    &__title {
+        color: rgba(var(--color-font), 1);
+        font-family: $defaultFont;
+        font-size: $ms2-fontSize !important;
+        font-weight: normal !important;
+        line-height: $ms2-lineHeight !important;
+        margin: 16px auto 4px !important;
+    }
+
+    &__description {
+        color: rgba(var(--color-font-secondary), 1);
+        font-family: $defaultFont;
+        font-size: $ms1-fontSize !important;
+        line-height: $ms1-lineHeight !important;
+        margin: 4px auto 16px !important;
+    }
+
+    &__call2action,
+    &__callToAction {
+        font-family: $defaultFont;
+        font-size: $ms1-fontSize;
+        margin: 0 auto;
+
+        a.button,
+        button {
+            margin-top: 0;
+            margin-right: auto;
+        }
+    }
+
+    &__visual,
+    &__title,
+    &__description,
+    &__call2action,
+    &__callToAction {
+        max-width: 500px;
+        width: 100%; //needed for IE 11
+        text-align: center; // needed for IE 11
+    }
+
+    &.emptyState--frameless {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    &.emptyState--withImage {
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        .emptyState__visual {
+            img {
+                max-width: 320px;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        @include breakpoint(550px) {
+            z-index: 1;
+
+            &:before {
+                background-image: url(../assets/images/emptyState.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                bottom: 0;
+                content: '';
+                display: block;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 650px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+    }
+
+    &.emptyState--withImage.emptyState--removeDefaultBg {
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.card .card__content {
+    .emptyState {
+        border-width: 0;
+        box-sizing: border-box;
+        min-height: 100%
+    }
+}

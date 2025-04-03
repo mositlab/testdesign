@@ -1,0 +1,1036 @@
+.inputGroup {
+    margin-bottom: 16px;
+
+    &__label {
+        box-sizing: border-box;
+        display: block;
+        font-size: $ms0-fontSize;
+        font-family: $defaultFont;
+        font-weight: bold;
+        line-height: $ms0-lineHeight; // to accomodate with margin between input
+        max-width: 100%;
+        overflow: hidden;
+        padding-bottom: 4px;
+
+        width: 100%;
+    }
+
+    .is-required:after {
+        color: rgba(var(--color-error), 1);
+        content: "*";
+        font-family: $defaultFont;
+        font-weight: bold;
+    }
+
+    // input text fields: height has to be set explicitly because iOS mobile has different user agent stylesheet
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    &__textInput {
+        height: 32px;
+    }
+
+    // input text fields
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    &__textInput,
+    &__textarea {
+        background-color: rgba(var(--color-interface), 1);
+
+        //box-shadow: 0 1px 2px 0 rgba(var(--color-shadow), 0.25) inset;
+        border-radius: 3px;
+        border: 1px solid rgba(var(--color-base600), 1);
+        box-sizing: border-box;
+        color: rgba(var(--color-font), 1);
+        display: block;
+        font-family: $defaultFont;
+        font-size: $ms0-fontSize;
+        line-height: $ms0-lineHeight;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 7px 12px;
+        width: 100%;
+
+        // pseudo-element placeholder:  must not be set in one assignent, does not work
+        &::-webkit-input-placeholder {
+            color: rgba(var(--color-base750), 1);
+            opacity: 1;
+        }
+
+        &::-moz-placeholder {
+            color: rgba(var(--color-base750), 1);
+            opacity: 1;
+        }
+
+        &:-ms-input-placeholder {
+            color: rgba(var(--color-base750), 1);
+            opacity: 1;
+        }
+
+        &:focus,
+        &.is-focused {
+            box-shadow: 0 0 0px 2px rgba(var(--color-primary-light), 1);
+            outline: none;
+        }
+
+        &[readonly],
+        &.is-readonly {
+            background-color: rgba(var(--color-base900), 1);
+            border: 1px solid rgba(var(--color-border), 1);
+            box-shadow: none;
+            color: rgba(var(--color-font), 1);
+        }
+
+        &[disabled],
+        &.is-disabled {
+            background-color: rgba(var(--color-interface), 1);
+            border: 1px solid rgba(var(--color-border), 1);
+            box-shadow: none;
+            color: rgba(var(--color-font-disabled), 1);
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
+        &.is-invalid,
+        &.ng-invalid.ng-dirty,
+        &.ng-invalid.ng-touched {
+            border: 1px solid rgba(var(--color-error), 1);
+            color: rgba(var(--color-error-dark), 1);
+
+            //&:focus {
+            //    box-shadow: 0 1px 2px 0 rgba(var(--color-shadow), 0.25) inset;
+            //}
+
+            &::-webkit-input-placeholder {
+                color: rgba(var(--color-font-disabled), 1);
+            }
+
+            &::-moz-placeholder {
+                color: rgba(var(--color-font-disabled), 1);
+            }
+
+            &:-ms-input-placeholder {
+                color: rgba(var(--color-font-disabled), 1);
+            }
+        }
+    }
+
+    // radio buttons and checkboxes
+    .radioButtonWrapper,
+    .checkboxWrapper {
+        margin: 0 0 8px 0;
+        position: relative;
+        font-size: $ms0-fontSize;
+
+        label,
+        .label {
+            font-weight: normal;
+        }
+
+        .checkbox__description,
+        .radioButton__description {
+            display: block;
+            margin-left: 26px;
+        }
+    }
+
+    .inputGroup__label + .radioButtonWrapper,
+    .inputGroup__label + .checkboxWrapper {
+        margin-top: 4px;
+    }
+
+    &__radioButton,
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+
+        + label {
+            font-size: $ms0-fontSize;
+            color: rgba(var(--color-font), 1);
+            display: inline-block;
+            margin-left: 26px;
+            text-indent: -26px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:before {
+                background: rgba(var(--color-interface), 1);
+                border-radius: 100%;
+                //box-shadow: 0 1px 2px 0 rgba(var(--color-shadow), 0.25) inset;
+                border: 1px solid rgba(var(--color-base600), 1);
+                content: "";
+                cursor: pointer;
+                display: inline-block;
+                height: 14px;
+                margin-right: 10px;
+                position: relative;
+                text-align: center;
+                transition: border 250ms ease-in-out, background-color 250ms ease-in-out;
+                vertical-align: top;
+                width: 14px;
+            }
+        }
+
+        &:focus {
+            + label {
+                &:before {
+                    border-color: rgba(var(--color-primary), 1);
+                    box-shadow: 0 0px 2px 2px rgba(var(--color-primary), 1);
+                    outline: none;
+                }
+            }
+        }
+
+        &:checked {
+            + label {
+                &:before {
+                    background-color: rgba(var(--color-interface), 1);
+                    border: 1px solid rgba(var(--color-primary), 1);
+                    box-shadow: 0 0px 0px 3px rgba(var(--color-primary), 1) inset;
+                }
+            }
+
+            &[disabled],
+            &.is-disabled {
+                + label:before {
+                    background-color: rgba(var(--color-interface), 1);
+                    border: 1px solid rgba(var(--color-base750), 1);
+                    box-shadow: 0 0px 0px 3px rgba(var(--color-shadow), 0.2) inset;
+                }
+            }
+        }
+
+        &:disabled,
+        &.is-disabled {
+            cursor: not-allowed;
+
+            + label {
+                color: rgba(var(--color-base800), 1);
+                cursor: not-allowed;
+
+                &:before {
+                    background: rgba(var(--color-base900), 1);
+                    border-color: rgba(var(--color-border), 1);
+                    box-shadow: none;
+                    cursor: not-allowed;
+                }
+
+                + label.radioButton__description {
+                    color: rgba(var(--color-base800), 1);
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        + label {
+            &:empty {
+                &:before {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .inputGroup__checkbox,
+    input[type="checkbox"]:not(.switch__checkbox) {
+        position: absolute;
+        opacity: 0;
+
+        + label {
+            color: rgba(var(--color-font), 1);
+            display: inline-block;
+            font-size: $ms0-fontSize;
+            margin-left: 26px;
+            text-indent: -26px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:before {
+                background: rgba(var(--color-interface), 1);
+                border-radius: 2px;
+                border: 1px solid rgba(var(--color-base600), 1);
+                content: '';
+                cursor: pointer;
+                display: inline-block;
+                height: 14px;
+                margin-right: 10px;
+                position: relative;
+                text-align: center;
+                transition: border 250ms ease-in-out,
+                    background-color 250ms ease-in-out;
+                top: 0;
+                vertical-align: top;
+                width: 14px;
+            }
+        }
+
+        &:checked {
+            + label {
+                position: relative;
+
+                &:before {
+                    background-color: rgba(var(--color-primary), 1);
+                    border: 1px solid rgba(var(--color-primary), 1);
+                    box-shadow: none;
+                }
+
+                &:after {
+                    border: solid rgba(var(--color-interface), 1);
+                    border-width: 0 2px 2px 0;
+                    content: '';
+                    display: block;
+                    height: 9px;
+                    left: -21px;
+                    position: absolute;
+                    top: 1px;
+                    transform: rotate(45deg);
+                    width: 4px;
+                }
+            }
+
+            &[disabled],
+            &.is-disabled {
+                + label:after {
+                    border-color: rgba(var(--color-base750), 1);
+                }
+            }
+        }
+
+        &:focus {
+            + label {
+                &:before {
+                    border-color: rgba(var(--color-primary), 1);
+                    box-shadow: 0 0px 2px 0px rgba(var(--color-primary), 1);
+                    outline: none;
+                }
+            }
+        }
+
+        &:disabled,
+        &.is-disabled {
+            cursor: not-allowed;
+
+            + label {
+                color: rgba(var(--color-base800), 1);
+                cursor: not-allowed;
+
+                &:before {
+                    border-color: rgba(var(--color-border), 1);
+                    background: rgba(var(--color-base900), 1);
+                    box-shadow: none;
+                    cursor: not-allowed;
+                }
+
+                + label.checkbox__description {
+                    color: rgba(var(--color-base800), 1);
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        + label {
+            &:empty {
+                &:before {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &.inputGroup__checkbox--indeterminate + label:before {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        // manually style indeterminate 'checkbox' by offsetting a pseudo element on the following label
+        // should be replaced by native indeterminate styling once available as real property in css
+        &.inputGroup__checkbox--indeterminate + label:after {
+            box-shadow: 0 0 1px rgba(var(--color-primary-darker), 1);
+            content: "";
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            background-color: rgba(var(--color-primary), 1);
+            left: 4px;
+            top: 7px;
+        }
+    }
+
+    // manually style indeterminate radios since there is no cross-browser constistant native option yet.
+    .inputGroup__radioButton.inputGroup__radioButton--indeterminate + label:before {
+        box-shadow: none;
+    }
+
+    .inputGroup__radioButton.inputGroup__radioButton--indeterminate + label:after {
+        border-radius: 2px;
+        box-shadow: 0 0 1px rgba(var(--color-primary-darker), 1);
+        background-color: rgba(var(--color-primary), 1);
+        content: "";
+        display: inline-block;
+        height: 2px;
+        left: 5px;
+        position: absolute;
+        top: 7px;
+        width: 6px;
+    }
+
+    .checkboxWrapper.checkboxWrapper--alternative,
+    .radioButtonWrapper.radioButtonWrapper--alternative {
+        background-color: rgba(var(--color-interface-highlight), 1);
+        border-color: rgba(var(--color-border), 1);
+        border-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+
+        display: flex;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.has-shadow {
+            box-shadow: 2px 2px 4px 0 rgba(var(--color-shadow), 0.2);
+        }
+
+        .inputGroup__radioButton:not(.is-disabled) + label:hover,
+        .inputGroup__checkbox:not(.is-disabled) + label:hover {
+            background-color: rgba(var(--color-primary-light), 0.15);
+        }
+
+        .inputGroup__radioButton + label,
+        .inputGroup__checkbox + label {
+            align-items: center;
+            background-color: rgba(var(--color-interface-secondary), 1);
+            border-right: 1px solid rgba(var(--color-border), 1);
+            display: flex;
+            flex-basis: 64px;
+            flex-shrink: 0;
+            justify-content: center;
+            margin: 0;
+            transition: background-color 0.2s ease-in-out;
+
+            &:before {
+                left: 0 !important;
+            }
+        }
+
+        // overwriting the default 'checkmark' for checkboxes
+        .inputGroup__checkbox:checked + label:after {
+            bottom: 2px !important;
+            display: inline-block !important;
+            left: 0 !important;
+            margin: auto;
+            position: absolute !important;
+            right: 0 !important;
+            top: 0 !important;
+        }
+
+        .checkboxWrapper--alternative__content,
+        .radioButtonWrapper--alternative__content {
+            margin: 16px;
+
+            font-size: $ms-1-fontSize;
+            line-height: $ms-1-lineHeight;
+
+            p:last-child,
+            .p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .checkboxWrapper--alternative__header,
+        .radioButtonWrapper--alternative__header {
+            font-size: $ms0-fontSize;
+            line-height: $ms0-lineHeight;
+
+            & + p,
+            & + .p {
+                margin-top: 0;
+                color: rgba(var(--color-font-secondary), 1);
+            }
+        }
+    }
+
+    .selectWrapper {
+        display: block;
+        position: relative;
+        @include iconUxt-regular(arrowSingleDown);
+
+        &:before {
+            display: block;
+            color: rgba(var(--color-font), 1);
+            height: 16px;
+            pointer-events: none; //needed so it does not 'capture' click events and passes them through to select
+            position: absolute;
+            right: 8px;
+            top: 9px;
+            width: 16px;
+        }
+    }
+
+    .selectWrapper--multiple:before {
+        display: none; // needed because the extension below otherwise will be visible on all devices
+    }
+
+    // caret down for IOS devices; had to add the touch-callout querie for ipadOS 14 (2021-06-16)
+    @supports (-webkit-touch-callout: none) or (-webkit-overflow-scrolling: touch) {
+        .selectWrapper--multiple {
+            display: block;
+            position: relative;
+            @include iconUxt-regular(arrowSingleDown);
+
+            &:before {
+                display: inline;
+                font-size: $ms2-fontSize;
+                height: $ms2-fontSize;
+                pointer-events: none;
+                position: absolute;
+                right: 0px;
+                top: 6px;
+                width: calc($ms2-fontSize*1.5);
+                z-index: 100;
+            }
+
+            select[multiple] {
+                padding: 7px 26px 7px 12px;
+            }
+        }
+    }
+
+    // caret down for chrome mobile
+    @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) and (hover: none) {
+        .selectWrapper--multiple {
+            display: block;
+            position: relative;
+            @include iconUxt-regular(arrowSingleDown);
+
+            &:before {
+                display: inline;
+                font-size: $ms2-fontSize;
+                height: 16px;
+                pointer-events: none;
+                position: absolute;
+                right: 4px;
+                top: 8px;
+                width: calc($ms2-fontSize*1.5);
+                z-index: 100;
+            }
+        }
+    }
+
+    &__select,
+    select {
+        background-color: rgba(var(--color-interface), 1);
+        border-radius: 3px;
+        border: 1px solid rgba(var(--color-base600), 1);
+        box-shadow: none;
+        color: rgba(var(--color-font), 1);
+        display: block;
+        font-family: $defaultFont;
+        font-size: $ms0-fontSize;
+        line-height: 16px;
+        max-width: 100%;
+        outline: none;
+        overflow: hidden;
+        padding: 7px 26px 7px 12px;
+        width: 100%;
+
+        /* Browser specific stuff */
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+
+        // firefox workaround for a bug which will be fixed in FF, line-height cannot be overwritten
+        @supports (-moz-box-sizing: border-box) {
+            padding: 6px 26px 6px 8px;
+        }
+
+        // remove dotted extra outline on firefox browser focus
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 rgba(var(--color-shadow), 1);
+        }
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0px 2px rgba(var(--color-primary-light), 1);
+            outline: none;
+        }
+
+        &:disabled,
+        &.is-disabled {
+            border-color: rgba(var(--color-border), 1);
+            box-shadow: none;
+            color: rgba(var(--color-font-disabled), 1);
+
+            &:hover {
+                cursor: not-allowed;
+            }
+
+            option {
+                color: rgba(var(--color-base600), 1);
+            }
+        }
+
+        &[multiple] {
+            //box-shadow: 0 1px 2px 0 rgba(var(--color-shadow), 0.25) inset;
+            padding: 0;
+
+            option {
+                padding: 7px 26px 7px 12px;
+
+                &:hover {
+                    background-color: rgba(var(--color-primary-lighter), 1);
+                    color: rgba(var(--color-base000), 1);
+                }
+
+                &:active {
+                    background-color: rgba(var(--color-primary), 1);
+                }
+
+                &:checked,
+                &[checked] {
+                    // just for clarification:
+                    // background color is not setable, therefor browser default (blue) is used.
+                    // and high contrast white for font. as soon as we override the blue with a gradient, the
+                    // color is default black -> very bad contrast.
+                    // e.g. -webkit-linear-gradient(bottom, $stateBlue020 0%, $stateBlue020 100%);
+                    background-color: rgba(var(--color-primary), 1);
+                }
+            }
+
+            // removed dotted line on focused option (in IE and FF, especially)
+            &:-moz-focusring,
+            &:focus option:checked,
+            &:focus::-ms-value {
+                outline: none;
+            }
+
+            // IOS browsers style 'multiple' selects differently
+            @supports (-webkit-overflow-scrolling: touch) {
+                line-height: 16px;
+                padding-left: 12px;
+                position: relative;
+            }
+
+            // Chrome mobile needs padding whereas the desktop Chrome must not have padding
+            // since there is no good way to target chrome only, we use a combination of
+            // targeting chrome (first two feature queries) and then only touch deviced (third feature query)
+            // hover property: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover
+            @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) and (hover: none) {
+                padding: 7px 26px 7px 12px;
+            }
+        }
+    }
+
+    .inputGroup__textarea {
+        border-radius: 3px;
+        border: 1px solid rgba(var(--color-base600), 1);
+        color: rgba(var(--color-font), 1);
+        font-family: $defaultFont;
+        font-size: $ms0-fontSize;
+        line-height: 20px;
+        min-width: 300px;
+        overflow: auto;
+        padding: 8px 12px;
+        resize: none;
+
+        &::-webkit-input-placeholder {
+            color: rgba(var(--color-base600), 1);
+        }
+
+        &::-moz-placeholder {
+            color: rgba(var(--color-base600), 1);
+        }
+
+        &:-ms-input-placeholder {
+            color: rgba(var(--color-base600), 1);
+        }
+
+        &:disabled,
+        &.is-disabled,
+        &[readonly],
+        &.is-readonly {
+            border: 1px solid rgba(var(--color-border), 1);
+            box-shadow: none;
+        }
+
+        &:disabled,
+        &.is-disabled {
+            color: rgba(var(--color-font-disabled), 1);
+            cursor: not-allowed;
+        }
+    }
+
+    &__description,
+    .radioButton__description,
+    .checkbox__description {
+        color: rgba(var(--color-font-secondary), 1);
+        font-family: $defaultFont;
+        font-size: $ms-1-fontSize;
+        line-height: $ms-1-lineHeight;
+        padding-top: 4px; // definition says 8px but line height is higher then font-size
+    }
+
+    .switch {
+        align-items: center;
+        display: inline-flex;
+        gap: 8px;
+        position: relative;
+
+        &__label {
+            color: rgba(var(--color-font), 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            font-size: $ms0-fontSize;
+            font-weight: normal;
+            line-height: 16px;
+            margin-left: 3px;
+            user-select: none;
+        }
+
+        &__description {
+            cursor: pointer;
+            color: rgba(var(--color-font-secondary), 1);
+            font-size: $ms-1-fontSize;
+            line-height: $ms-1-lineHeight;
+        }
+
+        &--small {
+            .switch__handle {
+                border-radius: 18px;
+                height: 24px;
+                width: 48px;
+
+                &:before {
+                    height: 18px;
+                    left: 3px;
+                    top: 3px;
+                    width: 18px;
+                }
+            }
+
+            .switch__icon {
+                font-size: 18px;
+                left: -18px;
+                line-height: 18px;
+            }
+
+            .switch__checkbox:checked + .switch__handle {
+                &:before {
+                    transform: translateX(-100%) translateX(-3px);
+                }
+
+                .switch__icon {
+                    left: 6px;
+                }
+            }
+        }
+
+        &--large {
+            .switch__handle {
+                border-radius: 32px;
+                height: 44px;
+                width: 88px;
+
+                &:before {
+                    box-shadow: rgba(var(--color-shadow), 0.4) 0 0 3px 0;
+                    height: 32px;
+                    left: 7px;
+                    top: 6px;
+                    width: 32px;
+                }
+            }
+
+            .switch__icon {
+                font-size: 32px;
+                left: -32px;
+                line-height: 32px;
+            }
+
+            .switch__checkbox:checked + .switch__handle {
+                &:before {
+                    transform: translateX(-100%) translateX(-7px);
+                }
+
+                .switch__icon {
+                    left: 10px;
+                }
+            }
+        }
+
+        &--indeterminate .switch__checkbox + .switch__handle:before {
+            transform: translateX(100%) translateX(-4px);
+            left: 0;
+        }
+
+        // manually style indeterminate 'checkbox' by offsetting a pseudo element on the following label
+        // should be replaced by native indeterminate styling once available as real property in css
+        // &--indeterminate + label:after {
+        //     box-shadow: 0 0 1px rgba(var(--color-primary-darker), 1);
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     width: 8px;
+        //     height: 2px;
+        //     background-color: rgba(var(--color-primary), 1);
+        //     left: 4px;
+        //     top: 7px;
+        // }
+
+        &__handle {
+            border-radius: 24px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: $defaultFont;
+            font-weight: bold;
+            height: 32px;
+            overflow: hidden;
+            position: relative;
+            vertical-align: middle;
+            user-select: none;
+            width: 64px;
+            transition: background 0.2s ease-in-out;
+
+            &:before {
+                background-color: rgba(var(--color-interface), 1);
+                border-radius: 50%;
+                box-shadow: rgba(var(--color-shadow), 0.4) 0 0 2px 0;
+                content: "";
+                display: block;
+                height: 24px;
+                left: 4px;
+                position: absolute;
+                top: 4px;
+                transition: all 0.2s ease-in-out;
+                width: 24px;
+            }
+        }
+
+        &__icon {
+            @include iconUxt-regular(check);
+
+            color: rgba(var(--color-interface), 1);
+            font-size: $iconSizeL;
+            left: -24px;
+            line-height: $iconSizeL;
+            position: absolute;
+            text-align: center;
+            transform: translateY(-50%);
+            transition: left 0.2s ease-in-out;
+            top: 50%;
+            user-select: none;
+        }
+
+        &__checkbox {
+            //display: none;
+            margin-left: 0;
+            margin-top: 0;
+            position: absolute;
+            opacity: 0.01;
+
+            &:not(:checked) {
+                & + .switch__handle {
+                    background-color: rgba(var(--color-base600), 1);
+                }
+            }
+
+            &:checked {
+                & + .switch__handle {
+                    &:before {
+                        left: 100%;
+                        transform: translateX(-100%) translateX(-4px);
+                    }
+
+                    .switch__icon {
+                        left: 7px;
+                    }
+                }
+            }
+
+            &[disabled] {
+                & + .switch__handle {
+                    background-color: rgba(var(--color-base800), 1) !important;
+                    cursor: not-allowed;
+                }
+
+                & ~ .switch__label,
+                & ~ .switch__label .switch__description {
+                    cursor: not-allowed;
+                    color: rgba(var(--color-base800), 1);
+                }
+            }
+        }
+
+        // focus outline for keyboard navigation
+        &,
+        &--small,
+        &--large {
+            input[type=checkbox]:focus-visible {
+                display: inline-block;
+                -moz-appearance: none; // to prevent 'double' outlines in FF 
+                opacity: 1;
+                outline: 2px solid rgba(var(--color-primary-light), 1);
+                outline-offset: 0;
+            }
+        }
+
+        & {
+            input[type="checkbox"]:focus {
+                width: 64px;
+                height: 32px;
+            }
+        }
+
+        &--small {
+            input[type="checkbox"]:focus {
+                width: 48px;
+                height: 24px;
+            }
+        }
+
+        &--large {
+            input[type="checkbox"]:focus {
+                width: 88px;
+                height: 44px;
+            }
+        }
+    }
+}
+
+// labels outside of form groups shall be optionally styleable, too.
+// Request: https://code.siemens.com/mds/mds/issues/350
+.label {
+    &--is-required {
+        &:after {
+            color: rgba(var(--color-error), 1);
+            content: "*";
+            font-family: $defaultFont;
+            font-weight: bold;
+        }
+    }
+}
+
+.switch__handle {
+    // needs to be out of the "switch" scope, so it can get overridden by the bgColor helper classes
+    background-color: rgba(var(--color-primary), 1);
+}
+
+.fieldset {
+    display: flow-root;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--color-border), 1);
+    font-size: $ms0-fontSize;
+    min-width: 0;
+    margin: 16px 0;
+    padding: 13px 24px;
+
+    // added for browsers how do not support display:flow-root
+    overflow: auto;
+
+    // https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element
+    .legend {
+        float: left;
+        font-size: $ms0-fontSize;
+        font-weight: bold;
+        line-height: $ms0-lineHeight;
+        margin-bottom: 14px;
+        padding: 0;
+
+        & + * {
+            clear: left;
+        }
+
+        // collapse legend if empty to have same spacing as container without title
+        &:empty {
+            margin: 0;
+        }
+    }
+
+    &.fieldset--alternative {
+        .legend {
+            background-color: rgba(var(--color-base900), 1);
+            border-bottom: 1px solid rgba(var(--color-border), 1);
+            margin: -13px -24px 13px -24px;
+            max-width: 100%;
+            min-width: 100%;
+            padding: 13px 24px;
+
+            .legend__subtitle {
+                color: rgba(var(--color-font), 0.7);
+                font-size: $ms-1-fontSize;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &.fieldset--compact {
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    &.fieldset--compact + .fieldset--compact {
+        border-top: 0;
+        margin-top: 0;
+    }
+
+    &.fieldset--compact:first-of-type {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    &.fieldset--compact:last-of-type {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}
+
+
+
+//removeIf(sassHandover)
+// style native elements when forced defaults
+&.#{$forceDefaultClass} {
+    textarea {
+        @extend .inputGroup__textarea;
+    }
+
+    fieldset {
+        @extend .fieldset;
+
+        legend {
+            @extend .legend;
+        }
+    }
+
+    .fieldset.fieldset--alternative {
+        legend {
+            @extend .legend;
+        }
+    }
+
+    .fieldset.fieldset--compact + .fieldset.fieldset--compact {
+        border-top: 0;
+        margin-top: 0;
+    }
+}
+
+//endRemoveIf(sassHandover)

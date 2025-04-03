@@ -1,0 +1,53 @@
+.contentHeader {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .contentHeader__actions {
+        margin-bottom: 8px;
+        margin-top: -4px;
+    }
+
+    .header__headline {
+        font-weight: 900;
+        margin: 0;
+    }
+
+    .header__subline {
+        color: rgba(var(--color-base600), 1);
+        font-size: $ms1-fontSize;
+        line-height: $ms1-lineHeight;
+    }
+
+    .header__context {
+        color: rgba(var(--color-font), 1);
+        font-size: $ms0-fontSize;
+        line-height: $ms0-lineHeight;
+        padding: 0;
+        margin: 2px 0 4px 0;
+    }
+
+    .contentHeader__header {
+        .button--secondary {
+            font-size: $ms0-fontSize;
+            line-height: $ms0-lineHeight;
+            margin: 0 4px 2px 0;
+            padding: 3px 8px 3px 0;
+
+            // todo: back button does not align with buttons on right side
+            .iconUxt {
+                margin: 0;
+                font-size: 24px;
+                margin-left: 0px;
+                margin-right: -4px;
+                position: relative;
+                top: -2px;
+            }
+        }
+
+        .breadcrumb {
+            margin-bottom: 2px;
+        }
+    }
+}

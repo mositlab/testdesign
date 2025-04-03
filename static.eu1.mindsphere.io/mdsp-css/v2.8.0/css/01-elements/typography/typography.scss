@@ -1,0 +1,443 @@
+@mixin defaultTextStyles {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    //font-family: $defaultFont;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@mixin headline1 {
+    font-family: $defaultFont;
+    font-size: $ms5-fontSize;
+    font-weight: bold;
+    line-height: $ms5-lineHeight;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+@mixin headline2 {
+    font-family: $defaultFont;
+    font-size: $ms4-fontSize;
+    font-weight: bold;
+    line-height: $ms4-lineHeight;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+@mixin headline3 {
+    font-family: $defaultFont;
+    font-size: $ms3-fontSize;
+    font-weight: bold;
+    line-height: $ms3-lineHeight;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+@mixin headline4 {
+    font-family: $defaultFont;
+    font-size: $ms2-fontSize;
+    font-weight: bold;
+    line-height: $ms2-lineHeight;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+@mixin headline5 {
+    font-family: $defaultFont;
+    font-size: $ms1-fontSize;
+    font-weight: bold;
+    line-height: $ms1-lineHeight;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+@mixin headline6 {
+    font-family: $defaultFont;
+    font-size: $ms0-fontSize;
+    font-weight: bold;
+    line-height: $ms0-lineHeight;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+@mixin paragraph {
+    font-family: $defaultFont;
+    line-height: $ms0-lineHeight;
+    margin-bottom: 16px;
+    margin-top: 0;
+
+    &.p--small {
+        font-size: $ms-1-fontSize;
+        line-height: $ms-1-lineHeight;
+    }
+}
+
+@mixin small {
+    font-size: $ms-1-fontSize;
+}
+
+@mixin em {
+    // special font face that is already italic is used
+    font-family: $defaultFont;
+    font-style: italic;
+}
+
+@mixin boldem {
+    font-family: $defaultFont;
+    font-style: italic;
+    font-weight: bold;
+}
+
+@mixin blackem {
+    font-family: $defaultFont;
+    font-style: italic;
+    font-weight: 900;
+}
+
+@mixin mark {
+    font-family: $defaultFont;
+    background-color: rgba(var(--color-primary-lighter), 1);
+    color: rgba(var(--color-base000), 1);
+}
+
+@mixin strong {
+    font-family: $defaultFont;
+    font-weight: bold;
+}
+
+@mixin hasMargin($margin) {
+    margin: $margin;
+}
+
+.h1 {
+    @include defaultTextStyles;
+    @include headline1;
+}
+
+.h2 {
+    @include defaultTextStyles;
+    @include headline2;
+}
+
+.h3 {
+    @include defaultTextStyles;
+    @include headline3;
+}
+
+.h4 {
+    @include defaultTextStyles;
+    @include headline4;
+}
+
+.h5 {
+    @include defaultTextStyles;
+    @include headline5;
+}
+
+.h6 {
+    @include defaultTextStyles;
+    @include headline6;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    &.has-margin-0 {
+        @include hasMargin(0);
+    }
+}
+
+.subheadline {
+    @include defaultTextStyles;
+    color: rgba(var(--color-font-secondary), 1);
+    font-size: $ms1-fontSize;
+    line-height: $ms1-lineHeight;
+}
+
+.p {
+    @include defaultTextStyles;
+    @include paragraph;
+}
+
+.b,
+.strong {
+    @include defaultTextStyles;
+    @include strong;
+}
+
+.small {
+    @include defaultTextStyles;
+    @include small;
+}
+
+.i,
+.em {
+    @include defaultTextStyles;
+    @include em;
+}
+
+.i .b,
+.b .i,
+.strong .i,
+.i .strong,
+.em .b,
+.b .em,
+.strong .em,
+.em .strong {
+    @include boldem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+
+    .em,
+    .i {
+        @include boldem;
+    }
+}
+
+
+.mark {
+    @include defaultTextStyles;
+    @include mark;
+}
+
+.code,
+.monospace {
+    font-family: $monospacedFont;
+    font-size: $ms-1-fontSize; // default monospace font size for code elements by user agent stylesheet
+}
+
+
+.a {
+    font-family: $defaultFont;
+    @include hoverTransition($animate: (color));
+
+    &,
+    &:visited {
+        color: rgba(var(--color-primary), 1);
+        text-decoration: underline;
+    }
+
+    &:hover {
+        text-decoration: underline;
+        color: rgba(var(--color-primary-light), 1);
+    }
+
+    &:focus-visible {
+        color: rgba(var(--color-primary-light), 1);
+        outline: 2px solid rgba(var(--color-primary-light), 1);
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: rgba(var(--color-primary-dark), 1);
+    }
+
+    &.is-external {
+        //&[href^="//"],
+        //&[href^="http://"],
+        //&[href^="https://"] {
+        @include iconUxt-regular(linkArrow, after);
+        padding-right: calc($iconSizeL/2.4);
+        position: relative;
+
+        &:after {
+            font-size: $iconSizeL;
+            height: $iconSizeL;
+            position: absolute;
+            bottom: 0.01em;
+            width: calc($iconSizeL/2.4);
+            text-decoration: underline;
+            display: inline-block;
+        }
+
+        // second declaration is necessary for IE 11
+        &:after {
+            text-decoration: none;
+        }
+    }
+}
+
+h1 {
+    @include defaultTextStyles;
+    @include headline1;
+}
+
+h2 {
+    @include defaultTextStyles;
+    @include headline2;
+}
+
+h3 {
+    @include defaultTextStyles;
+    @include headline3;
+}
+
+h4 {
+    @include defaultTextStyles;
+    @include headline4;
+}
+
+h5 {
+    @include defaultTextStyles;
+    @include headline5;
+}
+
+h6 {
+    @include defaultTextStyles;
+    @include headline6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &.has-margin-0 {
+        @include hasMargin(0);
+    }
+}
+
+p {
+    @include defaultTextStyles;
+    @include paragraph;
+}
+
+b,
+strong {
+    @include defaultTextStyles;
+    @include strong;
+}
+
+small {
+    @include defaultTextStyles;
+    @include small;
+}
+
+i,
+em {
+    @include defaultTextStyles;
+    @include em;
+}
+
+i b,
+b i,
+strong i,
+i strong,
+em b,
+b em,
+strong em,
+em strong {
+    @include boldem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    em,
+    i {
+        @include boldem;
+    }
+}
+
+
+mark {
+    @include defaultTextStyles;
+    @include mark;
+}
+
+code {
+    @extend .code;
+}
+
+a {
+    @extend .a;
+}
+
+
+hr {
+    border-top: 1px solid rgba(var(--color-border), 1);
+}
+
+ul,
+ol {
+    @include defaultTextStyles;
+    line-height: 21px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-left: 22px;
+
+    ul,
+    ol {
+        padding-left: 32px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    li {
+        margin: 0 0 12px;
+    }
+}
+
+dl {
+    @include defaultTextStyles;
+    margin: 0;
+
+    dt {
+        font-family: $defaultFont;
+        font-size: $ms1-fontSize;
+        font-weight: bold;
+        line-height: $ms1-lineHeight;
+        margin: 0;
+        padding-bottom: 12px;
+    }
+
+    dd {
+        font-family: $defaultFont;
+        font-size: $ms0-fontSize;
+        line-height: $ms0-lineHeight;
+        margin: 0;
+        padding-bottom: 32px;
+    }
+
+    &.dl--inlineList {
+        dt {
+            float: left;
+            width: 33%;
+        }
+
+        dd {
+            margin: 0 0 0 35%;
+            padding: 0;
+
+            + dd {
+                padding: 12px 0 0 0;
+            }
+
+            &:last-child {
+                padding-bottom: 32px;
+            }
+        }
+
+        dd + dt {
+            padding-top: 32px;
+
+            + dd {
+                padding-top: 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+.breadcrumb {
+    line-height: 20px !important;
+    padding: 2px 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    direction: rtl;
+    text-align: left;
+
+    &:hover {
+        // so not text caret cursor is displayed between breadcrumb items
+        cursor: default;
+    }
+
+    // utility class to "shorten" breadcrumbs item in the middle with ellipsis
+    &.breadcrumb--centered {
+        overflow: auto;
+        text-overflow: clip;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+        direction: ltr;
+        text-align: left;
+
+        height: 20px;
+
+        .breadcrumb__item {
+            flex-shrink: 1;
+            flex-basis: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &:first-child,
+            &:last-child {
+                flex-shrink: 0;
+            }
+
+            &:not(:first-child) {
+                @include iconUxt-regular(dashforward, before);
+
+                &:before {
+                    color: rgba(var(--color-base800), 1);
+                    font-size: $ms3-fontSize;
+                    vertical-align: bottom;
+                }
+
+                &:after {
+                    content: '';
+                }
+            }
+
+            &:first-child {
+                &:before {
+                    content: '';
+                    display: none;
+                }
+
+                &:after {
+                    content: '';
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+    // utility class to "cut off" breadcrumb items on the right with ellipsis
+    &.breadcrumb--right {
+        direction: ltr;
+        text-align: left;
+    }
+
+    .breadcrumb__item {
+        color: rgba(var(--color-base600), 1);
+        display: inline;
+        font-family: $defaultFont;
+        font-size: $ms0-fontSize;
+        line-height: $ms0-lineHeight;
+        margin: 0;
+
+        // needed for Firefox to 'correct' order of inline breadcrumb items (rtl): MDS-307012
+        unicode-bidi: normal;
+
+        // needed in order to not cut off focus outline on first and last item.
+        &:first-child {
+            padding-left: 3px;
+        }
+
+        &:last-child {
+            padding-right: 3px;
+        }
+
+        &:not(:last-child) {
+            @include iconUxt-regular(dashforward, after);
+        }
+
+        &:not(:last-child):after {
+            color: rgba(var(--color-base800), 1);
+            font-size: $ms3-fontSize;
+            vertical-align: bottom;
+        }
+
+        &:hover {
+            cursor: default;
+        }
+
+        > a {
+            color: rgba(var(--color-primary), 1);
+            cursor: pointer;
+            text-decoration: none;
+            @include hoverTransition(color);
+        }
+
+        > a:hover {
+            color: rgba(var(--color-primary-light), 1);
+            text-decoration: underline;
+        }
+
+        > a:active {
+            color: rgba(var(--color-primary-dark), 1);
+            text-decoration: underline;
+        }
+
+        &.is-current,
+        &.is-current a,
+        &.is-current a:visited,
+        &.is-current a:hover {
+            color: rgba(var(--color-base600), 1);
+            text-decoration: none;
+            cursor: default;
+        }
+    }
+}
+
+
+//removeIf(sassHandover)
+// style native elements when forced defaults
+&.#{$forceDefaultClass} {
+    .breadcrumb {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+}
+
+//endRemoveIf(sassHandover)

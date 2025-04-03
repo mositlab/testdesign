@@ -1,0 +1,296 @@
+.container {
+  background-color: rgba(var(--color-interface-highlight), 1);
+  border-radius: 3px;
+  border: 1px solid rgba(var(--color-border), 1);
+  box-sizing: border-box;
+  font-size: $ms0-fontSize;
+  line-height: $ms0-lineHeight;
+  margin-bottom: 16px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 13px 8px;
+  position: relative;
+
+  &.is-success,
+  &.is-warning,
+  &.is-error,
+  &.is-alert,
+  &.is-info {
+    &:before {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      content: '';
+      position: absolute;
+      z-index: 1;
+
+      inset: -1px -1px 0 -1px;
+      height: 4px;
+    }
+  }
+
+  &.is-success {
+    &:before {
+      background-color: rgba(var(--color-success), 1);
+    }
+  }
+
+  &.is-warning {
+    &:before {
+      background-color: rgba(var(--color-warning), 1);
+    }
+  }
+
+  &.is-error,
+  &.is-alert {
+    &:before {
+      background-color: rgba(var(--color-error), 1);
+    }
+  }
+
+  &.is-info {
+    &:before {
+      background-color: rgba(var(--color-info), 1);
+    }
+  }
+
+  &.has-indicator-bold:before {
+    height: 8px;
+  }
+
+  &.has-indicator-vertical {
+    &:before {
+      border-radius: 0;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      inset: -1px 0 -1px -1px;
+      height: unset;
+
+      width: 4px;
+    }
+
+    &.has-indicator-bold:before {
+      width: 8px;
+    }
+
+  }
+
+  &--filled {
+    background-color: rgba(var(--color-interface-secondary), 1);
+    border: 1px solid rgba(var(--color-base900), 1);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 14px;
+    position: relative;
+
+    .title__content {
+      flex-shrink: 1;
+
+      font-size: $ms0-fontSize;
+      font-family: $defaultFont;
+      font-weight: bold;
+      line-height: $ms0-lineHeight;
+      margin-left: 16px;
+      order: 1;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      flex-grow: 5;
+      order: 3;
+    }
+
+    .title__meta {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      margin-left: 8px;
+      order: 2;
+
+      .iconUxt {
+        font-size: $iconSizeL;
+      }
+    }
+
+    .title__actions {
+      flex-basis: 102px;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      order: 4;
+      position: relative;
+
+      .button,
+      button {
+        height: 32px;
+        margin: 0 0 0 2px;
+        position: relative;
+        top: -6px;
+        width: 32px;
+      }
+    }
+
+    .title__meta,
+    .title__actions {
+      height: 20px;
+    }
+  }
+
+  &__content {
+    margin: 0 16px 8px 16px;
+
+    //if there is a container without a title (just content area) harmonize margins
+    &:first-child {
+      margin-top: 8px;
+    }
+
+    img {
+      max-width: 100%;
+
+      // if image is last child, remove white spacing below it.
+      &:last-child {
+        display: block;
+      }
+    }
+
+    .content__divider {
+      margin: 16px 0;
+      border-width: 0;
+      border-top: 1px solid rgba(var(--color-border), 1);
+
+      &.content__divider--section {
+        margin: 24px -25px;
+      }
+    }
+
+    // remove bottom margin if paragraph is present to avoid weird margin bottom.
+    // todo: evaluate if any other elements might have their margin-bottom removed by default, too
+    p:last-child,
+    .keyValueWrapper:last-child {
+      margin-bottom: 0;
+    }
+
+    .container:last-child {
+      margin-bottom: 10px;
+    }
+
+    > form,
+    > .form {
+      margin: 0;
+    }
+  }
+
+  &.container--collapsable {
+    .title__content {
+      flex-shrink: 1;
+
+      font-size: $ms0-fontSize;
+      font-family: $defaultFont;
+      font-weight: bold;
+      line-height: $ms0-lineHeight;
+      margin-left: 16px;
+      @include iconUxt-filled(arrowDownExtraSmall);
+
+      &:before {
+        font-size: $iconSizeL;
+        left: -6px;
+        position: absolute;
+        top: 0px;
+      }
+    }
+
+    a.title__content {
+      & {
+        @include hoverTransition(color);
+      }
+
+      &,
+      &:visited {
+        color: rgba(var(--color-font), 1);
+        text-decoration: none !important;
+      }
+
+      &:hover {
+        color: rgba(var(--color-primary-light), 1);
+        cursor: pointer;
+        text-decoration: none !important;
+      }
+    }
+
+    &.is-collapsed {
+      height: 48px;
+      max-height: 48px;
+      overflow: hidden;
+
+      .title__content {
+        @include iconUxt-filled(arrowRightExtraSmall);
+        height: 20px;
+
+        &:after {
+          background: linear-gradient(to bottom, rgba(var(--color-interface-highlight), 0) 0%, rgba(var(--color-interface-highlight), 1) 100%);
+          bottom: -14px;
+          content: '';
+          display: block;
+          height: 12px;
+          left: -8px;
+          position: absolute;
+          right: -8px;
+        }
+      }
+    }
+  }
+
+  &.container--frameless {
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+
+    .container__title {
+      padding-left: 8px;
+      padding-right: 8px;
+
+      .title__content:before {
+        left: 0;
+      }
+    }
+
+    .container__content {
+      margin: 0;
+
+      .content__divider {
+        border-width: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.containergroup {
+  .container {
+    margin-bottom: 0;
+    border-radius: 0;
+    border-bottom-width: 0;
+
+    &:first-child {
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-bottom-width: 1px;
+      margin-bottom: 16px;
+    }
+  }
+}

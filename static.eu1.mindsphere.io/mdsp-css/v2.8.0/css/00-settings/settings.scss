@@ -1,0 +1,240 @@
+/* =============================================================
+   Default settings
+   ========================================================== */
+
+$defaultClass: uxt-defaults;
+$forceDefaultClass: forceDefaultElements;
+
+$defaultFont: "Siemens Sans", Arial, sans-serif;
+$monospacedFont: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+
+$assetPath: "../assets/";
+$webfontsPath: "fonts/";
+
+/* =============================================================
+   Breakpoints
+   ========================================================== */
+// https://github.com/angular/flex-layout/wiki/Responsive-API
+
+$xs: max-width 599px;
+$sm: 600px 959px;
+$md: 960px 1279px;
+$lg: 1280px 1919px;
+$xl: 1920px 5000px;
+
+/* =============================================================
+   Constants used for layout
+   ========================================================== */
+$appbarWidth: 80px;
+$appbarWidthMobile: 40px;
+$mobileToggleHeight: 40px; // corresponds to os bar height
+$toggleAreaWidth: 24px;
+$leadingRegionWidth: 320px;
+$contextRegionWidth: 320px;
+$breakpointLayoutMobile: 1024px;
+$breakpointLayoutPushed: 768px;
+
+$itemRegionSpacing: 16px;
+
+/* =============================================================
+   Increments for optionally different space distributions between main and context region
+   ========================================================== */
+
+$distributionWidths: 30, 33, 50, 60, 66;
+
+/* =============================================================
+   Increments for content list column widths
+   ========================================================== */
+
+$columnWidths: 5, 10, 15, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 85, 90, 95, 100;
+
+/* =============================================================
+   Default mixin for default transition of buttons, tabs, ...
+   ========================================================== */
+
+@mixin hoverTransition($animate, $duration: 0.2s, $mode: ease-in-out) {
+   $transitionList: (
+   );
+
+@each $property in $animate {
+   $transition: $property $duration $mode;
+   $transitionList: append($transitionList, $transition, comma);
+}
+
+transition: $transitionList;
+}
+
+@mixin statusIndicators() {
+
+   &.is-info,
+   &.is-warning,
+   &.is-error,
+   &.is-alert,
+   &.is-success {
+      &:before {
+         content: '';
+         inset: 5px 0;
+         position: absolute;
+         width: 4px;
+         z-index: 1;
+      }
+   }
+
+   &.is-info:before {
+      background-color: rgba(var(--color-info), 1);
+   }
+
+   &.is-warning:before {
+      background-color: rgba(var(--color-warning), 1);
+   }
+
+   &.is-error,
+   &.is-alert {
+      &::before {
+         background-color: rgba(var(--color-error), 1);
+      }
+   }
+
+   &.is-success:before {
+      background-color: rgba(var(--color-success), 1);
+   }
+
+   &.has-indicator-bold:before {
+      width: 8px;
+   }
+}
+
+@mixin favoriteButton() {
+   @include iconUxt-regular(star);
+   color: rgba(var(--color-font-secondary));
+
+   &:hover {
+      @include iconUxt-regular(star);
+      color: rgba(var(--color-primary));
+   }
+
+   &:active {
+      @include iconUxt-filled(star);
+      background-color: rgba(var(--color-primary-lighter));
+      color: rgba(var(--color-primary));
+
+   }
+
+   &.is-selected {
+      @include iconUxt-filled(star);
+      color: rgba(var(--color-warning));
+
+      &:hover {
+         @include iconUxt-filled(star);
+         background-color: rgba(var(--color-primary-lightest));
+         color: rgba(var(--color-primary));
+      }
+
+      &:active {
+         @include iconUxt-regular(star);
+         background-color: rgba(var(--color-primary-lighter));
+         color: rgba(var(--color-primary));
+      }
+   }
+
+   &.is-disabled {
+      color: rgba(var(--color-font-disabled));
+      background-color: unset;
+
+      &:hover {
+         color: rgba(var(--color-font-disabled));
+         background-color: unset;
+      }
+   }
+
+
+}
+
+/* =============================================================
+   different sizes and diameters for busy indicator
+   ========================================================== */
+
+$diameter-xsmall: 16px;
+$border-xsmall: 2px;
+
+$diameter-small: 24px;
+$border-small: 3px;
+
+$diameter-default: 48px;
+$border-default: 4px;
+
+$diameter-large: 96px;
+$border-large: 6px;
+
+/* =============================================================
+   App Bar "Advanced" settings
+   ========================================================== */
+
+$appBarAdvanced-wide: 220px;
+$appBarAdvanced-narrow: 54px;
+$appBarAdvanced__footerHeight: 34px;
+$appBarAdvanced__itemHeight: 45px;
+$appBarAdvanced__subitemHeight: 29px;
+$appBarAdvanced__flyoutWidth: 200px;
+
+/* =============================================================
+   Tree settings
+   ========================================================== */
+$treeLevelSpacing: 16px;
+$treeLevelCount: 5;
+
+/* =============================================================
+   Typography settings
+   ========================================================== */
+
+$iconSizeS: 8px;
+$iconSizeM: 16px;
+$iconSizeL: 24px;
+$iconSizeXL: 32px;
+$iconSizeXXL: 64px;
+
+$lineHeightScale: 1.32;
+
+/* Step -2: 11.06px → 9.72px */
+$ms-2-fontSize: clamp(0.61rem, calc(0.71rem + -0.08vw), 0.69rem);
+$ms-2-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step -1: 12.44px → 11.67px */
+$ms-1-fontSize: clamp(0.73rem, calc(0.79rem + -0.05vw), 0.78rem);
+$ms-1-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 0: 14.00px → 14.00px */
+$ms0-fontSize: 14px;
+$ms0-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 1: 15.75px → 16.80px */
+$ms1-fontSize: clamp(0.98rem, calc(0.97rem + 0.07vw), 1.05rem);
+$ms1-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 2: 17.72px → 20.16px */
+$ms2-fontSize: clamp(1.11rem, calc(1.08rem + 0.15vw), 1.26rem);
+$ms2-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 3: 19.93px → 24.19px */
+$ms3-fontSize: clamp(1.25rem, calc(1.19rem + 0.27vw), 1.51rem);
+$ms3-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 4: 22.43px → 29.03px */
+$ms4-fontSize: clamp(1.40rem, calc(1.32rem + 0.41vw), 1.81rem);
+$ms4-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 5: 25.23px → 34.84px */
+$ms5-fontSize: clamp(1.58rem, calc(1.46rem + 0.60vw), 2.18rem);
+$ms5-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 6: 28.38px → 41.80px */
+$ms6-fontSize: clamp(1.77rem, calc(1.61rem + 0.84vw), 2.61rem);
+$ms6-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 7: 31.93px → 50.16px */
+$ms7-fontSize: clamp(2.00rem, calc(1.77rem + 1.14vw), 3.14rem);
+$ms7-lineHeight: calc(1em * $lineHeightScale);
+
+/* Step 8: 35.92px → 60.20px */
+$ms8-fontSize: clamp(2.25rem, calc(1.94rem + 1.52vw), 3.76rem);
+$ms8-lineHeight: calc(1em * $lineHeightScale);

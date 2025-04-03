@@ -1,0 +1,182 @@
+.message {
+    background-color: rgba(var(--color-base900), 1);
+    border-radius: 3px;
+    border: 1px rgba(var(--color-border), 1) solid;
+    box-sizing: border-box;
+    color: rgba(var(--color-font), 1);
+    display: inline-block;
+    font-family: $defaultFont;
+    font-size: $ms0-fontSize;
+    font-weight: normal;
+    line-height: $ms0-lineHeight;
+    margin: 8px 0px 8px 0;
+    padding: 12px 16px 16px;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+
+    &.has-contentWidth {
+        width: auto;
+    }
+
+    ol,
+    ul {
+        padding-bottom: 0;
+    }
+
+    &--withIcon {
+        @include iconUxt-filled(attention);
+
+        &:before {
+            font-size: $iconSizeL;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            left: 16px;
+            line-height: $iconSizeL;
+            position: absolute;
+            top: calc(50% - 12px);
+        }
+
+        &:after {
+            border-right: 1px solid rgba(var(--color-base800), 1);
+            content: '';
+            height: 100%;
+            left: 56px;
+            position: absolute;
+            top: 0;
+            width: 0;
+        }
+
+        &:not(.message--small) {
+            > * {
+                color: inherit;
+                margin-left: 56px;
+
+                & label {
+                    color: inherit;
+                }
+            }
+        }
+
+        > *.button--secondary {
+            color: rgba(var(--color-primary), 1);
+        }
+    }
+
+    &--small {
+        padding: 6px 12px;
+
+        &.message--withIcon {
+            &:before {
+                left: 10px;
+            }
+
+            &:after {
+                border: none;
+            }
+
+            > * {
+                padding: 0;
+                padding-left: 30px;
+            }
+        }
+    }
+
+    > *,
+    > p {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    > h1,
+    > .message__headline {
+        color: inherit;
+        font-family: $defaultFont;
+        font-size: $ms0-fontSize;
+        font-weight: bold;
+        line-height: $ms0-lineHeight;
+        margin-bottom: 2px;
+    }
+
+    a,
+    button,
+    .button--primary,
+    .button--secondary,
+    .button--ghost {
+        margin-top: 0;
+        text-decoration: none;
+    }
+
+    label {
+        cursor: pointer;
+        @include iconUxt-bold(goTo, after);
+
+        &:after {
+            padding-left: 4px;
+        }
+    }
+
+    // informative was replaced by info but should be still supported
+    &.is-info,
+    &.is-informative {
+        background-color: rgba(var(--color-info-lighter), 1);
+        border: 1px solid rgba(var(--color-info-light), 1);
+        color: rgba(var(--color-info-dark), 1);
+
+        &.message--withIcon {
+            @include iconUxt-filled(information);
+        }
+
+        &.message--withIcon:after {
+            border-color: rgba(var(--color-info-light), 1);
+        }
+    }
+
+    &.is-success {
+        background-color: rgba(var(--color-success-lighter), 1);
+        border: 1px solid rgba(var(--color-success-light), 1);
+        color: rgba(var(--color-success-dark), 1);
+
+        &.message--withIcon {
+            @include iconUxt-filled(ok);
+        }
+
+        &.message--withIcon:after {
+            border-color: rgba(var(--color-success-light), 1);
+        }
+    }
+
+    &.is-warning {
+        background-color: rgba(var(--color-warning-lighter), 1);
+        border: 1px solid rgba(var(--color-warning-light), 1);
+        color: rgba(var(--color-warning-dark), 1);
+
+        &.message--withIcon {
+            @include iconUxt-filled(exclamationDiamond);
+        }
+
+        &.message--withIcon:after {
+            border-color: rgba(var(--color-warning-light), 1);
+        }
+    }
+
+    &.is-error,
+    &.is-alert {
+        background-color: rgba(var(--color-error-lighter), 1);
+        border: 1px solid rgba(var(--color-error-light), 1);
+        color: rgba(var(--color-error-dark), 1);
+
+        &.message--withIcon {
+            @include iconUxt-filled(errorAlert);
+        }
+
+        &.message--withIcon:after {
+            border-color: rgba(var(--color-error-light), 1);
+        }
+    }
+}

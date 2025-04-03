@@ -1,0 +1,185 @@
+.badge {
+    align-items: center;
+    border-radius: 10px;
+    border-width: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-family: $defaultFont;
+    // we do not set rem here on purpose since the badges shall not scale with increasing font size (scaling problems with icon positioning which are bigger then font size of badges)
+    font-size: $ms-1-fontSize;
+    font-weight: bold;
+    height: 20px;
+    justify-content: center;
+    min-width: 20px;
+    line-height: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+    padding: 2px 6px;
+    position: relative;
+    vertical-align: baseline;
+
+    font-smooth: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:hover {
+        cursor: default;
+    }
+
+    > a,
+    > span:not(.iconUxt),
+    > span:not(.badge__close) {
+        max-width: 12em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    > a,
+    > a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    > a:hover {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    > a:focus-visible {
+        box-shadow: rgba(var(--color-primary-light), 1) 0 0 0 3px;
+        border-radius: 3px;
+        outline: none;
+    }
+
+    > .iconUxt:first-child {
+        font-size: 16px;
+        padding-right: 2px;
+    }
+
+    .badge__close {
+        @include iconUxt-bold('cancelCircle');
+        font-size: $iconSizeM;
+        height: $iconSizeM;
+        line-height: $iconSizeM;
+        margin-left: 2px;
+        padding-left: 2px;
+
+        &:hover {
+            @include iconUxt-filled('cancelCircle');
+            text-decoration: none;
+        }
+    }
+
+    &.badge--noEllipsis {
+
+        > a,
+        > span:not(.iconUxt),
+        > span:not(.badge__close) {
+            max-width: none;
+        }
+    }
+
+    &--outline {
+        border: 1px solid rgba(var(--color-base200), 1);
+        border-width: 1px;
+        color: rgba(var(--color-font), 1);
+        padding: 1px 5px;
+
+        &.is-info {
+            border-color: rgba(var(--color-info), 1);
+            color: rgba(var(--color-info), 1);
+        }
+
+        &.is-warning {
+            border-color: rgba(var(--color-warning-dark), 1);
+            color: rgba(var(--color-warning-dark), 1);
+        }
+
+        &.is-error,
+        &.is-alert {
+            border-color: rgba(var(--color-error), 1);
+            color: rgba(var(--color-error), 1);
+        }
+
+        &.is-success {
+            border-color: rgba(var(--color-success), 1);
+            color: rgba(var(--color-success), 1);
+        }
+    }
+
+    &.is-info:not(.badge--outline) {
+        background-color: rgba(var(--color-info), 1);
+        color: rgba(var(--color-font-contrast), 1);
+    }
+
+    &.is-warning:not(.badge--outline) {
+        background-color: rgba(var(--color-warning), 1);
+        color: rgba(var(--color-font-contrast-inverse), 1);
+    }
+
+    &.is-error,
+    &.is-alert {
+        &:not(.badge--outline) {
+            background-color: rgba(var(--color-error), 1);
+            color: rgba(var(--color-font-contrast), 1);
+        }
+    }
+
+    &.is-success:not(.badge--outline) {
+        background-color: rgba(var(--color-success), 1);
+        color: rgba(var(--color-font-contrast), 1);
+    }
+
+    &.is-disabled {
+        opacity: 0.7;
+
+        > a {
+            pointer-events: none;
+        }
+
+        > a:hover {
+            text-decoration: none;
+        }
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.badge--large {
+    border-radius: 14px;
+    height: 28px;
+    line-height: 24px;
+    padding: 2px 8px 2px 8px;
+}
+
+.badge--dark {
+    background-color: rgba(var(--color-base600), 1);
+    color: rgba(var(--color-font-contrast), 1);
+}
+
+.badge--light {
+    background-color: rgba(var(--color-base800), 1);
+    color: rgba(var(--color-font), 1);
+}
+
+// buttons with badges inside the clickable area
+.button {
+    .badge {
+        margin-bottom: -4px;
+        margin-top: -3px;
+
+        .iconUxt {
+            line-height: 14px;
+            margin: 0;
+
+            &:before {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}

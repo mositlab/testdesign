@@ -1,0 +1,545 @@
+.button,
+a.button {
+
+    &:link,
+    &:visited {
+        color: rgba(var(--color-font-contrast), 1);
+    }
+
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $defaultFont;
+    font-size: $ms0-fontSize;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 8px 0px;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    // important below is necessary for 'link'-buttons with forcedefaults, since links only transition the color and would overwrite the background color transition
+    transition: background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    border 0.2s ease-in-out !important;
+
+    & + .button {
+        margin-left: 8px;
+    }
+
+    &[type="submit"] {
+        // disable 'native' IOS look on iPhones
+        -webkit-appearance: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid rgba(var(--color-primary-light), 1) !important;
+        outline-offset: -2px;
+    }
+
+    // remove dotted inner border in Firefox browsers
+    &::-moz-focus-inner {
+        border: 0;
+    }
+
+    &:disabled,
+    &[disabled],
+    &.is-disabled:focus-visible {
+        outline: none !important;
+    }
+
+    &.button--primary {
+        background-color: rgba(var(--color-primary), 1);
+        border: 1px solid transparent;
+        color: rgba(var(--color-font-contrast), 1) !important;
+        text-decoration: none;
+
+        &:link,
+        &:visited {
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: rgba(var(--color-primary-light), 1);
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: rgba(var(--color-primary-dark), 1);
+            outline: none;
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            outline-offset: -0px;
+        }
+
+        &.is-dangerButton {
+            background-color: rgba(var(--color-dangerPrimary), 1);
+
+            &:hover {
+                background-color: rgba(var(--color-dangerPrimary-hover), 1);
+            }
+
+            &:active {
+                background-color: rgba(var(--color-dangerPrimary-active), 1);
+            }
+        }
+
+        &:disabled,
+        &[disabled],
+        &.is-disabled {
+            background-color: rgba(var(--color-disabled), 1);
+            color: rgba(var(--color-font-contrast), 1);
+
+            &:hover {
+                cursor: not-allowed;
+                background-color: rgba(var(--color-disabled), 1);
+            }
+        }
+    }
+
+    &.button--secondary {
+        background-color: transparent;
+        border: 1px solid rgba(var(--color-primary), 1);
+        color: rgba(var(--color-primary), 1);
+        text-decoration: none;
+
+        &:link,
+        &:visited {
+            color: rgba(var(--color-primary), 1);
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: rgba(var(--color-primary-lightest), 1);
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: rgba(var(--color-primary-lighter), 1);
+            outline: none;
+            text-decoration: none;
+        }
+
+        &.is-dangerButton {
+            border-color: rgba(var(--color-dangerPrimary), 1);
+            color: rgba(var(--color-dangerPrimary), 1);
+
+            &:hover {
+                background-color: rgba(var(--color-dangerSecondary-hover), 1);
+            }
+
+            &:active {
+                background-color: rgba(var(--color-dangerSecondary-active), 1);
+            }
+
+            &:focus-visible {
+                outline-offset: -0px;
+            }
+        }
+
+        &:disabled,
+        &[disabled],
+        &.is-disabled {
+            background-color: rgba(var(--color-disabled-contrast), 1);
+            border-color: rgba(var(--color-font-disabled), 1);
+            color: rgba(var(--color-font-disabled), 1);
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: rgba(var(--color-disabled-contrast), 1);
+            }
+        }
+    }
+
+    &.button--ghost {
+        background-color: transparent;
+        color: rgba(var(--color-primary), 1);
+        font-family: $defaultFont;
+        border: 1px solid transparent;
+        padding: 8px;
+        text-decoration: none;
+
+        &:link,
+        &:visited {
+            color: rgba(var(--color-primary), 1);
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: rgba(var(--color-primary-lightest), 1);
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: rgba(var(--color-primary-lighter), 1);
+            outline: none;
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            outline-offset: -0px;
+        }
+
+        &.is-dangerButton {
+            color: rgba(var(--color-dangerPrimary), 1);
+
+            &:hover {
+                background-color: rgba(var(--color-dangerSecondary-hover), 1);
+            }
+
+            &:active {
+                background-color: rgba(var(--color-dangerSecondary-active), 1);
+            }
+        }
+
+        &:disabled,
+        &[disabled],
+        &.is-disabled {
+            background-color: rgba(var(--color-interface), 1);
+            color: rgba(var(--color-font-disabled), 1);
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: rgba(var(--color-interface), 1);
+            }
+
+            &:active {
+                background-color: rgba(var(--color-interface), 1);
+            }
+        }
+    }
+
+    &.button--secondaryContentAction,
+    &.button--primaryContentAction {
+        background-color: transparent;
+        border: 1px solid transparent;
+        color: rgba(var(--color-primary), 1);
+        font-family: $defaultFont;
+        margin: 0 8px;
+        padding: 8px 2px 8px 0px;
+        position: relative;
+        text-decoration: none;
+
+        &:link,
+        &:visited {
+            color: rgba(var(--color-primary), 1);
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: rgba(var(--color-primary-light), 1);
+            text-decoration: none;
+        }
+
+        &:focus {
+            outline-offset: 0px;
+        }
+
+        &:active {
+            color: rgba(var(--color-primary-dark), 1);
+            outline: none;
+        }
+
+        &:disabled,
+        &[disabled],
+        &.is-disabled {
+            background-color: transparent;
+            color: rgba(var(--color-font-disabled), 1);
+            cursor: not-allowed;
+        }
+    }
+
+    &.button--primaryContentAction {
+        font-weight: bold;
+        padding: 12px 2px 12px 0px;
+    }
+
+    &.button--split {
+        background-color: rgba(var(--color-interface), 1);
+        border: 1px solid rgba(var(--color-border), 1);
+        border-radius: 0;
+        border-width: 0px;
+        box-sizing: border-box;
+
+        color: rgba(var(--color-primary), 1);
+        display: block;
+        margin: 0;
+        padding: 0 30px 0 20px;
+
+        font-size: $ms0-fontSize;
+        height: 36px;
+        line-height: $ms0-lineHeight;
+
+        text-align: left;
+
+        &:link,
+        &:visited {
+            color: rgba(var(--color-primary), 1);
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: rgba(var(--color-base900), 1);
+            color: rgba(var(--color-primary-light), 1);
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: rgba(var(--color-base800), 1);
+            outline: none;
+            text-decoration: none;
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 2px rgba(var(--color-primary-light), 1);
+            // IE11 does not support outline-offset, hence the feature query
+            outline: 0;
+
+            @supports (outline-offset: -2px) {
+                box-shadow: none;
+                outline-offset: -2px;
+                outline: 2px solid rgba(var(--color-primary-light), 1);
+            }
+        }
+
+        &:disabled,
+        &[disabled],
+        &.is-disabled {
+            background-color: rgba(var(---color-interface), 1);
+            border-color: rgba(var(--color-font-disabled), 1);
+            color: rgba(var(--color-font-disabled), 1);
+            cursor: not-allowed;
+        }
+
+        .iconUxt {
+            vertical-align: middle;
+        }
+    }
+
+    .iconUxt {
+        display: inline-block;
+        font-size: $iconSizeL;
+
+        // the -2px on the left is to balance the center-alignment within the button (most icons are not completely covering 24x24px)
+        margin: 0 4px 0 -2px;
+        vertical-align: bottom;
+    }
+
+    &.has-icon-right {
+        .iconUxt {
+            // the -2px on the right is to balance the center-alignment within the button (most icons are not completely covering 24x24px)
+            margin: 0 -2px 0 4px;
+        }
+    }
+
+    &.has-icon-only {
+        padding: 8px 3px;
+
+        .iconUxt {
+            margin: 0;
+        }
+    }
+}
+
+
+.buttonGroup {
+    display: inline-flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+
+    + .buttonGroup {
+        margin-left: 12px;
+    }
+
+    .button,
+    a.button {
+        margin: 0 0 4px -1px;
+
+        &.button--primary,
+        &.button--secondary {
+            border-color: rgba(var(--color-base600), 1);
+            border-radius: 0;
+            color: rgba(var(--color-font), 1);
+
+            padding-left: 4px;
+            padding-right: 4px;
+
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+            &:last-child {
+                border-right-width: 1px; // for compensating 1px border
+            }
+
+            &:first-child {
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+
+            &:hover {
+                background-color: rgba(var(--color-base750), 1);
+            }
+
+            &:active,
+            &.is-activated {
+                background-color: rgba(var(--color-base450), 1);
+                border-color: rgba(var(--color-base450), 1);
+                color: rgba(var(--color-font-contrast), 1);
+                outline: none;
+                text-decoration: none;
+            }
+
+            &:disabled,
+            &[disabled],
+            &.is-disabled {
+                color: rgba(var(--color-base750), 1);
+                background-color: rgba(var(--color-base900), 1);
+            }
+        }
+
+        &.button--ghost {
+            color: rgba(var(--color-base200), 1);
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+            &:hover {
+                background-color: rgba(var(--color-base750), 1);
+            }
+
+            &:active,
+            &.is-activated {
+                background-color: rgba(var(--color-base450), 1);
+                color: rgba(var(--color-font-contrast), 1);
+                outline: none;
+                text-decoration: none;
+            }
+
+            &:disabled,
+            &[disabled],
+            &.is-disabled {
+                color: rgba(var(--color-base750), 1);
+                background-color: rgba(var(--color-base900), 1);
+            }
+        }
+    }
+}
+
+.buttonSplitWrapper {
+    align-items: flex-end;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+
+    + .buttonSplitWrapper {
+        margin-left: 12px;
+    }
+
+    .buttonGroup {
+        margin-bottom: 0;
+
+        .button {
+            &.button--secondary {
+                border-color: rgba(var(--color-primary), 1);
+                color: rgba(var(--color-primary), 1);
+
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            &.button--secondary.has-icon-only {
+                padding: 8px 3px;
+            }
+
+            &:hover {
+                background-color: rgba(var(--color-primary-lightest), 1);
+            }
+
+            &:active,
+            &.is-activated {
+                background-color: rgba(var(--color-primary-lighter), 1);
+            }
+
+            &:disabled,
+            &[disabled],
+            &.is-disabled {
+                background-color: rgba(var(--color-disabled-contrast), 1);
+                border-color: rgba(var(--color-font-disabled), 1);
+                color: rgba(var(--color-font-disabled), 1);
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .buttonSplit {
+        display: none;
+
+        box-shadow: 0 2px 30px 0 rgba(var(--color-shadow), 0.1);
+        background-color: rgba(var(--color-interface), 1);
+        border: 1px solid rgba(var(--color-border), 1);
+        border-radius: 3px;
+        flex-direction: column;
+        padding: 8px 0px;
+        position: absolute;
+        overflow-y: auto;
+        top: 34px;
+
+        // variants
+        &.is-left-aligned {
+            left: calc(100% - 32px);
+        }
+
+        &.is-bottom-aligned {
+            bottom: 36px;
+            top: auto;
+        }
+
+        &.is-activated {
+            display: inline-flex;
+            z-index: 10;
+        }
+    }
+
+    // added possibility of 'icon only' split button without changing button markup;
+    // since there is no way to target the button text alone without altering button styling we have to 'push' it off the visible area
+    &.buttonSplitWrapper--small {
+        .buttonGroup > .button--secondary:first-child {
+            width: 48px;
+            overflow: hidden;
+
+            > .iconUxt {
+                margin-left: -3px;
+                margin-right: 12px;
+            }
+        }
+    }
+}
+
+//removeIf(sassHandover)
+// style native elements when forced defaults
+&.#{$forceDefaultClass} {
+
+    button,
+    button[type=button],
+    input[type=button],
+    input[type=reset],
+    input[type=submit] {
+        @extend .button;
+    }
+
+    button + .button,
+    button + button,
+    .button + button {
+        margin-left: 8px;
+    }
+}
+
+//endRemoveIf(sassHandover)

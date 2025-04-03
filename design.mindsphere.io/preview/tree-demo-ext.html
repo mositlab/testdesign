@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Experience Toolkit for Insights Hub and Industrial IoT: CSS - stylesheet showcase</title>
+    <link rel="stylesheet" id="css-cdn" href="https://static.eu1.mindsphere.io/mdsp-css/v2.8.0/css/mdsp-css.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="uxt uxt-defaults forceDefaultElements">
+
+<div class="appWrapper has-appBarAdvanced has-appBarAdvanced-collapsed">
+
+    <div class="appWrapper__regions has-appHeader has-contextRegion has-leadingRegion contextRegion-is-expanded leadingRegion-is-expanded appWrapper__regions--pushLayout">
+
+        <section class="appHeader">
+            <div class="appHeader__breadcrumb">
+                <div class="breadcrumb">
+                    <div class="breadcrumb__item">
+                        <a href="#">Level 1</a>
+                    </div>
+                    <div class="breadcrumb__item">
+                        <a href="#">Level 2</a>
+                    </div>
+                    <div class="breadcrumb__item">
+                        <a href="#">Level 3</a>
+                    </div>
+                    <div class="breadcrumb__item is-current">
+                        <a href="#">Current</a>
+                    </div>
+                </div>
+            </div>
+            <div class="appHeader__content">
+                Optional content
+            </div>
+            <div class="appHeader__viewToggler">
+                <button class="button button--ghost has-icon-only button--leading" id="toggleLeadingRegionDemo">
+                    <span aria-hidden="true" class="iconUxt"></span>
+                </button>
+
+                <button class="button button--ghost has-icon-only button--context" id="toggleContextRegionDemo">
+                    <span aria-hidden="true" class="iconUxt is-flipped-horizontal"></span>
+                </button>
+            </div>
+        </section>
+
+        <section class="leadingRegion">
+            <h5 style="padding:24px 0 0 8px">Tree</h5>
+            <div class="tree">
+                <div class="tree__node is-level0 is-nested is-collapsed">
+                    <button class="button button--ghost has-icon-only node__arrow"></button>
+                    <a href="#" class="node__details">
+                        <span class="details__icon iconUxt asset" aria-hidden="true"></span>
+                        <div class="details__content">
+                            <span class="details__title">Dogs</span>
+                            <span class="details__description">Dog breeds</span>
+                        </div>
+                    </a>
+                    <div class="node__additional">
+                        <button class="button button--ghost has-icon-only node__favorite"></button>
+                        <div class="menu is-bottom is-right-aligned">
+                            <button class="button button--ghost has-icon-only"></button>
+                            <div class="popover__container">
+                                <button class="popover__item">
+                                    <span class="iconUxt duplicate" aria-hidden="true"></span>
+                                    Copy
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt move" aria-hidden="true"></span>
+                                    Move
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt delete" aria-hidden="true"></span>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree__node is-level1 is-hidden is-collapsed">
+                    <button class="button button--ghost has-icon-only node__arrow"></button>
+                    <a href="#" class="node__details">
+                        <span class="details__icon iconUxt asset" aria-hidden="true"></span>
+                        <div class="details__content">
+                            <span class="details__title">Beagle</span>
+                            <span class="details__description">The beagle is a breed of small scent hound</span>
+                        </div>
+                    </a>
+                    <div class="node__additional">
+                        <span class="badge badge--dark">
+                            <span>2</span>
+                        </span>
+                        <button class="button button--ghost has-icon-only node__favorite"></button>
+                        <div class="menu is-bottom is-right-aligned">
+                            <button class="button button--ghost has-icon-only"></button>
+                            <div class="popover__container">
+                                <button class="popover__item">
+                                    <span class="iconUxt duplicate" aria-hidden="true"></span>
+                                    Copy
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt move" aria-hidden="true"></span>
+                                    Move
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt delete" aria-hidden="true"></span>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree__node is-level0 is-nested is-collapsed is-success">
+                    <button class="button button--ghost has-icon-only node__arrow"></button>
+                    <a href="#" class="node__details">
+                        <span class="details__icon iconUxt asset" aria-hidden="true"></span>
+                        <div class="details__content">
+                            <span class="details__title">Trees</span>
+                            <span class="details__description">In botany, a tree is a perennial plant</span>
+                        </div>
+                    </a>
+                    <div class="node__additional">
+                        <span class="badge badge--dark">
+                            <span>1</span>
+                        </span>
+                        <button class="button button--ghost has-icon-only node__favorite"></button>
+                        <div class="menu is-bottom is-right-aligned">
+                            <button class="button button--ghost has-icon-only"></button>
+                            <div class="popover__container">
+                                <button class="popover__item">
+                                    <span class="iconUxt duplicate" aria-hidden="true"></span>
+                                    Copy
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt move" aria-hidden="true"></span>
+                                    Move
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt delete" aria-hidden="true"></span>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree__node is-level1 is-hidden is-collapsed is-error">
+                    <button class="button button--ghost has-icon-only node__arrow"></button>
+                    <a href="#" class="node__details">
+                        <span class="details__icon iconUxt asset" aria-hidden="true"></span>
+                        <div class="details__content">
+                            <span class="details__title">Birch</span>
+                            <span class="details__description">A birch is a thin-leaved deciduous hardwood tree</span>
+                        </div>
+                    </a>
+                    <div class="node__additional">
+                        <button class="button button--ghost has-icon-only node__favorite"></button>
+                        <div class="menu is-bottom is-right-aligned">
+                            <button class="button button--ghost has-icon-only"></button>
+                            <div class="popover__container">
+                                <button class="popover__item">
+                                    <span class="iconUxt duplicate" aria-hidden="true"></span>
+                                    Copy
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt move" aria-hidden="true"></span>
+                                    Move
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt delete" aria-hidden="true"></span>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree__node is-level0">
+                    <button class="button button--ghost has-icon-only node__arrow is-selected"></button>
+                    <a href="#" class="node__details">
+                        <span class="details__icon iconUxt asset" aria-hidden="true"></span>
+                        <div class="details__content">
+                            <span class="details__title">Books</span>
+                            <span class="details__description">A book is a medium for recording information in the form of writing or images</span>
+                        </div>
+                    </a>
+                    <div class="node__additional">
+                        <span class="badge badge--dark">
+                            <span>6</span>
+                        </span>
+                        <button class="button button--ghost has-icon-only node__favorite is-selected"></button>
+                        <div class="menu is-bottom is-right-aligned">
+                            <button class="button button--ghost has-icon-only"></button>
+                            <div class="popover__container">
+                                <button class="popover__item">
+                                    <span class="iconUxt duplicate" aria-hidden="true"></span>
+                                    Copy
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt move" aria-hidden="true"></span>
+                                    Move
+                                </button>
+                                <button class="popover__item">
+                                    <span class="iconUxt delete" aria-hidden="true"></span>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mainRegion">
+
+            <div class="contentHeader">
+                <div class="contentHeader__header">
+                    <h1 class="header__headline">Page Title</h1>
+                    <div class="header__subline">Optional subline</div>
+                </div>
+
+                <div class="contentHeader__actions">
+                    <button class="button--secondaryContentAction">
+                        <span class="iconUxt addCircle" aria-hidden="true"></span>
+                        Add Button
+                    </button>
+
+                    <a class="button button--secondaryContentAction" href="#">
+                        <span class="iconUxt edit" aria-hidden="true"></span>
+                        Edit Link
+                    </a>
+
+                    <a class="button button--secondaryContentAction" href="#">
+                        <span class="iconUxt delete" aria-hidden="true"></span>
+                        Delete Link
+                    </a>
+                </div>
+            </div>
+
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+            <p>Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet Lorem ipsum dolor it amet .</p>
+
+        </section>
+
+        <section class="contextRegion">
+            <button class="button button--secondary" id="toggleSlidingBehaviour">
+                Toggle sliding behaviour for demo
+            </button>
+        </section>
+
+    </div>
+
+    <nav class="appBarAdvanced">
+        <div class="appBarAdvanced__inner">
+            <div class="appBarAdvanced__header">
+                <!-- optional header -->
+            </div>
+            <ul class="appBarAdvanced__content">
+                <li class="level1 is-home">
+                    <a href="#" class="item__link">
+                        <div class="item__icon">
+                            <i aria-hidden="true" class="iconUxt home"></i>
+                        </div>
+                        <span class="item__title">Home</span>
+                    </a>
+                </li>
+                <li class="level1 is-active">
+                    <a href="#" class="item__link">
+                        <div class="item__icon has-notification">
+                            <i aria-hidden="true" class="iconUxt chartPie"></i>
+                        </div>
+                        <span class="item__title">Issues</span>
+                        <span class="badge">31</span>
+                    </a>
+                    <ul class="level2">
+                        <li class="subitem">
+                            <a href="#">Details</a>
+                        </li>
+                        <li class="subitem">
+                            <a href="#">Activity</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#" class="item__link">
+                        <div class="item__icon">
+                            <i aria-hidden="true" class="iconUxt shoppingCart"></i>
+                        </div>
+                        <span class="item__title">Activity</span>
+                    </a>
+                    <ul class="level2">
+                        <li class="subitem">
+                            <a href="#">Details</a>
+                        </li>
+                        <li class="subitem">
+                            <a href="#">Activity</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#" class="item__link">
+                        <div class="item__icon">
+                            <i aria-hidden="true" class="iconUxt hierarchy"></i>
+                        </div>
+                        <span class="item__title">Members</span>
+                    </a>
+                    <ul class="level2">
+                        <li class="subitem">
+                            <a href="#">Details</a>
+                        </li>
+                        <li class="subitem">
+                            <a href="#">Activity</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1 has-separator">
+                    <a href="#" class="item__link">
+                        <div class="item__icon has-notification">
+                            <i aria-hidden="true" class="iconUxt subtenant4"></i>
+                        </div>
+                        <span class="item__title">Settings</span>
+                        <span class="badge">12</span>
+                    </a>
+                    <ul class="level2">
+                        <li class="subitem">
+                            <a href="#">Details</a>
+                        </li>
+                        <li class="subitem">
+                            <a href="#">Activity</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#" class="item__link">
+                        <div class="item__icon has-notification">
+                            <i aria-hidden="true" class="iconUxt chartTrend"></i>
+                        </div>
+                        <span class="item__title"> Tools </span>
+                        <span class="badge">4</span>
+                    </a>
+                    <ul class="level2">
+                        <li class="subitem">
+                            <a href="#"> Details </a>
+                        </li>
+                        <li class="subitem">
+                            <a href="#"> Activity </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="appBarAdvanced__footer">
+                <a href="#" id="appBar--expander">
+                    <!-- optional expand / collapse label -->
+                    <span class="item__title">Collapse</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+<script>
+    _msb.init({
+        title: "App Layout",
+        showLegal: true,
+        polyfills: {
+            promise: true
+        }
+    });
+
+    window.onload = function (e) {
+
+        // polyfill for closest() - IE11 does not support that out of the box
+        if (!Element.prototype.matches) {
+            Element.prototype.matches = Element.prototype.msMatchesSelector ||
+                Element.prototype.webkitMatchesSelector;
+        }
+        if (!Element.prototype.closest) {
+            Element.prototype.closest = function (s) {
+                var el = this;
+
+                do {
+                    if (Element.prototype.matches.call(el, s)) return el;
+                    el = el.parentElement || el.parentNode;
+                } while (el !== null && el.nodeType === 1);
+                return null;
+            };
+        }
+
+        // toggle expand / collapse feature of sidebar
+        var toggle = document.querySelector("#appBar--expander");
+        var appWrapper = document.querySelector(".appWrapper");
+        toggle.addEventListener("click", function () {
+            // appBar.classList.toggle("has-appBarAdvanced-collapsed");
+            appWrapper.classList.toggle("has-appBarAdvanced-collapsed");
+            var elems = document.querySelectorAll(".appBarAdvanced .level1");
+            for (var i = 0; i < elems.length; i++) {
+                elems[i].classList.remove("is-shown");
+            }
+        });
+
+        // set active state of item on click
+        var level1links = document.querySelectorAll(".appBarAdvanced .item__link");
+        for (var i = 0; i < level1links.length; i++) {
+            level1links[i].addEventListener("click", function (event) {
+                for (var j = 0; j < level1links.length; j++) {
+                    level1links[j].parentElement.classList.remove("is-active");
+                }
+                event.target.closest(".level1").classList.add("is-active");
+                event.target.blur();
+                event.target.parentNode.parentNode.blur(); // needed for collapsed mode
+                event.preventDefault();
+            });
+        }
+
+        // add class to show app bar submenu on hover
+        var timerHover;
+        var collapsedAppBarElements = document.querySelectorAll(
+            ".has-appBarAdvanced-collapsed .appBarAdvanced .level1"
+        );
+        var collapsedAppBarLinks = document.querySelectorAll(
+            ".has-appBarAdvanced-collapsed .appBarAdvanced .level1 a"
+        );
+        for (var i = 0; i < collapsedAppBarLinks.length; i++) {
+            collapsedAppBarLinks[i].addEventListener("mouseenter", function (event) {
+                clearTimeout(timerHover);
+                for (var j = 0; j < collapsedAppBarElements.length; j++) {
+                    collapsedAppBarElements[j].classList.remove("is-shown");
+                }
+                event.target.closest(".level1").classList.add("is-shown");
+            });
+        }
+
+        // hide all possible open app bar items on mouse-leave, but wait for a split second
+        // to avoid unintentional mouseleave events
+        var appBar = document.querySelector(".appBarAdvanced");
+        appBar.addEventListener("mouseleave", function () {
+            timerHover = setTimeout(function () {
+                for (var j = 0; j < collapsedAppBarElements.length; j++) {
+                    collapsedAppBarElements[j].classList.remove("is-shown");
+                }
+            }, 100);
+        });
+
+
+        var regionsWrapper = document.querySelector(".appWrapper__regions");
+
+        // functionality to hide context and/or leadimg region through button
+        var toggleLeading = document.querySelector("#toggleLeadingRegionDemo");
+        toggleLeading.addEventListener('click', function () {
+            regionsWrapper.classList.toggle('leadingRegion-is-expanded');
+        });
+
+        var toggleContext = document.querySelector("#toggleContextRegionDemo");
+        toggleContext.addEventListener('click', function () {
+            regionsWrapper.classList.toggle('contextRegion-is-expanded');
+        });
+
+        // functionality to toggle sliding behaviour for leading and context region
+        var switchLayoutType = document.querySelector("#toggleSlidingBehaviour");
+        switchLayoutType.addEventListener('click', function () {
+            regionsWrapper.classList.toggle('appWrapper__regions--pushLayout');
+        });
+
+        // Tree function
+        var treeNode = document.querySelectorAll(".tree__node");
+        var collapseButton = document.querySelectorAll(".node__arrow");
+        var nodeDetails = document.querySelectorAll(".node__details");
+        var favoriteStar = document.querySelectorAll(".node__favorite");
+        var headerHeadline = document.querySelector(".header__headline");
+        var headerSubline = document.querySelector(".header__subline");
+        var nodeDetailsTitle = document.querySelectorAll(".details__title");
+        var nodeDetailsDescription = document.querySelectorAll(".details__description");
+        var treeMenu = document.querySelectorAll(".node__additional .menu");
+
+        for (i = 0; i < collapseButton.length; i++) {
+            collapseButton[i].addEventListener("click", function () {
+                this.parentElement.classList.toggle("is-collapsed");
+                this.parentNode.nextElementSibling.classList.toggle("is-hidden");
+
+            });
+        }
+
+        for (i = 0; i < favoriteStar.length; i++) {
+            favoriteStar[i].addEventListener("click", function () {
+                this.classList.toggle("is-selected");
+            });
+        }
+
+        for (i = 0; i < nodeDetails.length; i++) {
+            nodeDetails[i].addEventListener("click", function () {
+                for (j = 0; j < treeNode.length; j++) {
+                    treeNode[j].classList.remove("is-selected");
+                }
+                this.parentElement.classList.toggle("is-selected");
+                headerHeadline.textContent = this.children[1].children[0].textContent;
+                headerSubline.textContent = this.children[1].children[1].textContent;
+            });
+        }
+
+        for (i = 0; i < treeMenu.length; i++) {
+            treeMenu[i].addEventListener("click", function () {
+                for (j = 0; j < treeMenu.length; j++) {
+                    if (treeMenu[j] !== this) {
+                        treeMenu[j].classList.remove("is-shown");
+                    }
+                }
+                this.classList.toggle("is-shown");
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+.form  {
+    margin: 16px 32px 24px;
+
+    &__formGroup {
+        align-content: flex-start;
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        position: relative;
+
+        .form__lineBreak {
+            width: 100%;
+        }
+
+        > .inputGroup {
+            align-self: auto;
+            flex-basis: 240px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-right: 8px;
+            margin-bottom: 16px;
+
+            &--xxsmall {
+                flex-basis: 56px;
+                max-width: 100%;
+            }
+
+            &--xsmall {
+                flex-basis: 80px;
+                max-width: 100%;
+            }
+
+            &--small {
+                flex-basis: 160px;
+                max-width: 100%;
+            }
+
+            &--smallmedium {
+                flex-basis: 240px;
+                max-width: 100%;
+            }
+
+            &--medium {
+                flex-basis: 320px;
+                max-width: 100%;
+            }
+
+            &--mediumlarge {
+                flex-basis: 400px;
+                max-width: 100%;
+            }
+
+            &--large {
+                flex-basis: 640px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    // no additional bottom spacing if input group is last input group in last formgroup
+    .form__formGroup:last-child {
+        .inputGroup:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+//removeIf(sassHandover)
+// style native elements when forced defaults
+&.#{$forceDefaultClass} {
+    form {
+        @extend .form;
+    }
+}
+//endRemoveIf(sassHandover)

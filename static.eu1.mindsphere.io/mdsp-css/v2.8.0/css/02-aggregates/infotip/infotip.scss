@@ -1,0 +1,54 @@
+// infotip is using the generic popopver container, so there is infotip related css also in 02-aggregates/popover/popover.scss
+
+.infotip {
+  button {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    font-size: 24px !important;
+    line-height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    // used as with .button, but needed in case no forceDefaultElements is used
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:focus {
+      outline: none;
+    }
+
+    .iconUxt {
+      color: rgba(var(--color-info), 1);
+      line-height: inherit;
+      margin: 0;
+      vertical-align: baseline;
+
+      @include iconUxt-regular(question);
+    }
+  }
+
+  // automatic hide, does not work on OSX with Firefox and Safari: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#clicking_and_focus
+  &.infotip--autohide {
+    button:focus + .popover__container {
+      display: inline;
+    }
+
+    // hover is needed on IOS, buttons don't work with focus in Safari
+    // target Safari Browsers ONLY / questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
+    @supports (-webkit-hyphens:none) {
+      button:hover + .popover__container {
+        display: inline;
+      }
+    }
+  }
+
+  // since clicking anywhere besides the initial button will remove its focus, making every possible link within the infotip un-clickable, we have to work around:
+  button + .popover__container a:hover {
+    display: inline;
+  }
+}

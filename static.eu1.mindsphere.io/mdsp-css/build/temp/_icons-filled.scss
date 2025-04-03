@@ -1,0 +1,1698 @@
+@mixin filledstyles {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
+  font-family: "mdspcssfilled" !important;
+}
+
+.iconUxt.filled,
+.iconUxt.black {
+  @include filledstyles;
+}
+
+@mixin iconUxt-filled($filename, $insert: before) {
+  &:#{$insert} {
+    @include filledstyles;
+    content: filledchar($filename);
+  }
+}
+
+@function filledchar($filename) {
+  $char: "";
+
+  @if $filename == PLC {
+    $char: "\E001";
+  }
+  @if $filename == add {
+    $char: "\E002";
+  }
+  @if $filename == addCircle {
+    $char: "\E003";
+  }
+  @if $filename == agent {
+    $char: "\E004";
+  }
+  @if $filename == alarm {
+    $char: "\E005";
+  }
+  @if $filename == analysis {
+    $char: "\E006";
+  }
+  @if $filename == announcement {
+    $char: "\E007";
+  }
+  @if $filename == applyFilter {
+    $char: "\E008";
+  }
+  @if $filename == apps {
+    $char: "\E009";
+  }
+  @if $filename == archive {
+    $char: "\E00A";
+  }
+  @if $filename == areaSelect {
+    $char: "\E00B";
+  }
+  @if $filename == areaZoom {
+    $char: "\E00C";
+  }
+  @if $filename == arrowDownExtraSmall {
+    $char: "\E00D";
+  }
+  @if $filename == arrowFirstLeft {
+    $char: "\E00E";
+  }
+  @if $filename == arrowFirstTop {
+    $char: "\E00F";
+  }
+  @if $filename == arrowHierarchy {
+    $char: "\E010";
+  }
+  @if $filename == arrowLastBottom {
+    $char: "\E011";
+  }
+  @if $filename == arrowLastRight {
+    $char: "\E012";
+  }
+  @if $filename == arrowLeftExtraSmall {
+    $char: "\E013";
+  }
+  @if $filename == arrowRightExtraSmall {
+    $char: "\E014";
+  }
+  @if $filename == arrowSingleDown {
+    $char: "\E015";
+  }
+  @if $filename == arrowSingleLeft {
+    $char: "\E016";
+  }
+  @if $filename == arrowSingleRight {
+    $char: "\E017";
+  }
+  @if $filename == arrowSingleUp {
+    $char: "\E018";
+  }
+  @if $filename == arrowStemSingleDown {
+    $char: "\E019";
+  }
+  @if $filename == arrowStemSingleLeft {
+    $char: "\E01A";
+  }
+  @if $filename == arrowStemSingleRight {
+    $char: "\E01B";
+  }
+  @if $filename == arrowStemSingleUp {
+    $char: "\E01C";
+  }
+  @if $filename == arrowUpExtraSmall {
+    $char: "\E01D";
+  }
+  @if $filename == aspects {
+    $char: "\E01E";
+  }
+  @if $filename == asset {
+    $char: "\E01F";
+  }
+  @if $filename == assetNetwork {
+    $char: "\E020";
+  }
+  @if $filename == asterisk {
+    $char: "\E021";
+  }
+  @if $filename == attachment {
+    $char: "\E022";
+  }
+  @if $filename == attention {
+    $char: "\E023";
+  }
+  @if $filename == audit {
+    $char: "\E024";
+  }
+  @if $filename == backward {
+    $char: "\E025";
+  }
+  @if $filename == bookmark {
+    $char: "\E026";
+  }
+  @if $filename == boolean {
+    $char: "\E027";
+  }
+  @if $filename == boxPlot {
+    $char: "\E028";
+  }
+  @if $filename == buildingBlock {
+    $char: "\E029";
+  }
+  @if $filename == calendar {
+    $char: "\E02A";
+  }
+  @if $filename == calendarDay {
+    $char: "\E02B";
+  }
+  @if $filename == calendarWeek {
+    $char: "\E02C";
+  }
+  @if $filename == camera {
+    $char: "\E02D";
+  }
+  @if $filename == cancel {
+    $char: "\E02E";
+  }
+  @if $filename == cancelCircle {
+    $char: "\E02F";
+  }
+  @if $filename == certificate {
+    $char: "\E030";
+  }
+  @if $filename == chart {
+    $char: "\E031";
+  }
+  @if $filename == chartBarHorizontal {
+    $char: "\E032";
+  }
+  @if $filename == chartBarStacked {
+    $char: "\E033";
+  }
+  @if $filename == chartBarVertical {
+    $char: "\E034";
+  }
+  @if $filename == chartDonut {
+    $char: "\E035";
+  }
+  @if $filename == chartDurationCurve {
+    $char: "\E036";
+  }
+  @if $filename == chartGantt {
+    $char: "\E037";
+  }
+  @if $filename == chartGauge {
+    $char: "\E038";
+  }
+  @if $filename == chartHeatmap {
+    $char: "\E039";
+  }
+  @if $filename == chartLine {
+    $char: "\E03A";
+  }
+  @if $filename == chartMap {
+    $char: "\E03B";
+  }
+  @if $filename == chartPie {
+    $char: "\E03C";
+  }
+  @if $filename == chartPolar {
+    $char: "\E03D";
+  }
+  @if $filename == chartRadar {
+    $char: "\E03E";
+  }
+  @if $filename == chartSankey {
+    $char: "\E03F";
+  }
+  @if $filename == chartTrend {
+    $char: "\E040";
+  }
+  @if $filename == chartValueHorizontal {
+    $char: "\E041";
+  }
+  @if $filename == chartValueVertical {
+    $char: "\E042";
+  }
+  @if $filename == check {
+    $char: "\E043";
+  }
+  @if $filename == clipboard {
+    $char: "\E044";
+  }
+  @if $filename == clipboardCheck {
+    $char: "\E045";
+  }
+  @if $filename == clipboardInvalid {
+    $char: "\E046";
+  }
+  @if $filename == clock {
+    $char: "\E047";
+  }
+  @if $filename == clone {
+    $char: "\E048";
+  }
+  @if $filename == code {
+    $char: "\E049";
+  }
+  @if $filename == coin {
+    $char: "\E04A";
+  }
+  @if $filename == coinStack {
+    $char: "\E04B";
+  }
+  @if $filename == comment {
+    $char: "\E04C";
+  }
+  @if $filename == commentAlternative {
+    $char: "\E04D";
+  }
+  @if $filename == compare {
+    $char: "\E04E";
+  }
+  @if $filename == control {
+    $char: "\E04F";
+  }
+  @if $filename == conversation {
+    $char: "\E050";
+  }
+  @if $filename == counter {
+    $char: "\E051";
+  }
+  @if $filename == createWorkbook {
+    $char: "\E052";
+  }
+  @if $filename == cut {
+    $char: "\E053";
+  }
+  @if $filename == dashboard {
+    $char: "\E054";
+  }
+  @if $filename == dashboardAlternative {
+    $char: "\E055";
+  }
+  @if $filename == dashboardSmall {
+    $char: "\E056";
+  }
+  @if $filename == dashforward {
+    $char: "\E057";
+  }
+  @if $filename == dataManagement {
+    $char: "\E058";
+  }
+  @if $filename == dataMapping {
+    $char: "\E059";
+  }
+  @if $filename == dataSource {
+    $char: "\E05A";
+  }
+  @if $filename == delete {
+    $char: "\E05B";
+  }
+  @if $filename == desktop {
+    $char: "\E05C";
+  }
+  @if $filename == double {
+    $char: "\E05D";
+  }
+  @if $filename == download {
+    $char: "\E05E";
+  }
+  @if $filename == dragDrop {
+    $char: "\E05F";
+  }
+  @if $filename == draggable {
+    $char: "\E060";
+  }
+  @if $filename == draw {
+    $char: "\E061";
+  }
+  @if $filename == dropzone {
+    $char: "\E062";
+  }
+  @if $filename == duplicate {
+    $char: "\E063";
+  }
+  @if $filename == edit {
+    $char: "\E064";
+  }
+  @if $filename == editDocument {
+    $char: "\E065";
+  }
+  @if $filename == electricity {
+    $char: "\E066";
+  }
+  @if $filename == element {
+    $char: "\E067";
+  }
+  @if $filename == email {
+    $char: "\E068";
+  }
+  @if $filename == emoteHappy {
+    $char: "\E069";
+  }
+  @if $filename == emoteNeutral {
+    $char: "\E06A";
+  }
+  @if $filename == emoteSad {
+    $char: "\E06B";
+  }
+  @if $filename == enum {
+    $char: "\E06C";
+  }
+  @if $filename == enumList {
+    $char: "\E06D";
+  }
+  @if $filename == errorAlert {
+    $char: "\E06E";
+  }
+  @if $filename == exclamationDiamond {
+    $char: "\E06F";
+  }
+  @if $filename == exit {
+    $char: "\E070";
+  }
+  @if $filename == expand {
+    $char: "\E071";
+  }
+  @if $filename == export {
+    $char: "\E072";
+  }
+  @if $filename == factory {
+    $char: "\E073";
+  }
+  @if $filename == factoryMagnifier {
+    $char: "\E074";
+  }
+  @if $filename == fileTree {
+    $char: "\E075";
+  }
+  @if $filename == filetypeApp {
+    $char: "\E076";
+  }
+  @if $filename == filetypeArchive {
+    $char: "\E077";
+  }
+  @if $filename == filetypeDefault {
+    $char: "\E078";
+  }
+  @if $filename == filetypeDrawing {
+    $char: "\E079";
+  }
+  @if $filename == filetypeEMail {
+    $char: "\E07A";
+  }
+  @if $filename == filetypeImage {
+    $char: "\E07B";
+  }
+  @if $filename == filetypeJSON {
+    $char: "\E07C";
+  }
+  @if $filename == filetypeMisc {
+    $char: "\E07D";
+  }
+  @if $filename == filetypePDF {
+    $char: "\E07E";
+  }
+  @if $filename == filetypeSound {
+    $char: "\E07F";
+  }
+  @if $filename == filetypeTable {
+    $char: "\E080";
+  }
+  @if $filename == filetypeText {
+    $char: "\E081";
+  }
+  @if $filename == filetypeVideo {
+    $char: "\E082";
+  }
+  @if $filename == filetypeXML {
+    $char: "\E083";
+  }
+  @if $filename == filter {
+    $char: "\E084";
+  }
+  @if $filename == filterAlternative {
+    $char: "\E085";
+  }
+  @if $filename == filterHide {
+    $char: "\E086";
+  }
+  @if $filename == filterList {
+    $char: "\E087";
+  }
+  @if $filename == flagSmall {
+    $char: "\E088";
+  }
+  @if $filename == flash {
+    $char: "\E089";
+  }
+  @if $filename == flow {
+    $char: "\E08A";
+  }
+  @if $filename == folder {
+    $char: "\E08B";
+  }
+  @if $filename == forward {
+    $char: "\E08C";
+  }
+  @if $filename == frames {
+    $char: "\E08D";
+  }
+  @if $filename == fullscreen {
+    $char: "\E08E";
+  }
+  @if $filename == fullscreenExit {
+    $char: "\E08F";
+  }
+  @if $filename == gearBox {
+    $char: "\E090";
+  }
+  @if $filename == globalSettings {
+    $char: "\E091";
+  }
+  @if $filename == graph {
+    $char: "\E092";
+  }
+  @if $filename == hatMan {
+    $char: "\E093";
+  }
+  @if $filename == headset {
+    $char: "\E094";
+  }
+  @if $filename == heart {
+    $char: "\E095";
+  }
+  @if $filename == hierarchy {
+    $char: "\E096";
+  }
+  @if $filename == home {
+    $char: "\E097";
+  }
+  @if $filename == iconMissing {
+    $char: "\E098";
+  }
+  @if $filename == image {
+    $char: "\E099";
+  }
+  @if $filename == import {
+    $char: "\E09A";
+  }
+  @if $filename == information {
+    $char: "\E09B";
+  }
+  @if $filename == integer {
+    $char: "\E09C";
+  }
+  @if $filename == kpi {
+    $char: "\E09D";
+  }
+  @if $filename == legal {
+    $char: "\E09E";
+  }
+  @if $filename == length {
+    $char: "\E09F";
+  }
+  @if $filename == link {
+    $char: "\E0A0";
+  }
+  @if $filename == listBullet {
+    $char: "\E0A1";
+  }
+  @if $filename == listSortedAlternative {
+    $char: "\E0A2";
+  }
+  @if $filename == locationMarker {
+    $char: "\E0A3";
+  }
+  @if $filename == lockClosed {
+    $char: "\E0A4";
+  }
+  @if $filename == lockOpened {
+    $char: "\E0A5";
+  }
+  @if $filename == machineA {
+    $char: "\E0A6";
+  }
+  @if $filename == machineB {
+    $char: "\E0A7";
+  }
+  @if $filename == machineC {
+    $char: "\E0A8";
+  }
+  @if $filename == maintenance {
+    $char: "\E0A9";
+  }
+  @if $filename == map {
+    $char: "\E0AA";
+  }
+  @if $filename == mapAlternative {
+    $char: "\E0AB";
+  }
+  @if $filename == measure {
+    $char: "\E0AC";
+  }
+  @if $filename == menu {
+    $char: "\E0AD";
+  }
+  @if $filename == mobile {
+    $char: "\E0AE";
+  }
+  @if $filename == moon {
+    $char: "\E0AF";
+  }
+  @if $filename == moonSun {
+    $char: "\E0B0";
+  }
+  @if $filename == more {
+    $char: "\E0B1";
+  }
+  @if $filename == moreAlternative {
+    $char: "\E0B2";
+  }
+  @if $filename == move {
+    $char: "\E0B3";
+  }
+  @if $filename == moveToTop {
+    $char: "\E0B4";
+  }
+  @if $filename == movie {
+    $char: "\E0B5";
+  }
+  @if $filename == mqtt {
+    $char: "\E0B6";
+  }
+  @if $filename == next {
+    $char: "\E0B7";
+  }
+  @if $filename == note {
+    $char: "\E0B8";
+  }
+  @if $filename == notification {
+    $char: "\E0B9";
+  }
+  @if $filename == notificationSquare {
+    $char: "\E0BA";
+  }
+  @if $filename == ok {
+    $char: "\E0BB";
+  }
+  @if $filename == outgoing {
+    $char: "\E0BC";
+  }
+  @if $filename == outgoingInApp {
+    $char: "\E0BD";
+  }
+  @if $filename == outgoingInMdsp {
+    $char: "\E0BE";
+  }
+  @if $filename == outgoingSmall {
+    $char: "\E0BF";
+  }
+  @if $filename == package {
+    $char: "\E0C0";
+  }
+  @if $filename == paste {
+    $char: "\E0C1";
+  }
+  @if $filename == pause {
+    $char: "\E0C2";
+  }
+  @if $filename == person {
+    $char: "\E0C3";
+  }
+  @if $filename == personMultiple {
+    $char: "\E0C4";
+  }
+  @if $filename == phone {
+    $char: "\E0C5";
+  }
+  @if $filename == play {
+    $char: "\E0C6";
+  }
+  @if $filename == pressure {
+    $char: "\E0C7";
+  }
+  @if $filename == previous {
+    $char: "\E0C8";
+  }
+  @if $filename == printer {
+    $char: "\E0C9";
+  }
+  @if $filename == question {
+    $char: "\E0CA";
+  }
+  @if $filename == record {
+    $char: "\E0CB";
+  }
+  @if $filename == redo {
+    $char: "\E0CC";
+  }
+  @if $filename == reload {
+    $char: "\E0CD";
+  }
+  @if $filename == remove {
+    $char: "\E0CE";
+  }
+  @if $filename == removeCircle {
+    $char: "\E0CF";
+  }
+  @if $filename == reorder {
+    $char: "\E0D0";
+  }
+  @if $filename == restricted {
+    $char: "\E0D1";
+  }
+  @if $filename == roles {
+    $char: "\E0D2";
+  }
+  @if $filename == rules {
+    $char: "\E0D3";
+  }
+  @if $filename == save {
+    $char: "\E0D4";
+  }
+  @if $filename == scale {
+    $char: "\E0D5";
+  }
+  @if $filename == scope {
+    $char: "\E0D6";
+  }
+  @if $filename == scopeAlternative {
+    $char: "\E0D7";
+  }
+  @if $filename == search {
+    $char: "\E0D8";
+  }
+  @if $filename == selectAll {
+    $char: "\E0D9";
+  }
+  @if $filename == selectNone {
+    $char: "\E0DA";
+  }
+  @if $filename == serviceCredential {
+    $char: "\E0DB";
+  }
+  @if $filename == settings {
+    $char: "\E0DC";
+  }
+  @if $filename == share {
+    $char: "\E0DD";
+  }
+  @if $filename == shareAlternative {
+    $char: "\E0DE";
+  }
+  @if $filename == shift {
+    $char: "\E0DF";
+  }
+  @if $filename == shoppingCart {
+    $char: "\E0E0";
+  }
+  @if $filename == sidebar {
+    $char: "\E0E1";
+  }
+  @if $filename == sidebarHide {
+    $char: "\E0E2";
+  }
+  @if $filename == sidebarShow {
+    $char: "\E0E3";
+  }
+  @if $filename == sort {
+    $char: "\E0E4";
+  }
+  @if $filename == speedometer {
+    $char: "\E0E5";
+  }
+  @if $filename == split {
+    $char: "\E0E6";
+  }
+  @if $filename == star {
+    $char: "\E0E7";
+  }
+  @if $filename == starHalf {
+    $char: "\E0E8";
+  }
+  @if $filename == statusOff {
+    $char: "\E0E9";
+  }
+  @if $filename == statusOn {
+    $char: "\E0EA";
+  }
+  @if $filename == stop {
+    $char: "\E0EB";
+  }
+  @if $filename == stopwatch {
+    $char: "\E0EC";
+  }
+  @if $filename == storage {
+    $char: "\E0ED";
+  }
+  @if $filename == string {
+    $char: "\E0EE";
+  }
+  @if $filename == stringList {
+    $char: "\E0EF";
+  }
+  @if $filename == subtenant {
+    $char: "\E0F0";
+  }
+  @if $filename == subtenant2 {
+    $char: "\E0F1";
+  }
+  @if $filename == subtenantSmall {
+    $char: "\E0F2";
+  }
+  @if $filename == sun {
+    $char: "\E0F3";
+  }
+  @if $filename == tag {
+    $char: "\E0F4";
+  }
+  @if $filename == tagAlternative {
+    $char: "\E0F5";
+  }
+  @if $filename == temperature {
+    $char: "\E0F6";
+  }
+  @if $filename == thermometer {
+    $char: "\E0F7";
+  }
+  @if $filename == thumbDown {
+    $char: "\E0F8";
+  }
+  @if $filename == thumbUp {
+    $char: "\E0F9";
+  }
+  @if $filename == ticket {
+    $char: "\E0FA";
+  }
+  @if $filename == tile {
+    $char: "\E0FB";
+  }
+  @if $filename == timeZone {
+    $char: "\E0FC";
+  }
+  @if $filename == train {
+    $char: "\E0FD";
+  }
+  @if $filename == types {
+    $char: "\E0FE";
+  }
+  @if $filename == undo {
+    $char: "\E0FF";
+  }
+  @if $filename == update {
+    $char: "\E100";
+  }
+  @if $filename == updateGear {
+    $char: "\E101";
+  }
+  @if $filename == updateNotification {
+    $char: "\E102";
+  }
+  @if $filename == upload {
+    $char: "\E103";
+  }
+  @if $filename == variable {
+    $char: "\E104";
+  }
+  @if $filename == version {
+    $char: "\E105";
+  }
+  @if $filename == visibilityHidden {
+    $char: "\E106";
+  }
+  @if $filename == visibilityShown {
+    $char: "\E107";
+  }
+  @if $filename == voltage {
+    $char: "\E108";
+  }
+  @if $filename == watch {
+    $char: "\E109";
+  }
+  @if $filename == weatherCloudy {
+    $char: "\E10A";
+  }
+  @if $filename == weatherPartlyCloudy {
+    $char: "\E10B";
+  }
+  @if $filename == weatherRain {
+    $char: "\E10C";
+  }
+  @if $filename == weatherSnow {
+    $char: "\E10D";
+  }
+  @if $filename == weatherStorm {
+    $char: "\E10E";
+  }
+  @if $filename == weatherSunny {
+    $char: "\E10F";
+  }
+  @if $filename == weatherSunrise {
+    $char: "\E110";
+  }
+  @if $filename == weatherSunset {
+    $char: "\E111";
+  }
+  @if $filename == weatherThunder {
+    $char: "\E112";
+  }
+  @if $filename == widget {
+    $char: "\E113";
+  }
+  @if $filename == widgetDetails {
+    $char: "\E114";
+  }
+  @if $filename == zoomIn {
+    $char: "\E115";
+  }
+  @if $filename == zoomOut {
+    $char: "\E116";
+  }
+  @return $char;
+}
+
+.iconUxt.PLC.filled, .iconUxt.PLC.black {
+  @include iconUxt-filled(PLC);
+}
+.iconUxt.add.filled, .iconUxt.add.black {
+  @include iconUxt-filled(add);
+}
+.iconUxt.addCircle.filled, .iconUxt.addCircle.black {
+  @include iconUxt-filled(addCircle);
+}
+.iconUxt.agent.filled, .iconUxt.agent.black {
+  @include iconUxt-filled(agent);
+}
+.iconUxt.alarm.filled, .iconUxt.alarm.black {
+  @include iconUxt-filled(alarm);
+}
+.iconUxt.analysis.filled, .iconUxt.analysis.black {
+  @include iconUxt-filled(analysis);
+}
+.iconUxt.announcement.filled, .iconUxt.announcement.black {
+  @include iconUxt-filled(announcement);
+}
+.iconUxt.applyFilter.filled, .iconUxt.applyFilter.black {
+  @include iconUxt-filled(applyFilter);
+}
+.iconUxt.apps.filled, .iconUxt.apps.black {
+  @include iconUxt-filled(apps);
+}
+.iconUxt.archive.filled, .iconUxt.archive.black {
+  @include iconUxt-filled(archive);
+}
+.iconUxt.areaSelect.filled, .iconUxt.areaSelect.black {
+  @include iconUxt-filled(areaSelect);
+}
+.iconUxt.areaZoom.filled, .iconUxt.areaZoom.black {
+  @include iconUxt-filled(areaZoom);
+}
+.iconUxt.arrowDownExtraSmall.filled, .iconUxt.arrowDownExtraSmall.black {
+  @include iconUxt-filled(arrowDownExtraSmall);
+}
+.iconUxt.arrowFirstLeft.filled, .iconUxt.arrowFirstLeft.black {
+  @include iconUxt-filled(arrowFirstLeft);
+}
+.iconUxt.arrowFirstTop.filled, .iconUxt.arrowFirstTop.black {
+  @include iconUxt-filled(arrowFirstTop);
+}
+.iconUxt.arrowHierarchy.filled, .iconUxt.arrowHierarchy.black {
+  @include iconUxt-filled(arrowHierarchy);
+}
+.iconUxt.arrowLastBottom.filled, .iconUxt.arrowLastBottom.black {
+  @include iconUxt-filled(arrowLastBottom);
+}
+.iconUxt.arrowLastRight.filled, .iconUxt.arrowLastRight.black {
+  @include iconUxt-filled(arrowLastRight);
+}
+.iconUxt.arrowLeftExtraSmall.filled, .iconUxt.arrowLeftExtraSmall.black {
+  @include iconUxt-filled(arrowLeftExtraSmall);
+}
+.iconUxt.arrowRightExtraSmall.filled, .iconUxt.arrowRightExtraSmall.black {
+  @include iconUxt-filled(arrowRightExtraSmall);
+}
+.iconUxt.arrowSingleDown.filled, .iconUxt.arrowSingleDown.black {
+  @include iconUxt-filled(arrowSingleDown);
+}
+.iconUxt.arrowSingleLeft.filled, .iconUxt.arrowSingleLeft.black {
+  @include iconUxt-filled(arrowSingleLeft);
+}
+.iconUxt.arrowSingleRight.filled, .iconUxt.arrowSingleRight.black {
+  @include iconUxt-filled(arrowSingleRight);
+}
+.iconUxt.arrowSingleUp.filled, .iconUxt.arrowSingleUp.black {
+  @include iconUxt-filled(arrowSingleUp);
+}
+.iconUxt.arrowStemSingleDown.filled, .iconUxt.arrowStemSingleDown.black {
+  @include iconUxt-filled(arrowStemSingleDown);
+}
+.iconUxt.arrowStemSingleLeft.filled, .iconUxt.arrowStemSingleLeft.black {
+  @include iconUxt-filled(arrowStemSingleLeft);
+}
+.iconUxt.arrowStemSingleRight.filled, .iconUxt.arrowStemSingleRight.black {
+  @include iconUxt-filled(arrowStemSingleRight);
+}
+.iconUxt.arrowStemSingleUp.filled, .iconUxt.arrowStemSingleUp.black {
+  @include iconUxt-filled(arrowStemSingleUp);
+}
+.iconUxt.arrowUpExtraSmall.filled, .iconUxt.arrowUpExtraSmall.black {
+  @include iconUxt-filled(arrowUpExtraSmall);
+}
+.iconUxt.aspects.filled, .iconUxt.aspects.black {
+  @include iconUxt-filled(aspects);
+}
+.iconUxt.asset.filled, .iconUxt.asset.black {
+  @include iconUxt-filled(asset);
+}
+.iconUxt.assetNetwork.filled, .iconUxt.assetNetwork.black {
+  @include iconUxt-filled(assetNetwork);
+}
+.iconUxt.asterisk.filled, .iconUxt.asterisk.black {
+  @include iconUxt-filled(asterisk);
+}
+.iconUxt.attachment.filled, .iconUxt.attachment.black {
+  @include iconUxt-filled(attachment);
+}
+.iconUxt.attention.filled, .iconUxt.attention.black {
+  @include iconUxt-filled(attention);
+}
+.iconUxt.audit.filled, .iconUxt.audit.black {
+  @include iconUxt-filled(audit);
+}
+.iconUxt.backward.filled, .iconUxt.backward.black {
+  @include iconUxt-filled(backward);
+}
+.iconUxt.bookmark.filled, .iconUxt.bookmark.black {
+  @include iconUxt-filled(bookmark);
+}
+.iconUxt.boolean.filled, .iconUxt.boolean.black {
+  @include iconUxt-filled(boolean);
+}
+.iconUxt.boxPlot.filled, .iconUxt.boxPlot.black {
+  @include iconUxt-filled(boxPlot);
+}
+.iconUxt.buildingBlock.filled, .iconUxt.buildingBlock.black {
+  @include iconUxt-filled(buildingBlock);
+}
+.iconUxt.calendar.filled, .iconUxt.calendar.black {
+  @include iconUxt-filled(calendar);
+}
+.iconUxt.calendarDay.filled, .iconUxt.calendarDay.black {
+  @include iconUxt-filled(calendarDay);
+}
+.iconUxt.calendarWeek.filled, .iconUxt.calendarWeek.black {
+  @include iconUxt-filled(calendarWeek);
+}
+.iconUxt.camera.filled, .iconUxt.camera.black {
+  @include iconUxt-filled(camera);
+}
+.iconUxt.cancel.filled, .iconUxt.cancel.black {
+  @include iconUxt-filled(cancel);
+}
+.iconUxt.cancelCircle.filled, .iconUxt.cancelCircle.black {
+  @include iconUxt-filled(cancelCircle);
+}
+.iconUxt.certificate.filled, .iconUxt.certificate.black {
+  @include iconUxt-filled(certificate);
+}
+.iconUxt.chart.filled, .iconUxt.chart.black {
+  @include iconUxt-filled(chart);
+}
+.iconUxt.chartBarHorizontal.filled, .iconUxt.chartBarHorizontal.black {
+  @include iconUxt-filled(chartBarHorizontal);
+}
+.iconUxt.chartBarStacked.filled, .iconUxt.chartBarStacked.black {
+  @include iconUxt-filled(chartBarStacked);
+}
+.iconUxt.chartBarVertical.filled, .iconUxt.chartBarVertical.black {
+  @include iconUxt-filled(chartBarVertical);
+}
+.iconUxt.chartDonut.filled, .iconUxt.chartDonut.black {
+  @include iconUxt-filled(chartDonut);
+}
+.iconUxt.chartDurationCurve.filled, .iconUxt.chartDurationCurve.black {
+  @include iconUxt-filled(chartDurationCurve);
+}
+.iconUxt.chartGantt.filled, .iconUxt.chartGantt.black {
+  @include iconUxt-filled(chartGantt);
+}
+.iconUxt.chartGauge.filled, .iconUxt.chartGauge.black {
+  @include iconUxt-filled(chartGauge);
+}
+.iconUxt.chartHeatmap.filled, .iconUxt.chartHeatmap.black {
+  @include iconUxt-filled(chartHeatmap);
+}
+.iconUxt.chartLine.filled, .iconUxt.chartLine.black {
+  @include iconUxt-filled(chartLine);
+}
+.iconUxt.chartMap.filled, .iconUxt.chartMap.black {
+  @include iconUxt-filled(chartMap);
+}
+.iconUxt.chartPie.filled, .iconUxt.chartPie.black {
+  @include iconUxt-filled(chartPie);
+}
+.iconUxt.chartPolar.filled, .iconUxt.chartPolar.black {
+  @include iconUxt-filled(chartPolar);
+}
+.iconUxt.chartRadar.filled, .iconUxt.chartRadar.black {
+  @include iconUxt-filled(chartRadar);
+}
+.iconUxt.chartSankey.filled, .iconUxt.chartSankey.black {
+  @include iconUxt-filled(chartSankey);
+}
+.iconUxt.chartTrend.filled, .iconUxt.chartTrend.black {
+  @include iconUxt-filled(chartTrend);
+}
+.iconUxt.chartValueHorizontal.filled, .iconUxt.chartValueHorizontal.black {
+  @include iconUxt-filled(chartValueHorizontal);
+}
+.iconUxt.chartValueVertical.filled, .iconUxt.chartValueVertical.black {
+  @include iconUxt-filled(chartValueVertical);
+}
+.iconUxt.check.filled, .iconUxt.check.black {
+  @include iconUxt-filled(check);
+}
+.iconUxt.clipboard.filled, .iconUxt.clipboard.black {
+  @include iconUxt-filled(clipboard);
+}
+.iconUxt.clipboardCheck.filled, .iconUxt.clipboardCheck.black {
+  @include iconUxt-filled(clipboardCheck);
+}
+.iconUxt.clipboardInvalid.filled, .iconUxt.clipboardInvalid.black {
+  @include iconUxt-filled(clipboardInvalid);
+}
+.iconUxt.clock.filled, .iconUxt.clock.black {
+  @include iconUxt-filled(clock);
+}
+.iconUxt.clone.filled, .iconUxt.clone.black {
+  @include iconUxt-filled(clone);
+}
+.iconUxt.code.filled, .iconUxt.code.black {
+  @include iconUxt-filled(code);
+}
+.iconUxt.coin.filled, .iconUxt.coin.black {
+  @include iconUxt-filled(coin);
+}
+.iconUxt.coinStack.filled, .iconUxt.coinStack.black {
+  @include iconUxt-filled(coinStack);
+}
+.iconUxt.comment.filled, .iconUxt.comment.black {
+  @include iconUxt-filled(comment);
+}
+.iconUxt.commentAlternative.filled, .iconUxt.commentAlternative.black {
+  @include iconUxt-filled(commentAlternative);
+}
+.iconUxt.compare.filled, .iconUxt.compare.black {
+  @include iconUxt-filled(compare);
+}
+.iconUxt.control.filled, .iconUxt.control.black {
+  @include iconUxt-filled(control);
+}
+.iconUxt.conversation.filled, .iconUxt.conversation.black {
+  @include iconUxt-filled(conversation);
+}
+.iconUxt.counter.filled, .iconUxt.counter.black {
+  @include iconUxt-filled(counter);
+}
+.iconUxt.createWorkbook.filled, .iconUxt.createWorkbook.black {
+  @include iconUxt-filled(createWorkbook);
+}
+.iconUxt.cut.filled, .iconUxt.cut.black {
+  @include iconUxt-filled(cut);
+}
+.iconUxt.dashboard.filled, .iconUxt.dashboard.black {
+  @include iconUxt-filled(dashboard);
+}
+.iconUxt.dashboardAlternative.filled, .iconUxt.dashboardAlternative.black {
+  @include iconUxt-filled(dashboardAlternative);
+}
+.iconUxt.dashboardSmall.filled, .iconUxt.dashboardSmall.black {
+  @include iconUxt-filled(dashboardSmall);
+}
+.iconUxt.dashforward.filled, .iconUxt.dashforward.black {
+  @include iconUxt-filled(dashforward);
+}
+.iconUxt.dataManagement.filled, .iconUxt.dataManagement.black {
+  @include iconUxt-filled(dataManagement);
+}
+.iconUxt.dataMapping.filled, .iconUxt.dataMapping.black {
+  @include iconUxt-filled(dataMapping);
+}
+.iconUxt.dataSource.filled, .iconUxt.dataSource.black {
+  @include iconUxt-filled(dataSource);
+}
+.iconUxt.delete.filled, .iconUxt.delete.black {
+  @include iconUxt-filled(delete);
+}
+.iconUxt.desktop.filled, .iconUxt.desktop.black {
+  @include iconUxt-filled(desktop);
+}
+.iconUxt.double.filled, .iconUxt.double.black {
+  @include iconUxt-filled(double);
+}
+.iconUxt.download.filled, .iconUxt.download.black {
+  @include iconUxt-filled(download);
+}
+.iconUxt.dragDrop.filled, .iconUxt.dragDrop.black {
+  @include iconUxt-filled(dragDrop);
+}
+.iconUxt.draggable.filled, .iconUxt.draggable.black {
+  @include iconUxt-filled(draggable);
+}
+.iconUxt.draw.filled, .iconUxt.draw.black {
+  @include iconUxt-filled(draw);
+}
+.iconUxt.dropzone.filled, .iconUxt.dropzone.black {
+  @include iconUxt-filled(dropzone);
+}
+.iconUxt.duplicate.filled, .iconUxt.duplicate.black {
+  @include iconUxt-filled(duplicate);
+}
+.iconUxt.edit.filled, .iconUxt.edit.black {
+  @include iconUxt-filled(edit);
+}
+.iconUxt.editDocument.filled, .iconUxt.editDocument.black {
+  @include iconUxt-filled(editDocument);
+}
+.iconUxt.electricity.filled, .iconUxt.electricity.black {
+  @include iconUxt-filled(electricity);
+}
+.iconUxt.element.filled, .iconUxt.element.black {
+  @include iconUxt-filled(element);
+}
+.iconUxt.email.filled, .iconUxt.email.black {
+  @include iconUxt-filled(email);
+}
+.iconUxt.emoteHappy.filled, .iconUxt.emoteHappy.black {
+  @include iconUxt-filled(emoteHappy);
+}
+.iconUxt.emoteNeutral.filled, .iconUxt.emoteNeutral.black {
+  @include iconUxt-filled(emoteNeutral);
+}
+.iconUxt.emoteSad.filled, .iconUxt.emoteSad.black {
+  @include iconUxt-filled(emoteSad);
+}
+.iconUxt.enum.filled, .iconUxt.enum.black {
+  @include iconUxt-filled(enum);
+}
+.iconUxt.enumList.filled, .iconUxt.enumList.black {
+  @include iconUxt-filled(enumList);
+}
+.iconUxt.errorAlert.filled, .iconUxt.errorAlert.black {
+  @include iconUxt-filled(errorAlert);
+}
+.iconUxt.exclamationDiamond.filled, .iconUxt.exclamationDiamond.black {
+  @include iconUxt-filled(exclamationDiamond);
+}
+.iconUxt.exit.filled, .iconUxt.exit.black {
+  @include iconUxt-filled(exit);
+}
+.iconUxt.expand.filled, .iconUxt.expand.black {
+  @include iconUxt-filled(expand);
+}
+.iconUxt.export.filled, .iconUxt.export.black {
+  @include iconUxt-filled(export);
+}
+.iconUxt.factory.filled, .iconUxt.factory.black {
+  @include iconUxt-filled(factory);
+}
+.iconUxt.factoryMagnifier.filled, .iconUxt.factoryMagnifier.black {
+  @include iconUxt-filled(factoryMagnifier);
+}
+.iconUxt.fileTree.filled, .iconUxt.fileTree.black {
+  @include iconUxt-filled(fileTree);
+}
+.iconUxt.filetypeApp.filled, .iconUxt.filetypeApp.black {
+  @include iconUxt-filled(filetypeApp);
+}
+.iconUxt.filetypeArchive.filled, .iconUxt.filetypeArchive.black {
+  @include iconUxt-filled(filetypeArchive);
+}
+.iconUxt.filetypeDefault.filled, .iconUxt.filetypeDefault.black {
+  @include iconUxt-filled(filetypeDefault);
+}
+.iconUxt.filetypeDrawing.filled, .iconUxt.filetypeDrawing.black {
+  @include iconUxt-filled(filetypeDrawing);
+}
+.iconUxt.filetypeEMail.filled, .iconUxt.filetypeEMail.black {
+  @include iconUxt-filled(filetypeEMail);
+}
+.iconUxt.filetypeImage.filled, .iconUxt.filetypeImage.black {
+  @include iconUxt-filled(filetypeImage);
+}
+.iconUxt.filetypeJSON.filled, .iconUxt.filetypeJSON.black {
+  @include iconUxt-filled(filetypeJSON);
+}
+.iconUxt.filetypeMisc.filled, .iconUxt.filetypeMisc.black {
+  @include iconUxt-filled(filetypeMisc);
+}
+.iconUxt.filetypePDF.filled, .iconUxt.filetypePDF.black {
+  @include iconUxt-filled(filetypePDF);
+}
+.iconUxt.filetypeSound.filled, .iconUxt.filetypeSound.black {
+  @include iconUxt-filled(filetypeSound);
+}
+.iconUxt.filetypeTable.filled, .iconUxt.filetypeTable.black {
+  @include iconUxt-filled(filetypeTable);
+}
+.iconUxt.filetypeText.filled, .iconUxt.filetypeText.black {
+  @include iconUxt-filled(filetypeText);
+}
+.iconUxt.filetypeVideo.filled, .iconUxt.filetypeVideo.black {
+  @include iconUxt-filled(filetypeVideo);
+}
+.iconUxt.filetypeXML.filled, .iconUxt.filetypeXML.black {
+  @include iconUxt-filled(filetypeXML);
+}
+.iconUxt.filter.filled, .iconUxt.filter.black {
+  @include iconUxt-filled(filter);
+}
+.iconUxt.filterAlternative.filled, .iconUxt.filterAlternative.black {
+  @include iconUxt-filled(filterAlternative);
+}
+.iconUxt.filterHide.filled, .iconUxt.filterHide.black {
+  @include iconUxt-filled(filterHide);
+}
+.iconUxt.filterList.filled, .iconUxt.filterList.black {
+  @include iconUxt-filled(filterList);
+}
+.iconUxt.flagSmall.filled, .iconUxt.flagSmall.black {
+  @include iconUxt-filled(flagSmall);
+}
+.iconUxt.flash.filled, .iconUxt.flash.black {
+  @include iconUxt-filled(flash);
+}
+.iconUxt.flow.filled, .iconUxt.flow.black {
+  @include iconUxt-filled(flow);
+}
+.iconUxt.folder.filled, .iconUxt.folder.black {
+  @include iconUxt-filled(folder);
+}
+.iconUxt.forward.filled, .iconUxt.forward.black {
+  @include iconUxt-filled(forward);
+}
+.iconUxt.frames.filled, .iconUxt.frames.black {
+  @include iconUxt-filled(frames);
+}
+.iconUxt.fullscreen.filled, .iconUxt.fullscreen.black {
+  @include iconUxt-filled(fullscreen);
+}
+.iconUxt.fullscreenExit.filled, .iconUxt.fullscreenExit.black {
+  @include iconUxt-filled(fullscreenExit);
+}
+.iconUxt.gearBox.filled, .iconUxt.gearBox.black {
+  @include iconUxt-filled(gearBox);
+}
+.iconUxt.globalSettings.filled, .iconUxt.globalSettings.black {
+  @include iconUxt-filled(globalSettings);
+}
+.iconUxt.graph.filled, .iconUxt.graph.black {
+  @include iconUxt-filled(graph);
+}
+.iconUxt.hatMan.filled, .iconUxt.hatMan.black {
+  @include iconUxt-filled(hatMan);
+}
+.iconUxt.headset.filled, .iconUxt.headset.black {
+  @include iconUxt-filled(headset);
+}
+.iconUxt.heart.filled, .iconUxt.heart.black {
+  @include iconUxt-filled(heart);
+}
+.iconUxt.hierarchy.filled, .iconUxt.hierarchy.black {
+  @include iconUxt-filled(hierarchy);
+}
+.iconUxt.home.filled, .iconUxt.home.black {
+  @include iconUxt-filled(home);
+}
+.iconUxt.iconMissing.filled, .iconUxt.iconMissing.black {
+  @include iconUxt-filled(iconMissing);
+}
+.iconUxt.image.filled, .iconUxt.image.black {
+  @include iconUxt-filled(image);
+}
+.iconUxt.import.filled, .iconUxt.import.black {
+  @include iconUxt-filled(import);
+}
+.iconUxt.information.filled, .iconUxt.information.black {
+  @include iconUxt-filled(information);
+}
+.iconUxt.integer.filled, .iconUxt.integer.black {
+  @include iconUxt-filled(integer);
+}
+.iconUxt.kpi.filled, .iconUxt.kpi.black {
+  @include iconUxt-filled(kpi);
+}
+.iconUxt.legal.filled, .iconUxt.legal.black {
+  @include iconUxt-filled(legal);
+}
+.iconUxt.length.filled, .iconUxt.length.black {
+  @include iconUxt-filled(length);
+}
+.iconUxt.link.filled, .iconUxt.link.black {
+  @include iconUxt-filled(link);
+}
+.iconUxt.listBullet.filled, .iconUxt.listBullet.black {
+  @include iconUxt-filled(listBullet);
+}
+.iconUxt.listSortedAlternative.filled, .iconUxt.listSortedAlternative.black {
+  @include iconUxt-filled(listSortedAlternative);
+}
+.iconUxt.locationMarker.filled, .iconUxt.locationMarker.black {
+  @include iconUxt-filled(locationMarker);
+}
+.iconUxt.lockClosed.filled, .iconUxt.lockClosed.black {
+  @include iconUxt-filled(lockClosed);
+}
+.iconUxt.lockOpened.filled, .iconUxt.lockOpened.black {
+  @include iconUxt-filled(lockOpened);
+}
+.iconUxt.machineA.filled, .iconUxt.machineA.black {
+  @include iconUxt-filled(machineA);
+}
+.iconUxt.machineB.filled, .iconUxt.machineB.black {
+  @include iconUxt-filled(machineB);
+}
+.iconUxt.machineC.filled, .iconUxt.machineC.black {
+  @include iconUxt-filled(machineC);
+}
+.iconUxt.maintenance.filled, .iconUxt.maintenance.black {
+  @include iconUxt-filled(maintenance);
+}
+.iconUxt.map.filled, .iconUxt.map.black {
+  @include iconUxt-filled(map);
+}
+.iconUxt.mapAlternative.filled, .iconUxt.mapAlternative.black {
+  @include iconUxt-filled(mapAlternative);
+}
+.iconUxt.measure.filled, .iconUxt.measure.black {
+  @include iconUxt-filled(measure);
+}
+.iconUxt.menu.filled, .iconUxt.menu.black {
+  @include iconUxt-filled(menu);
+}
+.iconUxt.mobile.filled, .iconUxt.mobile.black {
+  @include iconUxt-filled(mobile);
+}
+.iconUxt.moon.filled, .iconUxt.moon.black {
+  @include iconUxt-filled(moon);
+}
+.iconUxt.moonSun.filled, .iconUxt.moonSun.black {
+  @include iconUxt-filled(moonSun);
+}
+.iconUxt.more.filled, .iconUxt.more.black {
+  @include iconUxt-filled(more);
+}
+.iconUxt.moreAlternative.filled, .iconUxt.moreAlternative.black {
+  @include iconUxt-filled(moreAlternative);
+}
+.iconUxt.move.filled, .iconUxt.move.black {
+  @include iconUxt-filled(move);
+}
+.iconUxt.moveToTop.filled, .iconUxt.moveToTop.black {
+  @include iconUxt-filled(moveToTop);
+}
+.iconUxt.movie.filled, .iconUxt.movie.black {
+  @include iconUxt-filled(movie);
+}
+.iconUxt.mqtt.filled, .iconUxt.mqtt.black {
+  @include iconUxt-filled(mqtt);
+}
+.iconUxt.next.filled, .iconUxt.next.black {
+  @include iconUxt-filled(next);
+}
+.iconUxt.note.filled, .iconUxt.note.black {
+  @include iconUxt-filled(note);
+}
+.iconUxt.notification.filled, .iconUxt.notification.black {
+  @include iconUxt-filled(notification);
+}
+.iconUxt.notificationSquare.filled, .iconUxt.notificationSquare.black {
+  @include iconUxt-filled(notificationSquare);
+}
+.iconUxt.ok.filled, .iconUxt.ok.black {
+  @include iconUxt-filled(ok);
+}
+.iconUxt.outgoing.filled, .iconUxt.outgoing.black {
+  @include iconUxt-filled(outgoing);
+}
+.iconUxt.outgoingInApp.filled, .iconUxt.outgoingInApp.black {
+  @include iconUxt-filled(outgoingInApp);
+}
+.iconUxt.outgoingInMdsp.filled, .iconUxt.outgoingInMdsp.black {
+  @include iconUxt-filled(outgoingInMdsp);
+}
+.iconUxt.outgoingSmall.filled, .iconUxt.outgoingSmall.black {
+  @include iconUxt-filled(outgoingSmall);
+}
+.iconUxt.package.filled, .iconUxt.package.black {
+  @include iconUxt-filled(package);
+}
+.iconUxt.paste.filled, .iconUxt.paste.black {
+  @include iconUxt-filled(paste);
+}
+.iconUxt.pause.filled, .iconUxt.pause.black {
+  @include iconUxt-filled(pause);
+}
+.iconUxt.person.filled, .iconUxt.person.black {
+  @include iconUxt-filled(person);
+}
+.iconUxt.personMultiple.filled, .iconUxt.personMultiple.black {
+  @include iconUxt-filled(personMultiple);
+}
+.iconUxt.phone.filled, .iconUxt.phone.black {
+  @include iconUxt-filled(phone);
+}
+.iconUxt.play.filled, .iconUxt.play.black {
+  @include iconUxt-filled(play);
+}
+.iconUxt.pressure.filled, .iconUxt.pressure.black {
+  @include iconUxt-filled(pressure);
+}
+.iconUxt.previous.filled, .iconUxt.previous.black {
+  @include iconUxt-filled(previous);
+}
+.iconUxt.printer.filled, .iconUxt.printer.black {
+  @include iconUxt-filled(printer);
+}
+.iconUxt.question.filled, .iconUxt.question.black {
+  @include iconUxt-filled(question);
+}
+.iconUxt.record.filled, .iconUxt.record.black {
+  @include iconUxt-filled(record);
+}
+.iconUxt.redo.filled, .iconUxt.redo.black {
+  @include iconUxt-filled(redo);
+}
+.iconUxt.reload.filled, .iconUxt.reload.black {
+  @include iconUxt-filled(reload);
+}
+.iconUxt.remove.filled, .iconUxt.remove.black {
+  @include iconUxt-filled(remove);
+}
+.iconUxt.removeCircle.filled, .iconUxt.removeCircle.black {
+  @include iconUxt-filled(removeCircle);
+}
+.iconUxt.reorder.filled, .iconUxt.reorder.black {
+  @include iconUxt-filled(reorder);
+}
+.iconUxt.restricted.filled, .iconUxt.restricted.black {
+  @include iconUxt-filled(restricted);
+}
+.iconUxt.roles.filled, .iconUxt.roles.black {
+  @include iconUxt-filled(roles);
+}
+.iconUxt.rules.filled, .iconUxt.rules.black {
+  @include iconUxt-filled(rules);
+}
+.iconUxt.save.filled, .iconUxt.save.black {
+  @include iconUxt-filled(save);
+}
+.iconUxt.scale.filled, .iconUxt.scale.black {
+  @include iconUxt-filled(scale);
+}
+.iconUxt.scope.filled, .iconUxt.scope.black {
+  @include iconUxt-filled(scope);
+}
+.iconUxt.scopeAlternative.filled, .iconUxt.scopeAlternative.black {
+  @include iconUxt-filled(scopeAlternative);
+}
+.iconUxt.search.filled, .iconUxt.search.black {
+  @include iconUxt-filled(search);
+}
+.iconUxt.selectAll.filled, .iconUxt.selectAll.black {
+  @include iconUxt-filled(selectAll);
+}
+.iconUxt.selectNone.filled, .iconUxt.selectNone.black {
+  @include iconUxt-filled(selectNone);
+}
+.iconUxt.serviceCredential.filled, .iconUxt.serviceCredential.black {
+  @include iconUxt-filled(serviceCredential);
+}
+.iconUxt.settings.filled, .iconUxt.settings.black {
+  @include iconUxt-filled(settings);
+}
+.iconUxt.share.filled, .iconUxt.share.black {
+  @include iconUxt-filled(share);
+}
+.iconUxt.shareAlternative.filled, .iconUxt.shareAlternative.black {
+  @include iconUxt-filled(shareAlternative);
+}
+.iconUxt.shift.filled, .iconUxt.shift.black {
+  @include iconUxt-filled(shift);
+}
+.iconUxt.shoppingCart.filled, .iconUxt.shoppingCart.black {
+  @include iconUxt-filled(shoppingCart);
+}
+.iconUxt.sidebar.filled, .iconUxt.sidebar.black {
+  @include iconUxt-filled(sidebar);
+}
+.iconUxt.sidebarHide.filled, .iconUxt.sidebarHide.black {
+  @include iconUxt-filled(sidebarHide);
+}
+.iconUxt.sidebarShow.filled, .iconUxt.sidebarShow.black {
+  @include iconUxt-filled(sidebarShow);
+}
+.iconUxt.sort.filled, .iconUxt.sort.black {
+  @include iconUxt-filled(sort);
+}
+.iconUxt.speedometer.filled, .iconUxt.speedometer.black {
+  @include iconUxt-filled(speedometer);
+}
+.iconUxt.split.filled, .iconUxt.split.black {
+  @include iconUxt-filled(split);
+}
+.iconUxt.star.filled, .iconUxt.star.black {
+  @include iconUxt-filled(star);
+}
+.iconUxt.starHalf.filled, .iconUxt.starHalf.black {
+  @include iconUxt-filled(starHalf);
+}
+.iconUxt.statusOff.filled, .iconUxt.statusOff.black {
+  @include iconUxt-filled(statusOff);
+}
+.iconUxt.statusOn.filled, .iconUxt.statusOn.black {
+  @include iconUxt-filled(statusOn);
+}
+.iconUxt.stop.filled, .iconUxt.stop.black {
+  @include iconUxt-filled(stop);
+}
+.iconUxt.stopwatch.filled, .iconUxt.stopwatch.black {
+  @include iconUxt-filled(stopwatch);
+}
+.iconUxt.storage.filled, .iconUxt.storage.black {
+  @include iconUxt-filled(storage);
+}
+.iconUxt.string.filled, .iconUxt.string.black {
+  @include iconUxt-filled(string);
+}
+.iconUxt.stringList.filled, .iconUxt.stringList.black {
+  @include iconUxt-filled(stringList);
+}
+.iconUxt.subtenant.filled, .iconUxt.subtenant.black {
+  @include iconUxt-filled(subtenant);
+}
+.iconUxt.subtenant2.filled, .iconUxt.subtenant2.black {
+  @include iconUxt-filled(subtenant2);
+}
+.iconUxt.subtenantSmall.filled, .iconUxt.subtenantSmall.black {
+  @include iconUxt-filled(subtenantSmall);
+}
+.iconUxt.sun.filled, .iconUxt.sun.black {
+  @include iconUxt-filled(sun);
+}
+.iconUxt.tag.filled, .iconUxt.tag.black {
+  @include iconUxt-filled(tag);
+}
+.iconUxt.tagAlternative.filled, .iconUxt.tagAlternative.black {
+  @include iconUxt-filled(tagAlternative);
+}
+.iconUxt.temperature.filled, .iconUxt.temperature.black {
+  @include iconUxt-filled(temperature);
+}
+.iconUxt.thermometer.filled, .iconUxt.thermometer.black {
+  @include iconUxt-filled(thermometer);
+}
+.iconUxt.thumbDown.filled, .iconUxt.thumbDown.black {
+  @include iconUxt-filled(thumbDown);
+}
+.iconUxt.thumbUp.filled, .iconUxt.thumbUp.black {
+  @include iconUxt-filled(thumbUp);
+}
+.iconUxt.ticket.filled, .iconUxt.ticket.black {
+  @include iconUxt-filled(ticket);
+}
+.iconUxt.tile.filled, .iconUxt.tile.black {
+  @include iconUxt-filled(tile);
+}
+.iconUxt.timeZone.filled, .iconUxt.timeZone.black {
+  @include iconUxt-filled(timeZone);
+}
+.iconUxt.train.filled, .iconUxt.train.black {
+  @include iconUxt-filled(train);
+}
+.iconUxt.types.filled, .iconUxt.types.black {
+  @include iconUxt-filled(types);
+}
+.iconUxt.undo.filled, .iconUxt.undo.black {
+  @include iconUxt-filled(undo);
+}
+.iconUxt.update.filled, .iconUxt.update.black {
+  @include iconUxt-filled(update);
+}
+.iconUxt.updateGear.filled, .iconUxt.updateGear.black {
+  @include iconUxt-filled(updateGear);
+}
+.iconUxt.updateNotification.filled, .iconUxt.updateNotification.black {
+  @include iconUxt-filled(updateNotification);
+}
+.iconUxt.upload.filled, .iconUxt.upload.black {
+  @include iconUxt-filled(upload);
+}
+.iconUxt.variable.filled, .iconUxt.variable.black {
+  @include iconUxt-filled(variable);
+}
+.iconUxt.version.filled, .iconUxt.version.black {
+  @include iconUxt-filled(version);
+}
+.iconUxt.visibilityHidden.filled, .iconUxt.visibilityHidden.black {
+  @include iconUxt-filled(visibilityHidden);
+}
+.iconUxt.visibilityShown.filled, .iconUxt.visibilityShown.black {
+  @include iconUxt-filled(visibilityShown);
+}
+.iconUxt.voltage.filled, .iconUxt.voltage.black {
+  @include iconUxt-filled(voltage);
+}
+.iconUxt.watch.filled, .iconUxt.watch.black {
+  @include iconUxt-filled(watch);
+}
+.iconUxt.weatherCloudy.filled, .iconUxt.weatherCloudy.black {
+  @include iconUxt-filled(weatherCloudy);
+}
+.iconUxt.weatherPartlyCloudy.filled, .iconUxt.weatherPartlyCloudy.black {
+  @include iconUxt-filled(weatherPartlyCloudy);
+}
+.iconUxt.weatherRain.filled, .iconUxt.weatherRain.black {
+  @include iconUxt-filled(weatherRain);
+}
+.iconUxt.weatherSnow.filled, .iconUxt.weatherSnow.black {
+  @include iconUxt-filled(weatherSnow);
+}
+.iconUxt.weatherStorm.filled, .iconUxt.weatherStorm.black {
+  @include iconUxt-filled(weatherStorm);
+}
+.iconUxt.weatherSunny.filled, .iconUxt.weatherSunny.black {
+  @include iconUxt-filled(weatherSunny);
+}
+.iconUxt.weatherSunrise.filled, .iconUxt.weatherSunrise.black {
+  @include iconUxt-filled(weatherSunrise);
+}
+.iconUxt.weatherSunset.filled, .iconUxt.weatherSunset.black {
+  @include iconUxt-filled(weatherSunset);
+}
+.iconUxt.weatherThunder.filled, .iconUxt.weatherThunder.black {
+  @include iconUxt-filled(weatherThunder);
+}
+.iconUxt.widget.filled, .iconUxt.widget.black {
+  @include iconUxt-filled(widget);
+}
+.iconUxt.widgetDetails.filled, .iconUxt.widgetDetails.black {
+  @include iconUxt-filled(widgetDetails);
+}
+.iconUxt.zoomIn.filled, .iconUxt.zoomIn.black {
+  @include iconUxt-filled(zoomIn);
+}
+.iconUxt.zoomOut.filled, .iconUxt.zoomOut.black {
+  @include iconUxt-filled(zoomOut);
+}

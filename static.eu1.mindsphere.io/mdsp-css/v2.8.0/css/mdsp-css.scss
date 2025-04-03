@@ -1,0 +1,55 @@
+/*! UTF8Charset */
+/*! User Experience Toolkit for Insights Hub and Industrial IoT / Development License Agreement: https://developer.mindsphere.io/license.html
+*/
+
+@import "_breakpoint";
+@import "00-settings/color";
+@import "00-settings/settings";
+@import "00-settings/webfonts_icons";
+@import "04-theming/theming-ix";
+@import "04-theming/theming-ix-colors";
+
+.uxt.#{$defaultClass} {
+    color: rgba(var(--color-font), 1);
+    font-family: $defaultFont;
+    @import "_icons-regular.scss";
+    @import "_icons-bold.scss";
+    @import "_icons-filled.scss";
+    @import "01-elements/button/button";
+    @import "01-elements/typography/typography";
+    @import "01-elements/table/table";
+    @import "01-elements/form-element/form-element";
+    @import "02-aggregates/breadcrumb/breadcrumb";
+    @import "02-aggregates/container/container";
+    @import "02-aggregates/message/message";
+    @import "02-aggregates/dateTime-picker/dateTime-picker";
+    @import "02-aggregates/dialog/dialog";
+    @import "02-aggregates/dialog-confirm/dialog-confirm";
+    @import "02-aggregates/dropzone/dropzone";
+    @import "02-aggregates/pager/pager";
+    @import "02-aggregates/popover/popover";
+    @import "02-aggregates/progressbar/progressbar";
+    @import "02-aggregates/stepper/stepper";
+    @import "02-aggregates/content-header/content-header";
+    @import "02-aggregates/tabs/tabs";
+    @import "02-aggregates/tabs-vertical/tabs-vertical";
+    @import "02-aggregates/empty-state/empty-state";
+    @import "02-aggregates/busy-indicator/busy-indicator";
+    @import "02-aggregates/notification/notification";
+    @import "02-aggregates/form-group/form-group";
+    @import "02-aggregates/badge/badge";
+    @import "02-aggregates/form-group/form-validation";
+    @import "02-aggregates/key-value/key-value";
+    @import "02-aggregates/menu/menu";
+    @import "02-aggregates/call-to-action/call-to-action";
+    @import "02-aggregates/card/card";
+    @import "02-aggregates/infotip/infotip";
+    @import "00-settings/utility";
+    @import "03-layout/layout/appBar";
+    @import "03-layout/layout/appBarAdvanced";
+    @import "03-layout/homeScreen/homeScreen";
+    @import "03-layout/layout/layout";
+    @import "03-layout/list/list";
+    @import "03-layout/list-navigation/list-navigation";
+    @import "03-layout/tree/tree";
+}

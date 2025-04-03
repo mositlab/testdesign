@@ -1,0 +1,104 @@
+.form {
+    &__formGroup.has-error {
+
+        &:before {
+            background-color: rgba(var(--color-error), 1);
+            content: '';
+            display: block;
+            bottom: 0;
+            left: -10px;
+            position: absolute;
+            top: 0;
+            width: 2px;
+        }
+
+        > .inputGroup {
+            margin-bottom: 0;
+        }
+
+        > .inputGroup.is-invalid {
+
+            > .checkboxWrapper > label,
+            > .selectWrapper > select,
+            > .radioButtonWrapper > label,
+            > input,
+            > textarea {
+                border-color: rgba(var(--color-error), 1);
+                color: rgba(var(--color-error), 1);
+
+                &::-webkit-input-placeholder {
+                    color: rgba(var(--color-base600), 1);
+                }
+
+                &::-moz-placeholder {
+                    color: rgba(var(--color-base600), 1);
+                }
+
+                &:-ms-input-placeholder {
+                    color: rgba(var(--color-base600), 1);
+                }
+
+                &[class$="__description"] {
+                    color: rgba(var(--color-font-secondary), 1);
+                }
+            }
+
+            .selectWrapper > select {
+
+                // remove dotted extra outline on firefox browser focus
+                &:-moz-focusring {
+                    color: transparent;
+                    text-shadow: 0 0 0 rgba(var(--color-error), 1);
+                }
+            }
+        }
+
+        // haas to be overwritten because formgroup with error class set turns it to 0.
+        // > .inputGroup:not(.is-invalid) {
+        //     margin-bottom: 16px;
+        // }
+
+        &:last-child {
+            margin-bottom: 0;
+
+            > .form__lineBreak:last-child {
+                .inputGroup--error:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__requiredMsg,
+    .inputGroup--error {
+        color: rgba(var(--color-error), 1);
+        display: block;
+        font-family: $defaultFont;
+        font-size: $ms-1-fontSize;
+        line-height: $ms-1-lineHeight;
+        margin-top: 2px;
+
+        &:last-child {
+            margin-bottom: 16px;
+        }
+    }
+
+    .inputGroup--error {
+        cursor: pointer;
+        @include iconUxt-bold(goTo, after);
+
+        &:after {
+            color: rgba(var(--color-error), 1);
+            font-size: $iconSizeM;
+            line-height: 13px;
+        }
+    }
+
+    &__buttons {
+        margin-top: 8px;
+    }
+
+    .messageWrapper {
+        padding: 12px 0 24px 0;
+    }
+}

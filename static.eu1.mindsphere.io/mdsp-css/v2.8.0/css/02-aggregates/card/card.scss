@@ -1,0 +1,405 @@
+// simple card 'grid' which uses flexbox to be backwards compatible, especially for IE
+.cards.cards--simpleGrid {
+
+    // negative margin used on wrapper since we dont have to adapt n-th child margin right lateron
+    // (it is even not possible since cards with huge content might break / wrap on other card cols already
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -16px;
+
+    // IE and Firefox handle bottom spacing differently, should be adapted / harmonized some time:
+    //padding-bottom: 32px !important;
+    //@include breakpoint(max-width 1024px) {
+    //    padding-bottom: 16px !important;
+    //}
+
+    .cards__row {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        // needed for shadows to work when contained in parent elements with position relative, otherwise shadow will be put behind that parent
+        position: relative;
+        z-index: 1;
+
+        .cards__col {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 0;
+
+            ///* two cards */
+            //&:first-child:nth-last-child(2),
+            //&:first-child:nth-last-child(2) ~ .cards__col {
+            //    flex-basis: 50%
+            //}
+
+            /* three cards */
+            @include breakpoint($sm) {
+
+                // SM
+                &:first-child:nth-last-child(3),
+                &:first-child:nth-last-child(3) ~ .cards__col {
+                    // -16px has to be removed -> 8 + 8 margin of columns
+                    flex-basis: calc(100% - 16px);
+                }
+            }
+
+            /* four cards */
+            @include breakpoint($sm, $md) {
+
+                // SM, MD
+                &:first-child:nth-last-child(4),
+                &:first-child:nth-last-child(4) ~ .cards__col {
+                    flex-basis: 48%;
+                }
+            }
+
+            /* five cards */
+            @include breakpoint($sm, $md) {
+
+                // SM, MD
+                &:first-child:nth-last-child(5),
+                &:first-child:nth-last-child(5) ~ .cards__col {
+
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        flex-basis: 48%;
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5) {
+                        flex-basis: 31%;
+                    }
+                }
+            }
+
+            /* six cards */
+            //@include breakpoint(min-width 1300px) { // LG
+            //    &:first-child:nth-last-child(6),
+            //    &:first-child:nth-last-child(6) ~ .cards__col {
+            //        //flex-basis: 13%;
+            //
+            //    }
+            //}
+
+            @include breakpoint($md) {
+
+                // MD
+                &:first-child:nth-last-child(6),
+                &:first-child:nth-last-child(6) ~ .cards__col {
+                    & {
+                        flex-basis: 31%;
+                    }
+                }
+            }
+
+            @include breakpoint($sm) {
+
+                // SM
+                &:first-child:nth-last-child(6),
+                &:first-child:nth-last-child(6) ~ .cards__col {
+                    & {
+                        flex-basis: 48%;
+                    }
+                }
+            }
+
+            // general width for every column below smallest breakpoint
+            @include breakpoint($xs) {
+                // -16px has to be removed -> 8 + 8 margin of columns
+                flex-basis: calc(100% - 16px);
+            }
+
+            // instead of setting a height of 100% to the childs (= .card)
+            display: flex;
+
+            align-items: stretch;
+            flex-direction: column;
+            margin-left: 8px;
+            margin-right: 8px;
+            margin-bottom: 16px;
+            max-width: 100%;
+
+            //&:first-child {
+            //    margin-left: 0;
+            //}
+            //
+            //&:last-child {
+            //    margin-right: 0;
+            //}
+        }
+
+
+    }
+}
+
+.card {
+    background-color: rgba(var(--color-interface-highlight), 1);
+    border: 1px solid rgba(var(--color-border), 1);
+    border-radius: 3px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex-direction: column;
+    position: relative;
+
+    > img:first-child {
+        border-radius: 2px 2px 0 0;
+    }
+
+
+    &--filled {
+        background-color: rgba(var(--color-interface-secondary), 1);
+        border: 1px solid rgba(var(--color-base900), 1);
+    }
+
+    &.is-success,
+    &.is-warning,
+    &.is-error,
+    &.is-alert,
+    &.is-info {
+        &:before {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            content: '';
+            position: absolute;
+            height: 4px;
+            inset: -1px -1px 0 -1px;
+        }
+    }
+
+    &.is-success {
+        &:before {
+            background-color: rgba(var(--color-success), 1);
+        }
+    }
+
+    &.is-warning {
+        &:before {
+            background-color: rgba(var(--color-warning), 1);
+        }
+    }
+
+    &.is-error,
+    &.is-alert {
+        &:before {
+            background-color: rgba(var(--color-error), 1);
+        }
+    }
+
+    &.is-info {
+        &:before {
+            background-color: rgba(var(--color-info), 1);
+        }
+    }
+
+    &.has-indicator-bold:before {
+        height: 8px;
+    }
+
+    &.has-indicator-vertical {
+        &:before {
+            border-radius: 0;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            inset: -1px 0 -1px -1px;
+            width: 4px;
+            height: unset;
+        }
+
+        &.has-indicator-bold:before {
+            width: 8px;
+        }
+
+    }
+
+    // make sure (just in case) other links in the card are clickable
+    & {
+
+        > a,
+        > p a,
+        > div a,
+        > div button,
+        > p button {
+            position: relative;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    // remove positioning from header wrapper to make title link wrap complete title,
+    // overwrites relative positioning from above lines
+    & > .card__header .card__title > a {
+        position: static;
+
+        &:visited,
+        & {
+            // set link color for clickable header explicitly to primary blue in case
+            // no forcedefaults is used
+            color: rgba(var(--color-primary), 1);
+        }
+    }
+
+    .card__header {
+        padding: 16px 24px;
+
+        .card__title {
+            font-size: $ms1-fontSize;
+            line-height: 23px;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-right: 0px;
+            margin-top: 0px;
+
+            a {
+                text-decoration: none;
+
+                &:before {
+                    bottom: 0;
+                    content: "";
+                    display: block;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+                @include iconUxt-regular(outgoingInApp, after);
+
+                &:after {
+                    display: inline-block;
+                    position: relative;
+                    color: rgba(var(--color-primary), 1);
+                    top: 0px;
+                    left: 4px;
+                    font-size: $ms0-fontSize;
+                }
+
+                &:focus {
+                    outline: none;
+
+                    &:before {
+                        outline: 2px solid rgba(var(--color-primary-light), 1);
+                    }
+                }
+
+                &.link--noIcon {
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+
+        .card__subline {
+            color: rgba(var(--color-font-secondary), 1);
+            font-size: $ms0-fontSize;
+            line-height: $ms0-lineHeight;
+
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .menu {
+            position: absolute;
+            top: 4px;
+            right: 12px;
+        }
+    }
+
+    .card__content {
+        &--autogrow {
+            flex-grow: 1;
+        }
+
+        > p {
+            font-size: $ms0-fontSize;
+            padding: 0 24px;
+        }
+
+        > p:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .card__footer {
+        margin-top: auto;
+
+        > button,
+        .button {
+            margin-bottom: 8px;
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 8px;
+        }
+
+        padding: 24px 24px 16px 24px;
+    }
+
+    // shadow 'layer' / element default
+    &:after {
+        bottom: 0px;
+        box-shadow: 0 2px 10px 0 rgba(var(--color-shadow), 0.4);
+        display: block;
+        content: '';
+        left: 8px;
+        position: absolute;
+        right: 8px;
+        top: 16px;
+        z-index: -1;
+    }
+
+    &:hover:after {
+        bottom: 0;
+        box-shadow: 0 3px 20px 0 rgba(var(--color-shadow), 0.4);
+        display: block;
+        content: '';
+        left: 6px;
+        position: absolute;
+        right: 6px;
+        top: 12px;
+        z-index: -1;
+    }
+
+    // shadow 'layer' / element for hover
+    // &:before {
+    //     bottom: 0;
+    //     box-shadow: 0 3px 20px 0 rgba(var(--color-shadow), 0.4);
+    //     display: block;
+    //     content: '';
+    //     left: 6px;
+    //     position: absolute;
+    //     right: 6px;
+    //     top: 12px;
+    //     z-index: -1;
+    //     opacity: 0;
+    //     transition: opacity 0.2s ease-in-out;
+    // }
+
+    // IE and Edge dont know the focus-within selector, therefor we cannot combine it with the following selector
+    &:focus-within:before {
+        opacity: 1;
+    }
+
+    &:hover:before {
+        opacity: 1;
+    }
+
+    &.card--centered {
+
+        .card__header,
+        .card__content,
+        .card__footer {
+            text-align: center;
+        }
+    }
+}

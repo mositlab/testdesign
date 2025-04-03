@@ -1,0 +1,445 @@
+:root {
+    .uxt-ix-theme-light {
+
+        /* Siemens Light Theme */
+        /* Base colors: Default from very dark (black) to very bright (white). */
+        --color-base000: 0, 0, 40;
+        --color-base200: 51, 51, 83;
+        --color-base450: 102, 102, 126;
+        --color-base600: 153, 153, 169;
+        --color-base750: 204, 204, 212;
+        --color-base800: 229, 229, 233;
+        --color-base900: 240, 240, 240;
+        --color-base950: 243, 243, 240;
+        --color-base1000: 255, 255, 255;
+
+        /* Primary colors: Main interaction color, used for any interactive elements, 
+e.g. buttons and links. */
+        --color-primary-darker: 0, 81, 89;
+        --color-primary-dark: 25, 98, 105;
+        --color-primary: 0, 121, 147;
+        --color-primary-light: 0, 152, 166;
+        --color-primary-lighter: 209, 255, 242;
+        --color-primary-lightest: 235, 247, 248;
+
+        /* Functional colors: Used for messages, notification and feedback patterns. */
+        --color-success-dark: 1, 106, 44;
+        --color-success: 1, 137, 58;
+        --color-success-light: 180, 204, 191;
+        --color-success-lighter: 210, 234, 221;
+        --color-warning-dark: 95, 79, 17;
+        --color-warning: 233, 195, 42;
+        --color-warning-light: 230, 219, 174;
+        --color-warning-lighter: 255, 245, 204;
+        --color-error-dark: 167, 27, 44;
+        --color-error: 215, 35, 57;
+        --color-error-light: 227, 184, 194;
+        --color-error-lighter: 253, 221, 229;
+        --color-info-dark: 0, 98, 138;
+        --color-info: 0, 126, 177;
+        --color-info-light: 183, 205, 214;
+        --color-info-lighter: 204, 229, 239;
+        --color-dangerPrimary: var(--color-error);
+        --color-dangerPrimary-hover: 193, 31, 51;
+        --color-dangerPrimary-active: 180, 29, 48;
+        --color-dangerSecondary: var(--color-error);
+        --color-dangerSecondary-hover: var(--color-dangerPrimary-hover);
+        --color-dangerSecondary-active: var(--color-dangerPrimary-active);
+
+        /*Meta colors: These colors can be set to either existing, other custom values or rgb color values. */
+        --color-font: var(--color-base000);
+        /* color for main font (headlines and text) */
+        --color-font-secondary: var(--color-base600);
+        /* color for secondary font objects, e.g. descriptions and subheadlines */
+        --color-font-disabled: var(--color-base600);
+        /* color for disabled elements' font and labels */
+        --color-font-contrast: var(--color-base1000);
+        --color-interface: var(--color-base1000);
+        /* main interface color */
+        --color-interface-secondary: var(--color-base950);
+        /* leading and context region background color */
+        --color-interface-highlight: var(--color-base1000);
+        /*elevation-1*/
+        /* header sections, card, container etc */
+        --color-interface-headerfooter: var(--color-base1000);
+        /*elevation-1*/
+        /* header and footers of dialogs, confirms */
+        --color-shadow: var(--color-base000);
+        /* (box) shadows color, uses darkest main color per default */
+        --color-overlay: var(--color-base200);
+        /* overlay background color */
+        --color-border: 232, 232, 232;
+        /*elevation-2*/
+        /* border color for interface elements, e.g. cards, fieldsets, containers, tables, dialogs (originally base750) */
+        --color-disabled: var(--color-base600);
+        /* main disabled color */
+        --color-disabled-contrast: var(--color-base1000);
+        /* contrast color for disabled items */
+
+        /* App bar colors */
+        --color-appBar-color: var(--color-base200);
+        /* advanced App bar: link / foreground color */
+        --color-appBar--active-collapsible: var(--color-primary);
+        /* advanced App bar: link color for active items */
+        --color-appBar-bg: var(--color-interface-secondary);
+        /* advanced App bar: background-color */
+        --color-appBar--active-bg: var(--color-interface);
+        /* advanced App bar: background color for active items ('highlight') */
+        --color-appBar-hover: var(--color-primary);
+        /* advanced App bar: hover link color for items */
+        --color-appBar-border: 232, 232, 232;
+        /* advanced App bar: border around second level items */
+        --color-appBar--active-indicator: var(--color-primary);
+        /* color for active indicator ('left border') of highlighted item */
+        --color-appBar--badge: var(--color-error);
+        /* background color for optional badges of App bar items */
+        --color-appBar--active-color: var(--color-primary);
+        /* advanced App bar: link color for active items */
+        --color-appHeader-bg: var(--color-interface-secondary);
+        /* background color for the app header */
+        --color-appHeader-font: var(--color-primary);
+        /* font color for the app header */
+
+        /* Charting colors */
+        --color-charting01: 0, 153, 153;
+        --color-charting02: 0, 137, 14;
+        --color-charting03: 0, 41, 73;
+        --color-charting04: 26, 116, 125;
+        --color-charting05: 0, 81, 89;
+        --color-charting06: 54, 100, 198;
+        --color-charting07: 0, 35, 122;
+        --color-charting08: 115, 83, 229;
+        --color-charting09: 85, 59, 163;
+        --color-charting10: 116, 0, 137;
+        --color-charting11: 192, 71, 116;
+        --color-charting12: 79, 21, 61;
+        --color-charting13: 190, 89, 37;
+        --color-charting14: 128, 16, 0;
+        --color-charting15: 128, 87, 0;
+        --color-charting16: 117, 117, 99;
+        --color-charting17: 76, 76, 104;
+        --color-charting18: 0, 135, 190;
+        --color-charting19: var(--color-error);
+        --color-charting20: var(--color-warning);
+        --color-charting21: var(--color-success);
+
+        // IX theme colors
+        --color-0: var(--color-base1000), 0;
+        --color-component: 189, 189, 174;
+        --color-component-1: var(--color-component), .2;
+        --color-component-1-hover: var(--color-component), .35;
+        --color-component-1-active: 150, 150, 138 .35;
+        --color-component-4: var(--color-base000), .30;
+        --color-component-error: 252, 204, 215;
+        --color-soft-text: var(--color-base000), .6;
+        --color-dynamic: var(--color-primary-darker);
+        --color-dynamic-hover: 18, 93, 101;
+        --color-dynamic-active: 16, 82, 89;
+        --color-primary-active: 22, 86, 92;
+        --color-secondary-hover: var(--color-primary-lighter);
+        --color-secondary-active: 184, 242, 226;
+        --color-focus-border: 25, 159, 255;
+
+        --color-ix-theme-2: 243, 243, 240;
+
+        //-----SIGNAL COLORS-----
+        //-----ERROR-----    
+        --color-ix-error: var(--color-error);
+        --color-ix-error-hover: 193, 31, 51;
+        --color-ix-error-active: 180, 29, 48;
+        --color-ix-error-contrast: var(--color-base1000);
+        //-----WARNING-----
+        --color-ix-warning: var(--color-warning);
+        --color-ix-warning-hover: 227, 186, 23;
+        --color-ix-warning-active: 208, 171, 21;
+        --color-ix-warning-contrast: var(--color-base000);
+
+        //-----SUCCESS-----
+        --color-ix-success: var(--color-success);
+        --color-ix-success-hover: 1, 122, 51;
+        --color-ix-success-active: 1, 111, 47;
+        --color-ix-success-contrast: var(--color-base1000);
+        //-----INFO-----
+        --color-ix-info: var(--color-info);
+        --color-ix-info-hover: 0, 113, 158;
+        --color-ix-info-active: 0, 105, 148;
+        --color-ix-info-contrast: var(--color-base1000);
+        //iX shadows
+        --color-shadow-1: rgba(0, 0, 40, 0.1);
+        --color-shadow-2: rgba(0, 0, 40, 0.2);
+        --color-shadow-3: rgba(0, 0, 40, 0.12);
+
+        //iX theme shadows
+        --theme-shadow-4: 0px 0px 2px var(--color-shadow-1), 0px 4px 8px var(--color-shadow-1), 0px 12px 18px var(--color-shadow-1);
+
+        // specific colors
+        //-----CARD-----
+        //grid-cards/ix-card-list
+        --color-card-list-background: var(--color-component-1);
+        --color-card-list-background-hover: var(--color-component-1-hover);
+        --color-card-list-background-active: var(--color-component-1-active);
+        //single-card/ix-action-card
+        --color-card-background: transparent;
+        --color-card-background-hover: var(--color-ghost-hover);
+        --color-card-background-active: var(--color-ghost-active);
+        --color-card-border: var(--color-base000), .20;
+
+
+        //-----INPUT-----
+        --color-input-background: var(--color-primary-lightest);
+        --color-input-background-hover: var(--color-primary-lighter);
+        --color-input-border-hover: var(--color-primary-darker);
+        --color-input-error-background: var(--color-component-error);
+
+
+        //-----BUTTON-----
+        //-----PRIMARY-----
+        --color-button-primary-background-hover: var(--color-primary-dark);
+        --color-button-primary-background-active: var(--color-primary-active);
+        --color-button-primary-background-disabled: var(--color-component-4);
+        //-----SECONDARY-----
+        --color-button-secondary-background: var(--color-base1000);
+        --color-button-secondary-background-hover: var(--color-secondary-hover);
+        --color-button-secondary-background-active: var(--color-secondary-active);
+        --color-button-secondary-border-hover: var(--color-primary-darker);
+        --color-button-secondary-color-hover: var(--color-primary-darker);
+        --color-button-secondary-border-active: var(--color-primary-darker);
+        --color-button-secondary-color-active: var(--color-primary-darker);
+        //-----GHOST-----
+        --color-ghost: 0, 0, 0, 0;
+        --color-ghost-hover: var(--color-component), .15;
+        --color-ghost-active: 143, 143, 117, 0.15;
+        --color-ghost-selected: 0, 255, 185, 0.18;
+        --color-ghost-selected-hover: 32, 197, 126, .22;
+        --color-button-ghost-font-disabled: var(--color-component-4);
+        --color-button-invisible-secondary-background-hover: rgb(189 189 174 / 15%);
+        --color-button-invisible-secondary-background-active: rgb(143 143 117 / 15%);
+
+        //-----PAGINATION-----
+        --color-pagination-active: var(--color-ghost-active);
+        --color-pagination-highlight: var(--color-ghost-selected);
+        --color-pagination-highlight-hover: var(--color-ghost-selected-hover);
+        --color-pagination-highlight-active: var(--color-primary-lighter);
+    }
+
+    .uxt-ix-theme-dark {
+        color-scheme: dark;
+
+        /* Siemens Dark Theme */
+        /* Base colors: Default from very dark (black) to very bright (white). */
+        --color-base000: 255, 255, 255;
+        --color-base200: 242, 242, 244;
+        --color-base450: 229, 229, 233;
+        --color-base600: 204, 204, 212;
+        --color-base750: 153, 153, 169;
+        --color-base800: 102, 102, 126;
+        --color-base900: 51, 51, 83;
+        --color-base950: 35, 35, 60;
+        --color-base1000: 0, 0, 40;
+
+        /* Primary colors: Main interaction color, used for any interactive elements, 
+e.g. buttons and links. */
+        --color-primary-darker: 197, 255, 239;
+        --color-primary-dark: 0, 229, 170;
+        --color-primary: 0, 204, 204;
+        --color-primary-light: 0, 255, 185;
+        --color-primary-lighter: 0, 24, 43;
+        --color-primary-lightest: 0, 41, 73;
+
+        /* Functional colors: Used for messages, notification and feedback patterns. */
+        --color-success-dark: 0, 87, 36;
+        --color-success: 1, 214, 90;
+        --color-success-light: 49, 163, 97;
+        --color-success-lighter: 64, 214, 127;
+        --color-warning-dark: 77, 65, 15;
+        --color-warning: 255, 215, 50;
+        --color-warning-light: 179, 161, 90;
+        --color-warning-lighter: 255, 230, 128;
+        --color-error-dark: 128, 19, 32;
+        --color-error: 255, 38, 64;
+        --color-error-light: 204, 94, 108;
+        --color-error-lighter: 255, 143, 157;
+        --color-info-dark: 0, 80, 92;
+        --color-info: 0, 190, 220;
+        --color-info-light: 43, 129, 143;
+        --color-info-lighter: 66, 199, 220;
+        --color-dangerPrimary: var(--color-error);
+        --color-dangerPrimary-hover: 255, 66, 89;
+        --color-dangerPrimary-active: 255, 20, 49;
+        --color-dangerSecondary: var(--color-error);
+        --color-dangerSecondary-hover: var(--color-dangerPrimary-hover);
+        --color-dangerSecondary-active: var(--color-dangerPrimary-active);
+
+        /*Meta colors: These colors can be set to either existing, other custom values or rgb color values. */
+        --color-font: var(--color-base000);
+        /* color for main font (headlines and text) */
+        --color-font-secondary: var(--color-base600);
+        /* color for secondary font objects, e.g. descriptions and subheadlines */
+        --color-font-disabled: 115, 115, 137;
+        /* color for disabled elements' font and labels */
+        --color-font-contrast: var(--color-base1000);
+        --color-interface: var(--color-base1000);
+        /* main interface color */
+        --color-interface-secondary: var(--color-base950);
+        /* leading and context region background color */
+        --color-interface-highlight: var(--color-base950);
+        /*elevation-1*/
+        /* header sections, card, container etc */
+        --color-interface-headerfooter: var(--color-base950);
+        /*elevation-1*/
+        /* header and footers of dialogs, confirms */
+        --color-disabled: var(--color-font-disabled);
+        /* main disabled color */
+        --color-disabled-contrast: var(--color-base1000);
+        /* contrast color for disabled items */
+        --color-shadow: var(--color-base900);
+        /* (box) shadows color */
+        --color-overlay: var(--color-base1000);
+        /* overlay background color */
+        --color-border: var(--color-base900);
+        /*elevation-2*/
+        /* border color for interface elements, e.g. cards, fieldsets, containers, tables, dialogs (originally base750) */
+
+        /* App bar colors */
+        --color-appBar-color: var(--color-font);
+        /* advanced App bar: link / foreground color */
+        --color-appBar--active-collapsible: var(--color-primary);
+        /* advanced App bar: link color for active items */
+        --color-appBar-bg: var(--color-interface-secondary);
+        /* advanced App bar: background-color */
+        --color-appBar--active-bg: var(--color-interface);
+        /* advanced App bar: background color for active items ('highlight') */
+        --color-appBar-hover: var(--color-primary);
+        /* advanced App bar: hover link color for items */
+        --color-appBar-border: 51, 51, 83;
+        /* advanced App bar: border around second level items */
+        --color-appBar--active-indicator: var(--color-primary);
+        /* color for active indicator ('left border') of highlighted item */
+        --color-appBar--badge: var(--color-error);
+        /* background color for optional badges of App bar items */
+        --color-appBar--active-color: var(--color-primary);
+        /* advanced App bar: link color for active items */
+        --color-appHeader-bg: var(--color-interface-secondary);
+        /* background color for the app header */
+        --color-appHeader-font: var(--color-primary);
+        /* font color for the app header */
+
+        /* Charting colors */
+        --color-charting01: 0, 193, 182;
+        --color-charting02: 1, 214, 90;
+        --color-charting03: 204, 245, 245;
+        --color-charting04: 0, 255, 185;
+        --color-charting05: 133, 233, 210;
+        --color-charting06: 104, 149, 246;
+        --color-charting07: 151, 199, 255;
+        --color-charting08: 128, 92, 255;
+        --color-charting09: 191, 176, 243;
+        --color-charting10: 185, 92, 201;
+        --color-charting11: 229, 101, 155;
+        --color-charting12: 255, 152, 196;
+        --color-charting13: 190, 89, 37;
+        --color-charting14: 255, 144, 0;
+        --color-charting15: 255, 215, 50;
+        --color-charting16: 170, 170, 150;
+        --color-charting17: 125, 128, 153;
+        --color-charting18: 77, 209, 231;
+        --color-charting19: var(--color-error);
+        --color-charting20: var(--color-warning);
+        --color-charting21: var(--color-success);
+
+        // IX theme colors
+        --color-0: var(--color-base1000), 0;
+        --color-component: 157, 157, 150;
+        --color-component-1: var(--color-component), .2;
+        --color-component-1-hover: var(--color-component), .35;
+        --color-component-1-active: 125, 125, 120 .35;
+        --color-component-4: var(--color-base000), .45;
+        --color-component-error: 51, 17, 49;
+        --color-soft-text: var(--color-base000), .6;
+        --color-dynamic: var(--color-primary-light);
+        --color-dynamic-hover: 98, 238, 199;
+        --color-dynamic-active: 92, 224, 188;
+        --color-secondary-hover: 0, 31, 57;
+        --color-secondary-active: 0, 24, 43;
+        --color-focus-border: 25, 159, 255;
+
+        --color-ix-theme-2: 35, 35, 60;
+
+        //-----ERROR-----    
+        --color-ix-error: var(--color-error);
+        --color-ix-error-hover: 255, 66, 89;
+        --color-ix-error-active: 255, 20, 49;
+        --color-ix-error-contrast: var(--color-base1000);
+
+        //-----WARNING-----
+        --color-ix-warning: var(--color-warning);
+        --color-ix-warning-hover: 255, 221, 82;
+        --color-ix-warning-active: 255, 212, 36;
+        --color-ix-warning-contrast: var(--color-base1000);
+
+        //-----SUCCESS-----
+        --color-ix-success: var(--color-success);
+        --color-ix-success-hover: 1, 234, 98;
+        --color-ix-success-active: 1, 193, 81;
+        --color-ix-success-contrast: var(--color-base1000);
+
+        //-----INFO-----
+        --color-ix-info: var(--color-info);
+        --color-ix-info-hover: 0, 207, 240;
+        --color-ix-info-active: 0, 181, 209;
+        --color-ix-info-contrast: var(--color-base1000);
+
+        //iX shadows
+        --color-shadow-1: rgba(0, 0, 0, 0.6);
+        --color-shadow-2: rgba(0, 0, 0, 0.2);
+        --color-shadow-3: rgba(0, 0, 0, 0.6);
+
+        //iX theme shadows
+        --theme-shadow-4: 0px 0px 2px var(--color-shadow-2), 0px 4px 8px var(--color-shadow-1), 0px 12px 18px var(--color-shadow-1);
+
+        // specific colors
+        //-----CARD-----
+        //grid-cards/ix-card-list
+        --color-card-list-background: var(--color-component-1);
+        --color-card-list-background-hover: var(--color-component-1-hover);
+        --color-card-list-background-active: var(--color-component-1-active);
+        //single-card/ix-action-card
+        --color-card-background: transparent;
+        --color-card-background-hover: var(--color-ghost-hover);
+        --color-card-background-active: var(--color-ghost-active);
+        --color-card-border: 235, 240, 245, .40;
+        //-----INPUT-----
+        --color-input-background: 0, 24, 59;
+        --color-input-background-hover: var(--color-secondary-hover);
+        --color-input-border-hover: var(--color-dynamic-hover);
+
+
+        //-----BUTTON-----
+        //-----PRIMARY-----
+        --color-button-primary-background-active: 0, 242, 176;
+        --color-button-primary-background-disabled: var(--color-component-4);
+        //-----SECONDARY-----
+        --color-button-secondary-background: var(--color-base1000);
+        --color-button-secondary-background-hover: var(--color-secondary-hover);
+        --color-button-secondary-background-active: var(--color-secondary-active);
+        --color-button-secondary-border-hover: var(--color-primary-light);
+        --color-button-secondary-color-hover: var(--color-primary-light);
+        --color-button-secondary-border-active: 0, 255, 185;
+        --color-button-secondary-color-active: 0, 255, 185;
+        //-----GHOST-----
+        --color-ghost: 255, 255, 255, 0;
+        --color-ghost-hover: var(--color-component), .15;
+        --color-ghost-active: 105, 105, 99, .15;
+        --color-ghost-selected: 58, 255, 201, .16;
+        --color-ghost-selected-hover: 123, 253, 199, .25;
+        --color-ghost-selected-active: 115, 221, 175, .22;
+        --color-button-ghost-font-disabled: var(--color-component-4);
+        --color-button-invisible-secondary-background-hover: rgb(189 189 174 / 15%);
+        --color-button-invisible-secondary-background-active: rgb(143 143 117 / 15%);
+
+        //-----PAGINATION-----
+        --color-pagination-active: var(--color-ghost-active);
+        --color-pagination-highlight: 0, 255, 185, .12;
+        --color-pagination-highlight-active: var(--color-ghost-selected-active);
+    }
+}

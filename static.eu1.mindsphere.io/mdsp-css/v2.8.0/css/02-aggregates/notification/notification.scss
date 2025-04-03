@@ -1,0 +1,292 @@
+.notificationContainer {
+    bottom: 0;
+    position: fixed;
+    right: -320px;
+    top: 0;
+    width: 320px;
+
+    // make sure notifications are ABOVE busy indicator which is ABOVE dialogs / confirms
+    z-index: 10000;
+}
+
+.notifications {
+    font-family: $defaultFont;
+    list-style-type: none;
+    margin: 52px 0 0 0 !important;
+    margin-block-start: 0;
+    padding: 0 !important;
+    padding-inline-start: 0;
+
+    .notification {
+        background-color: rgba(var(--color-info-lighter), 1);
+        border: 1px solid rgba(var(--color-info-light), 1);
+        border-radius: 3px;
+        box-sizing: border-box;
+        color: rgba(var(--color-info-dark), 1);
+        margin: 0 0 8px -336px;
+        position: relative;
+        width: 320px;
+
+        &.is-animated {
+            max-height: 400px; // attention: if notifications filled more then 400px, overflow occurs
+            transition: margin-left 0.4s ease-in-out,
+                max-height 0.2s 0.45s linear,
+                margin-bottom 0.2s 0.45s linear,
+                border-width 0s 0.45s linear;
+        }
+
+        &.is-hidden {
+            border-width: 0 !important;
+            margin-left: 0;
+            margin-bottom: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        // shadow (box) layer
+        &:after {
+            bottom: 0;
+            box-shadow: 0 2px 30px 0 rgba(var(--color-shadow), 0.25);
+            display: block;
+            content: '';
+            left: 16px;
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            z-index: -1;
+        }
+
+        // main content of notification
+        &__main {
+            margin: 12px 16px 12px 56px;
+            position: relative;
+
+            @include iconUxt-filled(information);
+
+            &:before {
+                font-size: $iconSizeL;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                left: -40px;
+                line-height: $iconSizeL;
+                position: absolute;
+                top: calc(50% - $iconSizeL*0.5);
+            }
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+
+            .notification__title {
+                font-weight: bold;
+                font-size: $ms0-fontSize;
+                line-height: $ms0-lineHeight;
+                margin: 0;
+                padding-right: 8px;
+            }
+
+            .notification__content {
+                font-size: $ms0-fontSize;
+                line-height: $ms0-lineHeight;
+                word-break: break-word;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        // optional 'more details' content
+        &__details {
+            border-top: 1px solid rgba(var(--color-info-light), 1);
+            font-size: $ms-1-fontSize;
+            line-height: $ms-1-lineHeight;
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+            .details__expander {
+                color: rgba(var(--color-info-dark), 1);
+                display: block;
+                padding: 8px 16px 8px 36px;
+                margin-left: 0;
+                position: relative;
+                text-decoration: none;
+                @include iconUxt-filled(arrowRightExtraSmall);
+
+                &:hover {
+                    color: rgba(var(--color-primary-light), 1) !important;
+                }
+
+                &:before {
+                    font-size: $iconSizeL;
+                    left: 12px;
+                    position: absolute;
+                }
+            }
+
+            .details__content {
+                display: none;
+                padding: 0 16px 8px 16px;
+
+                word-break: break-word;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+
+                li {
+                    margin: 0 0 0.2em 0;
+                }
+
+                table,
+                .table {
+                    margin: 0;
+
+                    th, td {
+                        font-size: $ms-1-fontSize;
+                    }
+                }
+
+                .keyValue__key,
+                .keyValue__value {
+                    font-size: $ms-1-fontSize;
+                }
+            }
+
+            &.is-expanded {
+                .details__expander {
+                    @include iconUxt-filled(arrowDownExtraSmall);
+                }
+                .details__content {
+                    display: block;
+                }
+            }
+        }
+
+        .notification__close {
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: $iconSizeL;
+            height: $iconSizeL;
+            position: absolute;
+            right: -12px;
+            top: -8px;
+            width: $iconSizeL;
+
+            @include iconUxt-regular(cancel);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+
+            &, &:visited {
+                color: rgba(var(--color-info-dark), 1);
+            }
+
+            &:hover {
+                color: rgba(var(--color-primary-light), 1) !important;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .notification.is-info {
+        background-color: rgba(var(--color-info-lighter), 1);
+        border: 1px solid rgba(var(--color-info-light), 1);
+        color: rgba(var(--color-info-dark), 1);
+
+        .notification__main {
+            @include iconUxt-filled(information);
+        }
+
+        .notification__details {
+            border-top-color: rgba(var(--color-info-light), 1);
+        }
+
+        .notification__close,
+        .details__expander {
+            &,
+            &:visited {
+                color: rgba(var(--color-info-dark), 1);
+            }
+        }
+    }
+
+    .notification.is-warning {
+        background-color: rgba(var(--color-warning-lighter), 1);
+        border: 1px solid rgba(var(--color-warning-light), 1);
+        color: rgba(var(--color-warning-dark), 1);
+
+        .notification__main {
+            @include iconUxt-filled(exclamationDiamond);
+        }
+
+        .notification__details {
+            border-top-color: rgba(var(--color-warning-light), 1);
+        }
+
+        .notification__close,
+        .details__expander {
+            &,
+            &:visited {
+                color: rgba(var(--color-warning-dark), 1);
+            }
+        }
+    }
+
+    .notification.is-error,
+    .notification.is-alert {
+        background-color: rgba(var(--color-error-lighter), 1);
+        border: 1px solid rgba(var(--color-error-light), 1);
+        color: rgba(var(--color-error-dark), 1);
+
+        .notification__main {
+            @include iconUxt-filled(errorAlert);
+        }
+
+        .notification__details {
+            border-top-color: rgba(var(--color-error-light), 1);
+        }
+
+        .notification__close,
+        .details__expander {
+            &,
+            &:visited {
+                color: rgba(var(--color-error-dark), 1);
+            }
+        }
+    }
+
+    .notification.is-success {
+        background-color: rgba(var(--color-success-lighter), 1);
+        border: 1px solid rgba(var(--color-success-light), 1);
+        color: rgba(var(--color-success-dark), 1);
+
+        .notification__main {
+            @include iconUxt-filled(ok);
+        }
+
+        .notification__details {
+            border-top-color: rgba(var(--color-success-light), 1);
+        }
+
+        .notification__close,
+        .details__expander {
+            &,
+            &:visited {
+                color: rgba(var(--color-success-dark), 1);
+            }
+        }
+    }
+}
+
+// responsive variant for small devices
+@include breakpoint($xs) {
+    .notificationContainer {
+        width: 100vw;
+        right: -100vw;
+    }
+
+    .notifications {
+        .notification {
+            width: calc(100% - 16px);
+            margin: 0 8px 8px calc(-100% + 8px);
+        }
+    }
+}

@@ -1,0 +1,152 @@
+.callToAction {
+  @extend .emptyState;
+
+  background: transparent;
+
+  &:before,
+  &:after {
+    content: none;
+  }
+
+  // cut out background-graphic behind optional dismiss icon
+  &:after {
+    clip-path: polygon(38px 38px, 38px 0, 100% 0, 100% 100%, 0% 100%, 0 38px);
+  }
+
+  &--defaultBgBright:before,
+  &--defaultBgBright:after {
+    content: '';
+    filter: saturate(0) brightness(5);
+  }
+
+  &--defaultBgDark:before,
+  &--defaultBgDark:after {
+    content: '';
+    filter: saturate(0) brightness(0.5);
+  }
+
+  &__dismiss {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: $ms3-fontSize;
+    height: $ms3-lineHeight;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    text-decoration: none !important;
+    transition: color 0.2s ease-in-out;
+    width: 24px;
+
+    @include iconUxt-regular(cancel);
+
+    &,
+    &:visited {
+      color: rgba(var(--color-info-dark), 1);
+    }
+
+    &:hover {
+      color: rgba(var(--color-primary-light), 1) !important;
+      text-decoration: none;
+    }
+  }
+
+  &__visual {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: $ms4-fontSize !important;
+    font-weight: 900 !important;
+    line-height: $ms4-lineHeight !important; // equals 29px
+    margin: 4px auto 4px !important;
+    text-align: center;
+  }
+
+  &__description,
+  &__callToAction {
+    font-size: $ms0-fontSize;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &__description {
+    line-height: $ms0-lineHeight !important;
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  &__callToAction {
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .form {
+      margin-bottom: 0;
+    }
+
+    input[type=text],
+    a.button,
+    button {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+  }
+
+  // small call to action without border, spacing and other elements beside the button
+  &.callToAction--small {
+    border: 0;
+    display: inline-block;
+    flex-direction: unset;
+    justify-content: unset;
+    margin: 0 8px;
+    padding: 0;
+
+    .callToAction__dismiss,
+    .callToAction__visual,
+    .callToAction__title,
+    .callToAction__description {
+      display: none;
+    }
+
+    input[type=text],
+    a.button,
+    button {
+      border-radius: 16px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 8px 12px;
+    }
+
+  }
+}
+
+// call to action in dialog context
+.dialog.dialog--frameless {
+  .callToAction {
+    border-width: 0;
+
+    @include breakpoint($xs) {
+      min-height: calc(100% - #{2*$mobileToggleHeight} - 16px);
+    }
+  }
+}
+
+// call to action in card context
+.card .card__content {
+  .callToAction {
+    border-width: 0;
+    box-sizing: border-box;
+    min-height: 100%;
+
+    .callToAction__dismiss {
+      position: absolute;
+    }
+  }
+}

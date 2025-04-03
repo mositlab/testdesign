@@ -1,0 +1,262 @@
+.homeScreen.appWrapper {
+
+    .mainRegion {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        .contentHeader {
+            padding: 36px;
+
+            .button--primaryContentAction.whatsNew {
+
+                margin: 0;
+
+                &:hover .iconUxt.announcement {
+                    -webkit-animation-name: wiggle;
+                    -webkit-animation-duration: 1000ms;
+                    -webkit-animation-iteration-count: 1;
+                    -webkit-animation-timing-function: ease-in-out;
+
+
+                    @keyframes wiggle {
+                        0% {
+                            transform: rotate(10deg);
+                        }
+
+                        25% {
+                            transform: rotate(-10deg);
+                        }
+
+                        50% {
+                            transform: rotate(20deg);
+                        }
+
+                        75% {
+                            transform: rotate(-5deg);
+                        }
+
+                        100% {
+                            transform: rotate(0deg);
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .contentOverview {
+            background-color: rgba(var(--color-appHeader-bg), 1);
+            padding: 45px 36px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            flex-wrap: wrap;
+
+            &__content {
+                flex-grow: 1;
+
+                &__separator {
+                    max-width: 1px;
+                    flex-grow: 1;
+                    background-color: rgba(var(--color-border), 1);
+                }
+
+                .cards {
+                    gap: 16px;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+
+                    .cards__row {
+                        gap: 16px;
+                        // margin: 0;
+
+                        .cards__col {
+                            margin: 0;
+                            gap: 16px;
+
+                            .card {
+
+                                &:hover,
+                                &::after {
+                                    box-shadow: unset;
+                                }
+
+                                &__content {
+
+                                    .stepper.stepper--simple.stepper--small {
+                                        .step {
+
+                                            &__status {
+                                                &__label {
+                                                    font-size: $ms0-fontSize;
+                                                    font-weight: normal;
+                                                    color: rgba(var(--color-font-secondary, 1));
+                                                }
+
+                                                &__line {
+                                                    border-left: 1px dashed rgba(var(--color-border), 1);
+                                                }
+                                            }
+
+                                            .step__status__indicator {
+                                                padding-left: 18px;
+                                            }
+
+                                            .step__status__dot {
+                                                height: 8px;
+                                                min-height: 8px;
+                                                min-width: 8px;
+                                                width: 8px;
+                                            }
+
+                                            // .step__status__line__wrapper {
+                                            //     padding-left: 14px;
+                                            // }
+
+
+
+                                            &.is-finished {
+
+                                                .step__status:hover {
+                                                    .step__status__dot {
+                                                        border-color: rgba(var(--color-success), 1);
+                                                    }
+                                                }
+
+                                                .step__status__dot {
+                                                    background-color: rgba(var(--color-success), 1);
+
+                                                    &::before {
+                                                        content: none;
+                                                    }
+                                                }
+
+                                                .step__status__line {
+                                                    background-color: unset;
+                                                }
+                                            }
+
+                                            &.has-error {
+
+                                                .step__status:hover {
+                                                    .step__status__dot {
+                                                        border-color: rgba(var(--color-error), 1);
+                                                    }
+                                                }
+
+                                                .step__status__dot {
+                                                    background-color: rgba(var(--color-error), 1);
+
+                                                    &::before {
+                                                        content: none;
+                                                    }
+                                                }
+
+                                                .step__status__line {
+                                                    background-color: unset;
+                                                }
+                                            }
+
+                                            &__flyout {
+                                                background-color: rgba(var(--color-interface-secondary), 1);
+                                                margin: 0 32px 16px 0;
+
+                                                &__content {
+                                                    padding: 8px 16px;
+
+                                                    &__header {
+                                                        font-weight: bold;
+                                                        color: rgba(var(--color-primary), 1);
+                                                    }
+                                                }
+
+                                            }
+                                        }
+                                    }
+
+                                    .card__content__number {
+                                        font-weight: bold;
+                                        padding: 0 24px 24px;
+                                        font-size: $ms6-fontSize;
+                                    }
+
+                                    &__container {
+                                        display: flex;
+                                        flex-direction: row;
+                                    }
+
+                                    &__quickLinks {
+                                        // padding: 28px 0;
+
+
+                                        .quickLink__container {
+                                            display: flex;
+                                            flex-direction: row;
+                                            gap: 8px;
+                                            padding: 18px 28px;
+
+                                            .quickLink__icon {
+                                                font-size: $iconSizeL;
+                                            }
+
+                                            &:not(:last-child) {
+                                                border-bottom: 1px dashed rgb(var(--color-border), 1);
+
+                                            }
+
+                                            .quickLink__content {
+                                                display: flex;
+                                                flex-direction: column;
+                                                gap: 8px;
+
+                                                &__header {
+                                                    font-weight: bold;
+                                                }
+
+
+                                                &__link {
+
+                                                    @include iconUxt-regular(arrowSingleRight, after);
+                                                    cursor: pointer;
+                                                    text-decoration: none;
+
+                                                    &::after {
+                                                        margin-left: 4px;
+                                                        display: inline;
+                                                    }
+
+
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                &__footer {
+
+                                    &__frame {
+                                        border-top: 1px solid rgb(var(--color-border), 1);
+                                        padding: 0 24px;
+
+                                        .button {
+                                            margin: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__quickLinks {
+                    flex-grow: 0;
+                    min-width: 370px;
+                }
+            }
+        }
+    }
+}

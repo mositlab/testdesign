@@ -1,0 +1,15 @@
+{
+    "areTasksEnabled": false,
+    "isUserConsentEnabled": true,
+    "mdspLinks": {
+        "academy": "https://training.plm.automation.siemens.com/mytraining/viewlibrary.cfm?memID=LAAS83001&memTypeID=LAAS83001&product=XAPID041247383&track=&lp=",
+        "community": "https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC/insights-hub",
+        "documentation": "https://documentation.mindsphere.io/",
+        "privacy": "https://www.sw.siemens.com/en-US/privacy-policy/",
+        "store": "https://www.dex.siemens.com/?selected=industrial-iot",
+        "status": "https://status.sw.siemens.com"
+    },
+    "showFurtherEnvironmentsLink": true,
+    "showNotifications": true,
+    "isQuotaExceedanceEnabled": true
+}

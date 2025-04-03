@@ -1,0 +1,482 @@
+@use "sass:math";
+/* dart sass needs math.div() instead of normal divisions outside of calc() */
+
+.list {
+    width: 100%;
+
+    .list__list {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .list__item {
+        align-content: stretch;
+        align-items: stretch;
+        border: 1px solid rgba(var(--color-border), 0.8);
+        border-radius: 3px;
+        box-shadow: rgba(var(--color-shadow), 0.1) 0 0 4px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        margin: 12px 0;
+        position: relative;
+        transition: background-color 0.1s ease-in-out,
+            border-color 0.2s ease-in-out;
+
+        &.is-info,
+        &.is-warning,
+        &.is-error,
+        &.is-success {
+            &:before {
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+                content: '';
+                position: absolute;
+                inset: -1px 0 -1px -1px;
+                width: 4px;
+            }
+        }
+
+        &.is-info:before {
+            background-color: rgba(var(--color-info), 1);
+        }
+
+        &.is-warning:before {
+            background-color: rgba(var(--color-warning), 1);
+        }
+
+        &.is-error:before {
+            background-color: rgba(var(--color-error), 1);
+        }
+
+        &.is-success:before {
+            background-color: rgba(var(--color-success), 1);
+        }
+
+        &.has-indicator-bold:before {
+            width: 8px;
+        }
+
+        &.is-hovered {
+            background-color: rgba(var(--color-primary-lightest), 0.1);
+            border-color: rgba(var(--color-primary-light), 0.4);
+            box-shadow: rgba(var(--color-primary), 0.2) 0 0 4px;
+            cursor: pointer;
+        }
+
+        &.is-selected {
+            background-color: rgba(var(--color-primary-lightest), 0.3);
+            border-color: rgba(var(--color-primary-lighter), 1);
+            box-shadow: rgba(var(--color-primary), 0.3) 0 0 4px;
+        }
+
+        .item__icon,
+        .item__checkbox {
+            align-items: center;
+            background-color: rgba(var(--color-base900), 0.4);
+            box-sizing: border-box;
+            display: flex;
+            flex-basis: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .item__checkbox {
+            padding-left: 16px;
+            padding-right: 12px;
+        }
+
+        .item__icon {
+            .iconUxt {
+                display: inline-block;
+                font-size: $iconSizeL;
+                height: 24px;
+                margin-left: 24px;
+                padding-right: 18px;
+                width: 24px;
+            }
+        }
+
+        .item__checkbox + .item__icon {
+            .iconUxt {
+                margin-left: 6px;
+            }
+        }
+
+        .item__content {
+            align-content: stretch;
+            align-items: stretch;
+            display: flex;
+            flex-basis: auto;
+            flex-direction: row;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: 0px;
+            margin-left: 0;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-left: 16px;
+
+            .content__column {
+
+                a.has-icon-only {
+                    text-decoration: none;
+                }
+
+                &:first-child {
+                    .iconUxt {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .content__column {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-size: $ms0-fontSize;
+        margin-bottom: 6px;
+        margin-right: 16px;
+        margin-top: 6px;
+
+        &--primary {
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            //            margin-right: 32px;
+
+            .item__title,
+            h4 {
+                flex-shrink: 0;
+                font-family: $defaultFont;
+                font-size: $ms0-fontSize;
+                font-weight: bold;
+                line-height: $ms0-lineHeight;
+                margin-bottom: 2px;
+                margin-top: 0;
+                width: 100%;
+
+                a,
+                a:visited {
+                    color: inherit;
+                }
+
+                a:hover {
+                    color: rgba(var(--color-primary), 1);
+                }
+            }
+
+            .item__description {
+                color: rgba(var(--color-font-secondary), 1);
+                flex-shrink: 0;
+                font-size: $ms-1-fontSize;
+                line-height: $ms-1-lineHeight;
+                width: 100%;
+
+                a,
+                a:visited {
+                    color: inherit;
+                }
+
+                a:hover {
+                    color: rgba(var(--color-primary), 1);
+                }
+            }
+        }
+
+        .item__meta {
+            color: rgba(var(--color-font-secondary), 1);
+            font-size: $ms0-fontSize;
+            line-height: $ms0-lineHeight;
+            margin-right: 14px;
+        }
+
+        &.has-alignment-right {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            margin-left: auto;
+        }
+
+        &.has-alignment-top {
+            align-items: flex-start;
+        }
+
+        &.has-alignment-bottom {
+            align-items: flex-end;
+        }
+
+        &.has-alignment-center {
+            align-items: center;
+        }
+
+        > .iconUxt {
+            font-size: $iconSizeL;
+            margin-left: 14px;
+
+            &.no-margin-left {
+                margin-left: 0;
+            }
+        }
+
+        // https://code.siemens.com/mds/mds/issues/312 - icon-only buttons container in lists have the wrong margin-left when used without .forceDefaultElements
+        .has-icon-only {
+            .iconUxt {
+                margin-left: 0;
+            }
+        }
+
+        // do not delete this: is necessary for correct alignment of badge in list
+        .badge {
+            vertical-align: top;
+        }
+    }
+}
+
+.list .list__item {
+    .xs-hide {
+        @include breakpoint($xs) {
+            display: none;
+        }
+    }
+
+    .sm-hide {
+        @include breakpoint($sm) {
+            display: none;
+        }
+    }
+
+    .md-hide {
+        @include breakpoint($md) {
+            display: none;
+        }
+    }
+
+    .lg-hide {
+        @include breakpoint($lg) {
+            display: none;
+        }
+    }
+
+    .xl-hide {
+        @include breakpoint($xl) {
+            display: none;
+        }
+    }
+
+    @each $width in $columnWidths {
+        .has-default-width-#{$width} {
+            flex-basis: calc(#{percentage(math.div($width, 100))} - 16px);
+        }
+    }
+
+    @include breakpoint($xs) {
+        @each $width in $columnWidths {
+            .xs-#{$width} {
+                flex-basis: calc(#{percentage(math.div($width, 100))} - 16px);
+            }
+        }
+    }
+
+    @include breakpoint($sm) {
+        @each $width in $columnWidths {
+            .sm-#{$width} {
+                flex-basis: calc(#{percentage(math.div($width, 100))} - 16px);
+            }
+        }
+    }
+
+    @include breakpoint($md) {
+        @each $width in $columnWidths {
+            .md-#{$width} {
+                flex-basis: calc(#{percentage(math.div($width, 100))} - 16px);
+            }
+        }
+    }
+
+    @include breakpoint($lg) {
+        @each $width in $columnWidths {
+            .lg-#{$width} {
+                flex-basis: calc(#{percentage(math.div($width, 100))} - 16px);
+            }
+        }
+    }
+
+    @include breakpoint($xl) {
+        @each $width in $columnWidths {
+            .xl-#{$width} {
+                flex-basis: calc(#{percentage(math.div($width, 100))} - 16px);
+            }
+        }
+    }
+
+    // flex wrap utility class to set a list row as no-wrapping row
+    .item__content {
+        &.xs-nowrap {
+            @include breakpoint($xs) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &.sm-nowrap {
+            @include breakpoint($sm) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &.md-nowrap {
+            @include breakpoint($md) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &.lg-nowrap {
+            @include breakpoint($lg) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &.xl-nowrap {
+            @include breakpoint($xl) {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+}
+
+.list.list--compact {
+
+    .list__item {
+        border-bottom-width: 0;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+
+        &:before {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        .item__icon,
+        .item__checkbox {
+            background-color: transparent;
+        }
+
+        .item__icon {
+            .iconUxt {
+                padding-right: 6px;
+            }
+        }
+
+        .item__content {
+            padding-left: 12px;
+        }
+
+        // if no item nor checkbox
+        > .item__content:first-child {
+            padding-left: 16px;
+        }
+
+        &:last-child {
+            border-bottom-width: 1px;
+        }
+
+        &.is-hovered {
+            border-bottom-width: 1px !important;
+
+            // if there is a succeeding list item, remove its top border because hovered does already set a border
+            & + .list__item {
+                border-top-width: 0;
+            }
+        }
+
+        &.is-selected {
+            border: 1px solid rgba(var(--color-border), 0.8);
+            border-bottom-width: 0;
+
+            &:last-child {
+                border-bottom-width: 1px;
+            }
+        }
+    }
+}
+
+// extra styling for lists in (frameless) containers
+.container.container--frameless {
+    .container__content {
+        .list.list--compact {
+            margin-top: -14px;
+
+            .list__list {
+                .list__item {
+                    border-left-width: 0;
+                    border-right-width: 0;
+
+                    //&:first-child {
+                    //    border-top-width: 0;
+                    //}
+
+                    &:last-child {
+                        border-bottom-width: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.container--collapsable {
+        .container__title + .container__content > .list--compact {
+            margin-top: 13px;
+        }
+    }
+}
+
+.list.debug {
+    .list__item {
+        .item__checkbox {
+            background-color: rgba(#c9c0ff, 0.2);
+        }
+
+        .item__icon {
+            background-color: rgba(#eeffc0, 0.2);
+        }
+
+        .item__content {
+            background-color: rgba(pink, 0.2);
+
+            .content__column {
+                &:nth-child(n+1) {
+                    background-color: rgba(turquoise, 0.2);
+                }
+
+                &:nth-child(n+2) {
+                    background-color: rgba(#aab414, 0.2);
+                }
+
+                &:nth-child(n+3) {
+                    background-color: rgba(#b4854e, 0.2);
+                }
+
+                &:nth-child(n+4) {
+                    background-color: rgba(#6362b4, 0.2);
+                }
+
+                &:nth-child(n+5) {
+                    background-color: rgba(#b456a7, 0.2);
+                }
+
+                &:nth-child(n+6) {
+                    background-color: rgba(#B43E3A, 0.2);
+                }
+            }
+        }
+    }
+}

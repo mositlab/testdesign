@@ -1,0 +1,388 @@
+.dialog {
+    display: none;
+    z-index: 100;
+
+    &.is-shown {
+        display: flex;
+
+        .dialog__overlay {
+            opacity: 1;
+        }
+    }
+
+    &,
+    &__overlay {
+        align-items: center;
+        box-sizing: border-box;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    &__overlay {
+        opacity: 0;
+        z-index: -1;
+        background-color: rgba(var(--color-overlay), 0.7);
+    }
+
+    &__container {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-around;
+        padding-top: $mobileToggleHeight + 4px; // needed to not having OS bar overlay maximized dialogs on mobile on top
+        pointer-events: none;
+        width: 100%;
+    }
+
+    &__background {
+        background-color: rgba(var(--color-interface-highlight), 1);
+        border-radius: 3px;
+        box-shadow: rgba(var(--color-shadow), 0.5) 0px 2px 30px 0px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 0;
+        flex-shrink: 0;
+        max-height: 100%;
+        overflow-y: auto;
+        pointer-events: auto;
+        width: 600px;
+
+        @include breakpoint($xs) {
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        background-color: transparent;
+        background-color: rgba(var(--color-interface-headerfooter), 1);
+        border-bottom: 1px solid rgba(var(--color-border), 1);
+        box-sizing: border-box;
+        color: rgba(var(--color-font), 1);
+        flex-shrink: 0;
+        font-size: $ms2-fontSize;
+        line-height: 27px;
+        margin: 0;
+        min-height: 1em;
+        padding: 7px 50px 7px 16px;
+        position: relative;
+
+        // see .infotip__close -> should be identical
+        .dialog__close {
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: 24px;
+            height: 24px;
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            width: 24px;
+
+            @include iconUxt-regular(cancel);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+
+            &,
+            &:visited {
+                color: rgba(var(--color-info-dark), 1);
+            }
+
+            &:hover {
+                color: rgba(var(--color-primary-light), 1) !important;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+        margin: 0;
+        overflow: auto;
+        padding: 24px 32px;
+
+        img {
+            height: auto;
+            max-width: 100%;
+            vertical-align: text-bottom; // remove vertical spacing below bottom
+        }
+
+        // remove margin from paragraph if last child
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        // remove top border from list item if contained directly in dialog
+        > .list .list__item:first-child {
+            border-top: 0;
+        }
+
+        &__container {
+            padding: 24px 32px;
+        }
+    }
+
+    &__footer {
+        align-items: center;
+        background-color: rgba(var(--color-interface-headerfooter), 1);
+        border-top: 1px solid rgba(var(--color-border), 1);
+        box-sizing: border-box;
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: 0;
+        min-height: 64px;
+        padding: 16px 16px 0 16px;
+        position: relative;
+
+        .button,
+        button {
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+    }
+
+    // width- and height-related properties are following not sorted alphabetically but better readable manner
+    &.dialog--medium {
+        .dialog__background {
+            border-radius: 0;
+            width: 100%;
+            max-width: 960px;
+
+            @include breakpoint($sm) {
+                border-radius: 3px;
+                width: 60%;
+                height: auto;
+                min-height: auto;
+                max-height: 60%;
+            }
+
+            @include breakpoint($md) {
+                border-radius: 3px;
+                width: 60%;
+                max-width: 960px;
+                height: auto;
+                min-height: auto;
+                max-height: 60%;
+            }
+
+            @include breakpoint($lg) {
+                border-radius: 3px;
+                width: 60%;
+                max-width: 960px;
+                height: auto;
+                min-height: auto;
+                max-height: 60%;
+            }
+
+            @include breakpoint($xl) {
+                border-radius: 3px;
+                width: 960px;
+                height: auto;
+                min-height: auto;
+                max-height: 60%;
+            }
+        }
+    }
+
+    &.dialog--large {
+        .dialog__background {
+            border-radius: 0;
+            width: 100%;
+            max-width: 1920px;
+
+            @include breakpoint($sm) {
+                width: 100%;
+                height: 100%;
+            }
+
+            @include breakpoint($md) {
+                border-radius: 3px;
+                width: 90%;
+                max-width: 1920px;
+                height: auto;
+                min-height: auto;
+                max-height: 90%;
+            }
+
+            @include breakpoint($lg) {
+                border-radius: 3px;
+                width: 90%;
+                max-width: 1920px;
+                height: auto;
+                min-height: auto;
+                max-height: 90%;
+            }
+
+            @include breakpoint($xl) {
+                border-radius: 3px;
+                width: 90%;
+                height: auto;
+                min-height: auto;
+                max-height: 90%;
+            }
+        }
+    }
+
+    &.dialog--frameless {
+        .dialog__content {
+            padding: 0;
+        }
+    }
+
+    &__whatsNew {
+        .dialog__background {
+            @include breakpoint($xs) {
+                border-radius: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            position: relative;
+            height: 600px;
+
+            .dialog__title {
+                padding-left: 96px;
+
+            }
+
+            .dialog__content {
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+
+                &__img {
+                    min-height: 240px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                }
+
+                &__container {
+                    height: 100%;
+                    border-top: 1px solid rgba(var(--color-border), 1);
+                    overflow: auto;
+
+                    a:not(:last-child) {
+                        margin-right: 8px;
+                    }
+
+                    .whatsNew__list {
+                        padding: 0;
+                        list-style-type: none;
+
+                        &__item {
+                            @include iconUxt-bold(ok);
+                            display: flex;
+                            gap: 8px;
+
+                            &::before {
+                                color: rgba(var(--color-success));
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .dialog__footer {
+                .pager {
+                    margin-right: auto;
+                    margin-bottom: 16px
+                }
+            }
+        }
+
+        &__banner {
+            align-items: center;
+            display: flex;
+            left: 32px;
+            position: absolute;
+            justify-content: center;
+            z-index: 1;
+
+            height: 64px;
+            width: 48px;
+
+            .banner__background {
+                border: 10px solid rgba(var(--color-primary-dark), 1);
+                background-color: transparent;
+                border-bottom-color: transparent;
+                border-width: 8px;
+                border-left-width: 24px;
+                border-right-width: 24px;
+                display: block;
+                filter: drop-shadow(2px 3px 8px rgba(var(--color-shadow), 0.2));
+
+                position: absolute;
+
+                width: 0;
+                height: 48px;
+            }
+
+            .banner__icon {
+                font-size: $iconSizeXL;
+                color: rgba(var(--color-font-contrast), 1);
+                position: absolute;
+            }
+
+            &:hover .banner__icon {
+                -webkit-animation-name: wiggle;
+                -webkit-animation-duration: 1000ms;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-timing-function: ease-in-out;
+
+            }
+        }
+
+        @media only screen and (max-height: 470px) {
+            .dialog__background .dialog__content {
+                overflow: auto;
+
+                .dialog__content__container {
+                    overflow: unset;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .dialog__background .dialog__content .dialog__content__img {
+                min-height: auto;
+            }
+        }
+
+
+
+        @keyframes wiggle {
+            0% {
+                transform: rotate(10deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            50% {
+                transform: rotate(20deg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}

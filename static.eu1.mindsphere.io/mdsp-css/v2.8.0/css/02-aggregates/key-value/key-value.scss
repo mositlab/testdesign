@@ -1,0 +1,185 @@
+.keyValueWrapper {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 12px;
+
+	&__icon { // minimum icon size
+		font-size: 24px;
+		margin-right: 16px;
+	}
+
+	&__keyValue {
+		align-items: flex-start;
+		display: flex;
+
+		.keyValue {
+			&__key,
+			&__value {
+				color: rgba(var(--color-font-secondary), 1);
+				font-family: $defaultFont;
+				font-size: $ms0-fontSize;
+				line-height: $ms0-lineHeight;
+			}
+
+			&__value {
+				color: rgba(var(--color-font), 1);
+				margin-left: 16px;
+
+				&--black,
+				&--bolder {
+					font-family: $defaultFont;
+					font-weight: 900;
+				}
+
+				&--bold {
+					font-family: $defaultFont;
+					font-weight: bold;
+				}
+
+				> * {
+					margin-top: 0;
+				}
+
+				> .breadcrumb {
+					padding-top: 0 !important;
+				}
+			}
+
+			&__unit {
+				color: inherit;
+				margin-left: 0.3em; // browsers dont end an inline element at the very right , hence 8 pixels are too wide.
+			}
+		}
+
+		@include breakpoint($xs) {
+			align-items: flex-start;
+			flex-direction: column;
+
+			.keyValue__value {
+				margin-left: 0;
+			}
+		}
+
+		&--column {
+			align-items: flex-start;
+			flex-direction: column;
+
+			.keyValue__value {
+				margin-left: 0;
+			}
+		}
+
+		&--reverse {
+			align-items: flex-start;
+			flex-direction: column-reverse;
+
+			.keyValue__value {
+				margin-left: 0;
+			}
+		}
+	}
+
+	&--large {
+		.keyValueWrapper__icon {
+			font-size: $ms6-fontSize;
+			line-height: $ms6-lineHeight;
+		}
+
+		.keyValue {
+			&__key {
+				font-size: $ms1-fontSize;
+				line-height: $ms1-lineHeight;
+			}
+
+			&__unit {
+				font-size:  $ms2-fontSize;
+				line-height: $ms2-lineHeight;
+			}
+
+			&__value {
+				font-size: $ms6-fontSize;
+				line-height: $ms6-lineHeight;
+			}
+		}
+	}
+
+	&--medium {
+		.keyValueWrapper__icon {
+			font-size: $ms3-fontSize;
+			line-height:$ms3-lineHeight;
+		}
+
+		.keyValue {
+			&__key {
+				font-size: $ms0-fontSize;
+				line-height: $ms0-lineHeight;
+			}
+
+			&__unit,
+			&__value {
+				font-size: $ms1-fontSize;
+				line-height: $ms1-lineHeight;
+			}
+		}
+	}
+
+	&.has-alignment {
+		&-center {
+			justify-content: center;
+
+			.keyValueWrapper__keyValue {
+				align-items: center;
+
+				&--column .keyValue__key,
+				&--reverse .keyValue__key {
+					margin-right: 0;
+				}
+			}
+		}
+
+		&-right {
+			justify-content: flex-end;
+		}
+	}
+}
+
+// for a container with more than one keyValueWrapper
+.container .keyValueWrapper:not(:only-child),
+.keyValueList {
+	.keyValueWrapper__keyValue {
+		flex-basis: 100%;
+
+		.keyValue__key {
+			flex-basis: 30%;
+		}
+
+		.keyValue__value {
+			flex-basis: 70%;
+		}
+
+		@include breakpoint($xs) {
+			.keyValue__key,
+			.keyValue__value {
+				flex-basis: auto;
+			}
+		}
+	}
+
+	// IE11 bugfix for flex-direction: column/column-reverse
+	.keyValueWrapper__keyValue--column,
+	.keyValueWrapper__keyValue--reverse {
+		.keyValue__key,
+		.keyValue__value {
+			flex-basis: auto;
+		}
+	}
+
+	// for alignment the flex basis has to be overwritten
+	.has-alignment-right,
+	.has-alignment-center {
+		.keyValueWrapper__keyValue {
+			flex-basis: auto;
+		}
+	}
+}

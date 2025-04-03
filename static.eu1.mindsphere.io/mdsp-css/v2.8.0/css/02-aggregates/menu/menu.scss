@@ -1,0 +1,38 @@
+// menu is using the generic popopver container, so there is menu related css also in 02-aggregates/popover/popover.scss
+
+.menu {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  > .button,
+  > button {
+    background-color: rgba(var(--color-interface), 1);
+    box-sizing: border-box;
+    font-size: 24px;
+    height: 32px;
+    width: 32px;
+    @include iconUxt-filled(more);
+  }
+
+  &.is-shown {
+    z-index: 2;
+
+    > .button,
+    > button {
+      background-color: rgba(var(--color-primary-lighter), 1);
+      border: 1px solid rgba(var(--color-primary), 1);
+    }
+
+
+  }
+}
+
+// if menu is preceeded by a button, add a spacing on the left
+button,
+.button {
+  + .menu {
+    margin-left: 8px;
+    // if menu is preceeded by a button, add a spacing on the left
+  }
+}

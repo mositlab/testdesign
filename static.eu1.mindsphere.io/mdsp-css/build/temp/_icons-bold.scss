@@ -1,0 +1,1793 @@
+@mixin boldstyles {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
+  font-family: "mdspcssbold" !important;
+}
+
+.iconUxt.bold {
+  @include boldstyles;
+}
+
+@mixin iconUxt-bold($filename, $insert: before) {
+  &:#{$insert} {
+    @include boldstyles;
+    content: boldchar($filename);
+  }
+}
+
+@function boldchar($filename) {
+  $char: "";
+
+  @if $filename == PLC {
+    $char: "\E001";
+  }
+  @if $filename == add {
+    $char: "\E002";
+  }
+  @if $filename == addCircle {
+    $char: "\E003";
+  }
+  @if $filename == agent {
+    $char: "\E004";
+  }
+  @if $filename == alarm {
+    $char: "\E005";
+  }
+  @if $filename == analysis {
+    $char: "\E006";
+  }
+  @if $filename == announcement {
+    $char: "\E007";
+  }
+  @if $filename == applyFilter {
+    $char: "\E008";
+  }
+  @if $filename == apps {
+    $char: "\E009";
+  }
+  @if $filename == archive {
+    $char: "\E00A";
+  }
+  @if $filename == areaSelect {
+    $char: "\E00B";
+  }
+  @if $filename == areaZoom {
+    $char: "\E00C";
+  }
+  @if $filename == arrowDoubleDown {
+    $char: "\E00D";
+  }
+  @if $filename == arrowDoubleLeft {
+    $char: "\E00E";
+  }
+  @if $filename == arrowDoubleRight {
+    $char: "\E00F";
+  }
+  @if $filename == arrowDoubleUp {
+    $char: "\E010";
+  }
+  @if $filename == arrowDownExtraSmall {
+    $char: "\E011";
+  }
+  @if $filename == arrowFirstLeft {
+    $char: "\E012";
+  }
+  @if $filename == arrowFirstLeftSmall {
+    $char: "\E013";
+  }
+  @if $filename == arrowFirstTop {
+    $char: "\E014";
+  }
+  @if $filename == arrowFirstTopSmall {
+    $char: "\E015";
+  }
+  @if $filename == arrowHierarchy {
+    $char: "\E016";
+  }
+  @if $filename == arrowLastBottom {
+    $char: "\E017";
+  }
+  @if $filename == arrowLastRight {
+    $char: "\E018";
+  }
+  @if $filename == arrowLastRightSmall {
+    $char: "\E019";
+  }
+  @if $filename == arrowLeftExtraSmall {
+    $char: "\E01A";
+  }
+  @if $filename == arrowRightExtraSmall {
+    $char: "\E01B";
+  }
+  @if $filename == arrowSingleDown {
+    $char: "\E01C";
+  }
+  @if $filename == arrowSingleLeft {
+    $char: "\E01D";
+  }
+  @if $filename == arrowSingleRight {
+    $char: "\E01E";
+  }
+  @if $filename == arrowSingleUp {
+    $char: "\E01F";
+  }
+  @if $filename == arrowStemSingleDown {
+    $char: "\E020";
+  }
+  @if $filename == arrowStemSingleLeft {
+    $char: "\E021";
+  }
+  @if $filename == arrowStemSingleRight {
+    $char: "\E022";
+  }
+  @if $filename == arrowStemSingleUp {
+    $char: "\E023";
+  }
+  @if $filename == arrowUpExtraSmall {
+    $char: "\E024";
+  }
+  @if $filename == aspects {
+    $char: "\E025";
+  }
+  @if $filename == asset {
+    $char: "\E026";
+  }
+  @if $filename == assetNetwork {
+    $char: "\E027";
+  }
+  @if $filename == asterisk {
+    $char: "\E028";
+  }
+  @if $filename == attachment {
+    $char: "\E029";
+  }
+  @if $filename == attention {
+    $char: "\E02A";
+  }
+  @if $filename == audit {
+    $char: "\E02B";
+  }
+  @if $filename == backButtonNarrow {
+    $char: "\E02C";
+  }
+  @if $filename == backward {
+    $char: "\E02D";
+  }
+  @if $filename == bookmark {
+    $char: "\E02E";
+  }
+  @if $filename == boolean {
+    $char: "\E02F";
+  }
+  @if $filename == boxPlot {
+    $char: "\E030";
+  }
+  @if $filename == buildingBlock {
+    $char: "\E031";
+  }
+  @if $filename == calendar {
+    $char: "\E032";
+  }
+  @if $filename == calendarDay {
+    $char: "\E033";
+  }
+  @if $filename == calendarWeek {
+    $char: "\E034";
+  }
+  @if $filename == camera {
+    $char: "\E035";
+  }
+  @if $filename == cancel {
+    $char: "\E036";
+  }
+  @if $filename == cancelCircle {
+    $char: "\E037";
+  }
+  @if $filename == certificate {
+    $char: "\E038";
+  }
+  @if $filename == chart {
+    $char: "\E039";
+  }
+  @if $filename == chartBarHorizontal {
+    $char: "\E03A";
+  }
+  @if $filename == chartBarStacked {
+    $char: "\E03B";
+  }
+  @if $filename == chartBarVertical {
+    $char: "\E03C";
+  }
+  @if $filename == chartDonut {
+    $char: "\E03D";
+  }
+  @if $filename == chartDurationCurve {
+    $char: "\E03E";
+  }
+  @if $filename == chartGantt {
+    $char: "\E03F";
+  }
+  @if $filename == chartGauge {
+    $char: "\E040";
+  }
+  @if $filename == chartHeatmap {
+    $char: "\E041";
+  }
+  @if $filename == chartLine {
+    $char: "\E042";
+  }
+  @if $filename == chartMap {
+    $char: "\E043";
+  }
+  @if $filename == chartPie {
+    $char: "\E044";
+  }
+  @if $filename == chartPolar {
+    $char: "\E045";
+  }
+  @if $filename == chartRadar {
+    $char: "\E046";
+  }
+  @if $filename == chartSankey {
+    $char: "\E047";
+  }
+  @if $filename == chartTrend {
+    $char: "\E048";
+  }
+  @if $filename == chartValueHorizontal {
+    $char: "\E049";
+  }
+  @if $filename == chartValueVertical {
+    $char: "\E04A";
+  }
+  @if $filename == check {
+    $char: "\E04B";
+  }
+  @if $filename == clipboard {
+    $char: "\E04C";
+  }
+  @if $filename == clipboardCheck {
+    $char: "\E04D";
+  }
+  @if $filename == clipboardInvalid {
+    $char: "\E04E";
+  }
+  @if $filename == clock {
+    $char: "\E04F";
+  }
+  @if $filename == clone {
+    $char: "\E050";
+  }
+  @if $filename == code {
+    $char: "\E051";
+  }
+  @if $filename == coin {
+    $char: "\E052";
+  }
+  @if $filename == coinStack {
+    $char: "\E053";
+  }
+  @if $filename == comment {
+    $char: "\E054";
+  }
+  @if $filename == commentAlternative {
+    $char: "\E055";
+  }
+  @if $filename == compare {
+    $char: "\E056";
+  }
+  @if $filename == control {
+    $char: "\E057";
+  }
+  @if $filename == conversation {
+    $char: "\E058";
+  }
+  @if $filename == counter {
+    $char: "\E059";
+  }
+  @if $filename == createWorkbook {
+    $char: "\E05A";
+  }
+  @if $filename == cut {
+    $char: "\E05B";
+  }
+  @if $filename == dashboard {
+    $char: "\E05C";
+  }
+  @if $filename == dashboardAlternative {
+    $char: "\E05D";
+  }
+  @if $filename == dashboardSmall {
+    $char: "\E05E";
+  }
+  @if $filename == dashforward {
+    $char: "\E05F";
+  }
+  @if $filename == dataManagement {
+    $char: "\E060";
+  }
+  @if $filename == dataMapping {
+    $char: "\E061";
+  }
+  @if $filename == dataSource {
+    $char: "\E062";
+  }
+  @if $filename == delete {
+    $char: "\E063";
+  }
+  @if $filename == desktop {
+    $char: "\E064";
+  }
+  @if $filename == double {
+    $char: "\E065";
+  }
+  @if $filename == download {
+    $char: "\E066";
+  }
+  @if $filename == dragDrop {
+    $char: "\E067";
+  }
+  @if $filename == draggable {
+    $char: "\E068";
+  }
+  @if $filename == dropzone {
+    $char: "\E069";
+  }
+  @if $filename == duplicate {
+    $char: "\E06A";
+  }
+  @if $filename == edit {
+    $char: "\E06B";
+  }
+  @if $filename == editDocument {
+    $char: "\E06C";
+  }
+  @if $filename == electricity {
+    $char: "\E06D";
+  }
+  @if $filename == element {
+    $char: "\E06E";
+  }
+  @if $filename == email {
+    $char: "\E06F";
+  }
+  @if $filename == emoteHappy {
+    $char: "\E070";
+  }
+  @if $filename == emoteNeutral {
+    $char: "\E071";
+  }
+  @if $filename == emoteSad {
+    $char: "\E072";
+  }
+  @if $filename == enum {
+    $char: "\E073";
+  }
+  @if $filename == enumList {
+    $char: "\E074";
+  }
+  @if $filename == errorAlert {
+    $char: "\E075";
+  }
+  @if $filename == exclamationDiamond {
+    $char: "\E076";
+  }
+  @if $filename == exclamationMark {
+    $char: "\E077";
+  }
+  @if $filename == exit {
+    $char: "\E078";
+  }
+  @if $filename == expand {
+    $char: "\E079";
+  }
+  @if $filename == export {
+    $char: "\E07A";
+  }
+  @if $filename == factoryMagnifier {
+    $char: "\E07B";
+  }
+  @if $filename == fileTree {
+    $char: "\E07C";
+  }
+  @if $filename == filetypeApp {
+    $char: "\E07D";
+  }
+  @if $filename == filetypeArchive {
+    $char: "\E07E";
+  }
+  @if $filename == filetypeDefault {
+    $char: "\E07F";
+  }
+  @if $filename == filetypeDrawing {
+    $char: "\E080";
+  }
+  @if $filename == filetypeEMail {
+    $char: "\E081";
+  }
+  @if $filename == filetypeImage {
+    $char: "\E082";
+  }
+  @if $filename == filetypeJSON {
+    $char: "\E083";
+  }
+  @if $filename == filetypeMisc {
+    $char: "\E084";
+  }
+  @if $filename == filetypePDF {
+    $char: "\E085";
+  }
+  @if $filename == filetypeSound {
+    $char: "\E086";
+  }
+  @if $filename == filetypeTable {
+    $char: "\E087";
+  }
+  @if $filename == filetypeText {
+    $char: "\E088";
+  }
+  @if $filename == filetypeVideo {
+    $char: "\E089";
+  }
+  @if $filename == filetypeXML {
+    $char: "\E08A";
+  }
+  @if $filename == filter {
+    $char: "\E08B";
+  }
+  @if $filename == filterAlternative {
+    $char: "\E08C";
+  }
+  @if $filename == filterHide {
+    $char: "\E08D";
+  }
+  @if $filename == filterList {
+    $char: "\E08E";
+  }
+  @if $filename == flow {
+    $char: "\E08F";
+  }
+  @if $filename == folder {
+    $char: "\E090";
+  }
+  @if $filename == forward {
+    $char: "\E091";
+  }
+  @if $filename == frames {
+    $char: "\E092";
+  }
+  @if $filename == fullscreen {
+    $char: "\E093";
+  }
+  @if $filename == fullscreenExit {
+    $char: "\E094";
+  }
+  @if $filename == gearBox {
+    $char: "\E095";
+  }
+  @if $filename == globalSettings {
+    $char: "\E096";
+  }
+  @if $filename == goTo {
+    $char: "\E097";
+  }
+  @if $filename == graph {
+    $char: "\E098";
+  }
+  @if $filename == headline {
+    $char: "\E099";
+  }
+  @if $filename == headset {
+    $char: "\E09A";
+  }
+  @if $filename == heart {
+    $char: "\E09B";
+  }
+  @if $filename == hierarchy {
+    $char: "\E09C";
+  }
+  @if $filename == home {
+    $char: "\E09D";
+  }
+  @if $filename == image {
+    $char: "\E09E";
+  }
+  @if $filename == import {
+    $char: "\E09F";
+  }
+  @if $filename == indent {
+    $char: "\E0A0";
+  }
+  @if $filename == information {
+    $char: "\E0A1";
+  }
+  @if $filename == integer {
+    $char: "\E0A2";
+  }
+  @if $filename == italic {
+    $char: "\E0A3";
+  }
+  @if $filename == kpi {
+    $char: "\E0A4";
+  }
+  @if $filename == length {
+    $char: "\E0A5";
+  }
+  @if $filename == limitsHidden {
+    $char: "\E0A6";
+  }
+  @if $filename == limitsShown {
+    $char: "\E0A7";
+  }
+  @if $filename == link {
+    $char: "\E0A8";
+  }
+  @if $filename == linkDissolve {
+    $char: "\E0A9";
+  }
+  @if $filename == listBullet {
+    $char: "\E0AA";
+  }
+  @if $filename == listSorted {
+    $char: "\E0AB";
+  }
+  @if $filename == listSortedAlternative {
+    $char: "\E0AC";
+  }
+  @if $filename == locationMarker {
+    $char: "\E0AD";
+  }
+  @if $filename == lockClosed {
+    $char: "\E0AE";
+  }
+  @if $filename == lockOpened {
+    $char: "\E0AF";
+  }
+  @if $filename == machineA {
+    $char: "\E0B0";
+  }
+  @if $filename == machineB {
+    $char: "\E0B1";
+  }
+  @if $filename == machineC {
+    $char: "\E0B2";
+  }
+  @if $filename == maintenance {
+    $char: "\E0B3";
+  }
+  @if $filename == map {
+    $char: "\E0B4";
+  }
+  @if $filename == mapAlternative {
+    $char: "\E0B5";
+  }
+  @if $filename == measure {
+    $char: "\E0B6";
+  }
+  @if $filename == menu {
+    $char: "\E0B7";
+  }
+  @if $filename == mobile {
+    $char: "\E0B8";
+  }
+  @if $filename == moon {
+    $char: "\E0B9";
+  }
+  @if $filename == moonSun {
+    $char: "\E0BA";
+  }
+  @if $filename == more {
+    $char: "\E0BB";
+  }
+  @if $filename == moreAlternative {
+    $char: "\E0BC";
+  }
+  @if $filename == move {
+    $char: "\E0BD";
+  }
+  @if $filename == moveToTop {
+    $char: "\E0BE";
+  }
+  @if $filename == movie {
+    $char: "\E0BF";
+  }
+  @if $filename == mqtt {
+    $char: "\E0C0";
+  }
+  @if $filename == navigateLeftSmall {
+    $char: "\E0C1";
+  }
+  @if $filename == navigateRightSmall {
+    $char: "\E0C2";
+  }
+  @if $filename == next {
+    $char: "\E0C3";
+  }
+  @if $filename == notification {
+    $char: "\E0C4";
+  }
+  @if $filename == notificationSquare {
+    $char: "\E0C5";
+  }
+  @if $filename == ok {
+    $char: "\E0C6";
+  }
+  @if $filename == outdent {
+    $char: "\E0C7";
+  }
+  @if $filename == outgoing {
+    $char: "\E0C8";
+  }
+  @if $filename == outgoingExtSmall {
+    $char: "\E0C9";
+  }
+  @if $filename == outgoingInApp {
+    $char: "\E0CA";
+  }
+  @if $filename == outgoingInMdsp {
+    $char: "\E0CB";
+  }
+  @if $filename == outgoingSmall {
+    $char: "\E0CC";
+  }
+  @if $filename == package {
+    $char: "\E0CD";
+  }
+  @if $filename == parameter {
+    $char: "\E0CE";
+  }
+  @if $filename == paste {
+    $char: "\E0CF";
+  }
+  @if $filename == pause {
+    $char: "\E0D0";
+  }
+  @if $filename == person {
+    $char: "\E0D1";
+  }
+  @if $filename == personMultiple {
+    $char: "\E0D2";
+  }
+  @if $filename == phone {
+    $char: "\E0D3";
+  }
+  @if $filename == play {
+    $char: "\E0D4";
+  }
+  @if $filename == pressure {
+    $char: "\E0D5";
+  }
+  @if $filename == previous {
+    $char: "\E0D6";
+  }
+  @if $filename == printer {
+    $char: "\E0D7";
+  }
+  @if $filename == question {
+    $char: "\E0D8";
+  }
+  @if $filename == questionMark {
+    $char: "\E0D9";
+  }
+  @if $filename == quote {
+    $char: "\E0DA";
+  }
+  @if $filename == record {
+    $char: "\E0DB";
+  }
+  @if $filename == redo {
+    $char: "\E0DC";
+  }
+  @if $filename == reload {
+    $char: "\E0DD";
+  }
+  @if $filename == remove {
+    $char: "\E0DE";
+  }
+  @if $filename == removeCircle {
+    $char: "\E0DF";
+  }
+  @if $filename == reorder {
+    $char: "\E0E0";
+  }
+  @if $filename == restricted {
+    $char: "\E0E1";
+  }
+  @if $filename == roles {
+    $char: "\E0E2";
+  }
+  @if $filename == save {
+    $char: "\E0E3";
+  }
+  @if $filename == scope {
+    $char: "\E0E4";
+  }
+  @if $filename == scopeAlternative {
+    $char: "\E0E5";
+  }
+  @if $filename == search {
+    $char: "\E0E6";
+  }
+  @if $filename == separatorLine {
+    $char: "\E0E7";
+  }
+  @if $filename == settings {
+    $char: "\E0E8";
+  }
+  @if $filename == settingsAlternative {
+    $char: "\E0E9";
+  }
+  @if $filename == share {
+    $char: "\E0EA";
+  }
+  @if $filename == shareAlternative {
+    $char: "\E0EB";
+  }
+  @if $filename == shoppingCart {
+    $char: "\E0EC";
+  }
+  @if $filename == sidebar {
+    $char: "\E0ED";
+  }
+  @if $filename == sidebarHide {
+    $char: "\E0EE";
+  }
+  @if $filename == sidebarShow {
+    $char: "\E0EF";
+  }
+  @if $filename == sort {
+    $char: "\E0F0";
+  }
+  @if $filename == speedometer {
+    $char: "\E0F1";
+  }
+  @if $filename == split {
+    $char: "\E0F2";
+  }
+  @if $filename == star {
+    $char: "\E0F3";
+  }
+  @if $filename == statusOff {
+    $char: "\E0F4";
+  }
+  @if $filename == statusOn {
+    $char: "\E0F5";
+  }
+  @if $filename == stop {
+    $char: "\E0F6";
+  }
+  @if $filename == stopwatch {
+    $char: "\E0F7";
+  }
+  @if $filename == storage {
+    $char: "\E0F8";
+  }
+  @if $filename == strikethrough {
+    $char: "\E0F9";
+  }
+  @if $filename == string {
+    $char: "\E0FA";
+  }
+  @if $filename == stringList {
+    $char: "\E0FB";
+  }
+  @if $filename == strong {
+    $char: "\E0FC";
+  }
+  @if $filename == subtenant {
+    $char: "\E0FD";
+  }
+  @if $filename == subtenant2 {
+    $char: "\E0FE";
+  }
+  @if $filename == subtenant3 {
+    $char: "\E0FF";
+  }
+  @if $filename == subtenantSmall {
+    $char: "\E100";
+  }
+  @if $filename == sun {
+    $char: "\E101";
+  }
+  @if $filename == tableCreate {
+    $char: "\E102";
+  }
+  @if $filename == tag {
+    $char: "\E103";
+  }
+  @if $filename == tagAlternative {
+    $char: "\E104";
+  }
+  @if $filename == temperature {
+    $char: "\E105";
+  }
+  @if $filename == thermometer {
+    $char: "\E106";
+  }
+  @if $filename == thumbDown {
+    $char: "\E107";
+  }
+  @if $filename == thumbUp {
+    $char: "\E108";
+  }
+  @if $filename == ticket {
+    $char: "\E109";
+  }
+  @if $filename == tile {
+    $char: "\E10A";
+  }
+  @if $filename == timeZone {
+    $char: "\E10B";
+  }
+  @if $filename == train {
+    $char: "\E10C";
+  }
+  @if $filename == types {
+    $char: "\E10D";
+  }
+  @if $filename == underline {
+    $char: "\E10E";
+  }
+  @if $filename == undo {
+    $char: "\E10F";
+  }
+  @if $filename == update {
+    $char: "\E110";
+  }
+  @if $filename == updateGear {
+    $char: "\E111";
+  }
+  @if $filename == upload {
+    $char: "\E112";
+  }
+  @if $filename == variable {
+    $char: "\E113";
+  }
+  @if $filename == version {
+    $char: "\E114";
+  }
+  @if $filename == virtualHidden {
+    $char: "\E115";
+  }
+  @if $filename == virtualShown {
+    $char: "\E116";
+  }
+  @if $filename == visibilityHidden {
+    $char: "\E117";
+  }
+  @if $filename == visibilityShown {
+    $char: "\E118";
+  }
+  @if $filename == voltage {
+    $char: "\E119";
+  }
+  @if $filename == watch {
+    $char: "\E11A";
+  }
+  @if $filename == weatherCloudy {
+    $char: "\E11B";
+  }
+  @if $filename == weatherPartlyCloudy {
+    $char: "\E11C";
+  }
+  @if $filename == weatherRain {
+    $char: "\E11D";
+  }
+  @if $filename == weatherSnow {
+    $char: "\E11E";
+  }
+  @if $filename == weatherStorm {
+    $char: "\E11F";
+  }
+  @if $filename == weatherSunny {
+    $char: "\E120";
+  }
+  @if $filename == weatherSunrise {
+    $char: "\E121";
+  }
+  @if $filename == weatherSunset {
+    $char: "\E122";
+  }
+  @if $filename == weatherThunder {
+    $char: "\E123";
+  }
+  @if $filename == widget {
+    $char: "\E124";
+  }
+  @if $filename == zoomIn {
+    $char: "\E125";
+  }
+  @if $filename == zoomOut {
+    $char: "\E126";
+  }
+  @return $char;
+}
+
+.iconUxt.PLC.bold {
+  @include iconUxt-bold(PLC);
+}
+.iconUxt.add.bold {
+  @include iconUxt-bold(add);
+}
+.iconUxt.addCircle.bold {
+  @include iconUxt-bold(addCircle);
+}
+.iconUxt.agent.bold {
+  @include iconUxt-bold(agent);
+}
+.iconUxt.alarm.bold {
+  @include iconUxt-bold(alarm);
+}
+.iconUxt.analysis.bold {
+  @include iconUxt-bold(analysis);
+}
+.iconUxt.announcement.bold {
+  @include iconUxt-bold(announcement);
+}
+.iconUxt.applyFilter.bold {
+  @include iconUxt-bold(applyFilter);
+}
+.iconUxt.apps.bold {
+  @include iconUxt-bold(apps);
+}
+.iconUxt.archive.bold {
+  @include iconUxt-bold(archive);
+}
+.iconUxt.areaSelect.bold {
+  @include iconUxt-bold(areaSelect);
+}
+.iconUxt.areaZoom.bold {
+  @include iconUxt-bold(areaZoom);
+}
+.iconUxt.arrowDoubleDown.bold {
+  @include iconUxt-bold(arrowDoubleDown);
+}
+.iconUxt.arrowDoubleLeft.bold {
+  @include iconUxt-bold(arrowDoubleLeft);
+}
+.iconUxt.arrowDoubleRight.bold {
+  @include iconUxt-bold(arrowDoubleRight);
+}
+.iconUxt.arrowDoubleUp.bold {
+  @include iconUxt-bold(arrowDoubleUp);
+}
+.iconUxt.arrowDownExtraSmall.bold {
+  @include iconUxt-bold(arrowDownExtraSmall);
+}
+.iconUxt.arrowFirstLeft.bold {
+  @include iconUxt-bold(arrowFirstLeft);
+}
+.iconUxt.arrowFirstLeftSmall.bold {
+  @include iconUxt-bold(arrowFirstLeftSmall);
+}
+.iconUxt.arrowFirstTop.bold {
+  @include iconUxt-bold(arrowFirstTop);
+}
+.iconUxt.arrowFirstTopSmall.bold {
+  @include iconUxt-bold(arrowFirstTopSmall);
+}
+.iconUxt.arrowHierarchy.bold {
+  @include iconUxt-bold(arrowHierarchy);
+}
+.iconUxt.arrowLastBottom.bold {
+  @include iconUxt-bold(arrowLastBottom);
+}
+.iconUxt.arrowLastRight.bold {
+  @include iconUxt-bold(arrowLastRight);
+}
+.iconUxt.arrowLastRightSmall.bold {
+  @include iconUxt-bold(arrowLastRightSmall);
+}
+.iconUxt.arrowLeftExtraSmall.bold {
+  @include iconUxt-bold(arrowLeftExtraSmall);
+}
+.iconUxt.arrowRightExtraSmall.bold {
+  @include iconUxt-bold(arrowRightExtraSmall);
+}
+.iconUxt.arrowSingleDown.bold {
+  @include iconUxt-bold(arrowSingleDown);
+}
+.iconUxt.arrowSingleLeft.bold {
+  @include iconUxt-bold(arrowSingleLeft);
+}
+.iconUxt.arrowSingleRight.bold {
+  @include iconUxt-bold(arrowSingleRight);
+}
+.iconUxt.arrowSingleUp.bold {
+  @include iconUxt-bold(arrowSingleUp);
+}
+.iconUxt.arrowStemSingleDown.bold {
+  @include iconUxt-bold(arrowStemSingleDown);
+}
+.iconUxt.arrowStemSingleLeft.bold {
+  @include iconUxt-bold(arrowStemSingleLeft);
+}
+.iconUxt.arrowStemSingleRight.bold {
+  @include iconUxt-bold(arrowStemSingleRight);
+}
+.iconUxt.arrowStemSingleUp.bold {
+  @include iconUxt-bold(arrowStemSingleUp);
+}
+.iconUxt.arrowUpExtraSmall.bold {
+  @include iconUxt-bold(arrowUpExtraSmall);
+}
+.iconUxt.aspects.bold {
+  @include iconUxt-bold(aspects);
+}
+.iconUxt.asset.bold {
+  @include iconUxt-bold(asset);
+}
+.iconUxt.assetNetwork.bold {
+  @include iconUxt-bold(assetNetwork);
+}
+.iconUxt.asterisk.bold {
+  @include iconUxt-bold(asterisk);
+}
+.iconUxt.attachment.bold {
+  @include iconUxt-bold(attachment);
+}
+.iconUxt.attention.bold {
+  @include iconUxt-bold(attention);
+}
+.iconUxt.audit.bold {
+  @include iconUxt-bold(audit);
+}
+.iconUxt.backButtonNarrow.bold {
+  @include iconUxt-bold(backButtonNarrow);
+}
+.iconUxt.backward.bold {
+  @include iconUxt-bold(backward);
+}
+.iconUxt.bookmark.bold {
+  @include iconUxt-bold(bookmark);
+}
+.iconUxt.boolean.bold {
+  @include iconUxt-bold(boolean);
+}
+.iconUxt.boxPlot.bold {
+  @include iconUxt-bold(boxPlot);
+}
+.iconUxt.buildingBlock.bold {
+  @include iconUxt-bold(buildingBlock);
+}
+.iconUxt.calendar.bold {
+  @include iconUxt-bold(calendar);
+}
+.iconUxt.calendarDay.bold {
+  @include iconUxt-bold(calendarDay);
+}
+.iconUxt.calendarWeek.bold {
+  @include iconUxt-bold(calendarWeek);
+}
+.iconUxt.camera.bold {
+  @include iconUxt-bold(camera);
+}
+.iconUxt.cancel.bold {
+  @include iconUxt-bold(cancel);
+}
+.iconUxt.cancelCircle.bold {
+  @include iconUxt-bold(cancelCircle);
+}
+.iconUxt.certificate.bold {
+  @include iconUxt-bold(certificate);
+}
+.iconUxt.chart.bold {
+  @include iconUxt-bold(chart);
+}
+.iconUxt.chartBarHorizontal.bold {
+  @include iconUxt-bold(chartBarHorizontal);
+}
+.iconUxt.chartBarStacked.bold {
+  @include iconUxt-bold(chartBarStacked);
+}
+.iconUxt.chartBarVertical.bold {
+  @include iconUxt-bold(chartBarVertical);
+}
+.iconUxt.chartDonut.bold {
+  @include iconUxt-bold(chartDonut);
+}
+.iconUxt.chartDurationCurve.bold {
+  @include iconUxt-bold(chartDurationCurve);
+}
+.iconUxt.chartGantt.bold {
+  @include iconUxt-bold(chartGantt);
+}
+.iconUxt.chartGauge.bold {
+  @include iconUxt-bold(chartGauge);
+}
+.iconUxt.chartHeatmap.bold {
+  @include iconUxt-bold(chartHeatmap);
+}
+.iconUxt.chartLine.bold {
+  @include iconUxt-bold(chartLine);
+}
+.iconUxt.chartMap.bold {
+  @include iconUxt-bold(chartMap);
+}
+.iconUxt.chartPie.bold {
+  @include iconUxt-bold(chartPie);
+}
+.iconUxt.chartPolar.bold {
+  @include iconUxt-bold(chartPolar);
+}
+.iconUxt.chartRadar.bold {
+  @include iconUxt-bold(chartRadar);
+}
+.iconUxt.chartSankey.bold {
+  @include iconUxt-bold(chartSankey);
+}
+.iconUxt.chartTrend.bold {
+  @include iconUxt-bold(chartTrend);
+}
+.iconUxt.chartValueHorizontal.bold {
+  @include iconUxt-bold(chartValueHorizontal);
+}
+.iconUxt.chartValueVertical.bold {
+  @include iconUxt-bold(chartValueVertical);
+}
+.iconUxt.check.bold {
+  @include iconUxt-bold(check);
+}
+.iconUxt.clipboard.bold {
+  @include iconUxt-bold(clipboard);
+}
+.iconUxt.clipboardCheck.bold {
+  @include iconUxt-bold(clipboardCheck);
+}
+.iconUxt.clipboardInvalid.bold {
+  @include iconUxt-bold(clipboardInvalid);
+}
+.iconUxt.clock.bold {
+  @include iconUxt-bold(clock);
+}
+.iconUxt.clone.bold {
+  @include iconUxt-bold(clone);
+}
+.iconUxt.code.bold {
+  @include iconUxt-bold(code);
+}
+.iconUxt.coin.bold {
+  @include iconUxt-bold(coin);
+}
+.iconUxt.coinStack.bold {
+  @include iconUxt-bold(coinStack);
+}
+.iconUxt.comment.bold {
+  @include iconUxt-bold(comment);
+}
+.iconUxt.commentAlternative.bold {
+  @include iconUxt-bold(commentAlternative);
+}
+.iconUxt.compare.bold {
+  @include iconUxt-bold(compare);
+}
+.iconUxt.control.bold {
+  @include iconUxt-bold(control);
+}
+.iconUxt.conversation.bold {
+  @include iconUxt-bold(conversation);
+}
+.iconUxt.counter.bold {
+  @include iconUxt-bold(counter);
+}
+.iconUxt.createWorkbook.bold {
+  @include iconUxt-bold(createWorkbook);
+}
+.iconUxt.cut.bold {
+  @include iconUxt-bold(cut);
+}
+.iconUxt.dashboard.bold {
+  @include iconUxt-bold(dashboard);
+}
+.iconUxt.dashboardAlternative.bold {
+  @include iconUxt-bold(dashboardAlternative);
+}
+.iconUxt.dashboardSmall.bold {
+  @include iconUxt-bold(dashboardSmall);
+}
+.iconUxt.dashforward.bold {
+  @include iconUxt-bold(dashforward);
+}
+.iconUxt.dataManagement.bold {
+  @include iconUxt-bold(dataManagement);
+}
+.iconUxt.dataMapping.bold {
+  @include iconUxt-bold(dataMapping);
+}
+.iconUxt.dataSource.bold {
+  @include iconUxt-bold(dataSource);
+}
+.iconUxt.delete.bold {
+  @include iconUxt-bold(delete);
+}
+.iconUxt.desktop.bold {
+  @include iconUxt-bold(desktop);
+}
+.iconUxt.double.bold {
+  @include iconUxt-bold(double);
+}
+.iconUxt.download.bold {
+  @include iconUxt-bold(download);
+}
+.iconUxt.dragDrop.bold {
+  @include iconUxt-bold(dragDrop);
+}
+.iconUxt.draggable.bold {
+  @include iconUxt-bold(draggable);
+}
+.iconUxt.dropzone.bold {
+  @include iconUxt-bold(dropzone);
+}
+.iconUxt.duplicate.bold {
+  @include iconUxt-bold(duplicate);
+}
+.iconUxt.edit.bold {
+  @include iconUxt-bold(edit);
+}
+.iconUxt.editDocument.bold {
+  @include iconUxt-bold(editDocument);
+}
+.iconUxt.electricity.bold {
+  @include iconUxt-bold(electricity);
+}
+.iconUxt.element.bold {
+  @include iconUxt-bold(element);
+}
+.iconUxt.email.bold {
+  @include iconUxt-bold(email);
+}
+.iconUxt.emoteHappy.bold {
+  @include iconUxt-bold(emoteHappy);
+}
+.iconUxt.emoteNeutral.bold {
+  @include iconUxt-bold(emoteNeutral);
+}
+.iconUxt.emoteSad.bold {
+  @include iconUxt-bold(emoteSad);
+}
+.iconUxt.enum.bold {
+  @include iconUxt-bold(enum);
+}
+.iconUxt.enumList.bold {
+  @include iconUxt-bold(enumList);
+}
+.iconUxt.errorAlert.bold {
+  @include iconUxt-bold(errorAlert);
+}
+.iconUxt.exclamationDiamond.bold {
+  @include iconUxt-bold(exclamationDiamond);
+}
+.iconUxt.exclamationMark.bold {
+  @include iconUxt-bold(exclamationMark);
+}
+.iconUxt.exit.bold {
+  @include iconUxt-bold(exit);
+}
+.iconUxt.expand.bold {
+  @include iconUxt-bold(expand);
+}
+.iconUxt.export.bold {
+  @include iconUxt-bold(export);
+}
+.iconUxt.factoryMagnifier.bold {
+  @include iconUxt-bold(factoryMagnifier);
+}
+.iconUxt.fileTree.bold {
+  @include iconUxt-bold(fileTree);
+}
+.iconUxt.filetypeApp.bold {
+  @include iconUxt-bold(filetypeApp);
+}
+.iconUxt.filetypeArchive.bold {
+  @include iconUxt-bold(filetypeArchive);
+}
+.iconUxt.filetypeDefault.bold {
+  @include iconUxt-bold(filetypeDefault);
+}
+.iconUxt.filetypeDrawing.bold {
+  @include iconUxt-bold(filetypeDrawing);
+}
+.iconUxt.filetypeEMail.bold {
+  @include iconUxt-bold(filetypeEMail);
+}
+.iconUxt.filetypeImage.bold {
+  @include iconUxt-bold(filetypeImage);
+}
+.iconUxt.filetypeJSON.bold {
+  @include iconUxt-bold(filetypeJSON);
+}
+.iconUxt.filetypeMisc.bold {
+  @include iconUxt-bold(filetypeMisc);
+}
+.iconUxt.filetypePDF.bold {
+  @include iconUxt-bold(filetypePDF);
+}
+.iconUxt.filetypeSound.bold {
+  @include iconUxt-bold(filetypeSound);
+}
+.iconUxt.filetypeTable.bold {
+  @include iconUxt-bold(filetypeTable);
+}
+.iconUxt.filetypeText.bold {
+  @include iconUxt-bold(filetypeText);
+}
+.iconUxt.filetypeVideo.bold {
+  @include iconUxt-bold(filetypeVideo);
+}
+.iconUxt.filetypeXML.bold {
+  @include iconUxt-bold(filetypeXML);
+}
+.iconUxt.filter.bold {
+  @include iconUxt-bold(filter);
+}
+.iconUxt.filterAlternative.bold {
+  @include iconUxt-bold(filterAlternative);
+}
+.iconUxt.filterHide.bold {
+  @include iconUxt-bold(filterHide);
+}
+.iconUxt.filterList.bold {
+  @include iconUxt-bold(filterList);
+}
+.iconUxt.flow.bold {
+  @include iconUxt-bold(flow);
+}
+.iconUxt.folder.bold {
+  @include iconUxt-bold(folder);
+}
+.iconUxt.forward.bold {
+  @include iconUxt-bold(forward);
+}
+.iconUxt.frames.bold {
+  @include iconUxt-bold(frames);
+}
+.iconUxt.fullscreen.bold {
+  @include iconUxt-bold(fullscreen);
+}
+.iconUxt.fullscreenExit.bold {
+  @include iconUxt-bold(fullscreenExit);
+}
+.iconUxt.gearBox.bold {
+  @include iconUxt-bold(gearBox);
+}
+.iconUxt.globalSettings.bold {
+  @include iconUxt-bold(globalSettings);
+}
+.iconUxt.goTo.bold {
+  @include iconUxt-bold(goTo);
+}
+.iconUxt.graph.bold {
+  @include iconUxt-bold(graph);
+}
+.iconUxt.headline.bold {
+  @include iconUxt-bold(headline);
+}
+.iconUxt.headset.bold {
+  @include iconUxt-bold(headset);
+}
+.iconUxt.heart.bold {
+  @include iconUxt-bold(heart);
+}
+.iconUxt.hierarchy.bold {
+  @include iconUxt-bold(hierarchy);
+}
+.iconUxt.home.bold {
+  @include iconUxt-bold(home);
+}
+.iconUxt.image.bold {
+  @include iconUxt-bold(image);
+}
+.iconUxt.import.bold {
+  @include iconUxt-bold(import);
+}
+.iconUxt.indent.bold {
+  @include iconUxt-bold(indent);
+}
+.iconUxt.information.bold {
+  @include iconUxt-bold(information);
+}
+.iconUxt.integer.bold {
+  @include iconUxt-bold(integer);
+}
+.iconUxt.italic.bold {
+  @include iconUxt-bold(italic);
+}
+.iconUxt.kpi.bold {
+  @include iconUxt-bold(kpi);
+}
+.iconUxt.length.bold {
+  @include iconUxt-bold(length);
+}
+.iconUxt.limitsHidden.bold {
+  @include iconUxt-bold(limitsHidden);
+}
+.iconUxt.limitsShown.bold {
+  @include iconUxt-bold(limitsShown);
+}
+.iconUxt.link.bold {
+  @include iconUxt-bold(link);
+}
+.iconUxt.linkDissolve.bold {
+  @include iconUxt-bold(linkDissolve);
+}
+.iconUxt.listBullet.bold {
+  @include iconUxt-bold(listBullet);
+}
+.iconUxt.listSorted.bold {
+  @include iconUxt-bold(listSorted);
+}
+.iconUxt.listSortedAlternative.bold {
+  @include iconUxt-bold(listSortedAlternative);
+}
+.iconUxt.locationMarker.bold {
+  @include iconUxt-bold(locationMarker);
+}
+.iconUxt.lockClosed.bold {
+  @include iconUxt-bold(lockClosed);
+}
+.iconUxt.lockOpened.bold {
+  @include iconUxt-bold(lockOpened);
+}
+.iconUxt.machineA.bold {
+  @include iconUxt-bold(machineA);
+}
+.iconUxt.machineB.bold {
+  @include iconUxt-bold(machineB);
+}
+.iconUxt.machineC.bold {
+  @include iconUxt-bold(machineC);
+}
+.iconUxt.maintenance.bold {
+  @include iconUxt-bold(maintenance);
+}
+.iconUxt.map.bold {
+  @include iconUxt-bold(map);
+}
+.iconUxt.mapAlternative.bold {
+  @include iconUxt-bold(mapAlternative);
+}
+.iconUxt.measure.bold {
+  @include iconUxt-bold(measure);
+}
+.iconUxt.menu.bold {
+  @include iconUxt-bold(menu);
+}
+.iconUxt.mobile.bold {
+  @include iconUxt-bold(mobile);
+}
+.iconUxt.moon.bold {
+  @include iconUxt-bold(moon);
+}
+.iconUxt.moonSun.bold {
+  @include iconUxt-bold(moonSun);
+}
+.iconUxt.more.bold {
+  @include iconUxt-bold(more);
+}
+.iconUxt.moreAlternative.bold {
+  @include iconUxt-bold(moreAlternative);
+}
+.iconUxt.move.bold {
+  @include iconUxt-bold(move);
+}
+.iconUxt.moveToTop.bold {
+  @include iconUxt-bold(moveToTop);
+}
+.iconUxt.movie.bold {
+  @include iconUxt-bold(movie);
+}
+.iconUxt.mqtt.bold {
+  @include iconUxt-bold(mqtt);
+}
+.iconUxt.navigateLeftSmall.bold {
+  @include iconUxt-bold(navigateLeftSmall);
+}
+.iconUxt.navigateRightSmall.bold {
+  @include iconUxt-bold(navigateRightSmall);
+}
+.iconUxt.next.bold {
+  @include iconUxt-bold(next);
+}
+.iconUxt.notification.bold {
+  @include iconUxt-bold(notification);
+}
+.iconUxt.notificationSquare.bold {
+  @include iconUxt-bold(notificationSquare);
+}
+.iconUxt.ok.bold {
+  @include iconUxt-bold(ok);
+}
+.iconUxt.outdent.bold {
+  @include iconUxt-bold(outdent);
+}
+.iconUxt.outgoing.bold {
+  @include iconUxt-bold(outgoing);
+}
+.iconUxt.outgoingExtSmall.bold {
+  @include iconUxt-bold(outgoingExtSmall);
+}
+.iconUxt.outgoingInApp.bold {
+  @include iconUxt-bold(outgoingInApp);
+}
+.iconUxt.outgoingInMdsp.bold {
+  @include iconUxt-bold(outgoingInMdsp);
+}
+.iconUxt.outgoingSmall.bold {
+  @include iconUxt-bold(outgoingSmall);
+}
+.iconUxt.package.bold {
+  @include iconUxt-bold(package);
+}
+.iconUxt.parameter.bold {
+  @include iconUxt-bold(parameter);
+}
+.iconUxt.paste.bold {
+  @include iconUxt-bold(paste);
+}
+.iconUxt.pause.bold {
+  @include iconUxt-bold(pause);
+}
+.iconUxt.person.bold {
+  @include iconUxt-bold(person);
+}
+.iconUxt.personMultiple.bold {
+  @include iconUxt-bold(personMultiple);
+}
+.iconUxt.phone.bold {
+  @include iconUxt-bold(phone);
+}
+.iconUxt.play.bold {
+  @include iconUxt-bold(play);
+}
+.iconUxt.pressure.bold {
+  @include iconUxt-bold(pressure);
+}
+.iconUxt.previous.bold {
+  @include iconUxt-bold(previous);
+}
+.iconUxt.printer.bold {
+  @include iconUxt-bold(printer);
+}
+.iconUxt.question.bold {
+  @include iconUxt-bold(question);
+}
+.iconUxt.questionMark.bold {
+  @include iconUxt-bold(questionMark);
+}
+.iconUxt.quote.bold {
+  @include iconUxt-bold(quote);
+}
+.iconUxt.record.bold {
+  @include iconUxt-bold(record);
+}
+.iconUxt.redo.bold {
+  @include iconUxt-bold(redo);
+}
+.iconUxt.reload.bold {
+  @include iconUxt-bold(reload);
+}
+.iconUxt.remove.bold {
+  @include iconUxt-bold(remove);
+}
+.iconUxt.removeCircle.bold {
+  @include iconUxt-bold(removeCircle);
+}
+.iconUxt.reorder.bold {
+  @include iconUxt-bold(reorder);
+}
+.iconUxt.restricted.bold {
+  @include iconUxt-bold(restricted);
+}
+.iconUxt.roles.bold {
+  @include iconUxt-bold(roles);
+}
+.iconUxt.save.bold {
+  @include iconUxt-bold(save);
+}
+.iconUxt.scope.bold {
+  @include iconUxt-bold(scope);
+}
+.iconUxt.scopeAlternative.bold {
+  @include iconUxt-bold(scopeAlternative);
+}
+.iconUxt.search.bold {
+  @include iconUxt-bold(search);
+}
+.iconUxt.separatorLine.bold {
+  @include iconUxt-bold(separatorLine);
+}
+.iconUxt.settings.bold {
+  @include iconUxt-bold(settings);
+}
+.iconUxt.settingsAlternative.bold {
+  @include iconUxt-bold(settingsAlternative);
+}
+.iconUxt.share.bold {
+  @include iconUxt-bold(share);
+}
+.iconUxt.shareAlternative.bold {
+  @include iconUxt-bold(shareAlternative);
+}
+.iconUxt.shoppingCart.bold {
+  @include iconUxt-bold(shoppingCart);
+}
+.iconUxt.sidebar.bold {
+  @include iconUxt-bold(sidebar);
+}
+.iconUxt.sidebarHide.bold {
+  @include iconUxt-bold(sidebarHide);
+}
+.iconUxt.sidebarShow.bold {
+  @include iconUxt-bold(sidebarShow);
+}
+.iconUxt.sort.bold {
+  @include iconUxt-bold(sort);
+}
+.iconUxt.speedometer.bold {
+  @include iconUxt-bold(speedometer);
+}
+.iconUxt.split.bold {
+  @include iconUxt-bold(split);
+}
+.iconUxt.star.bold {
+  @include iconUxt-bold(star);
+}
+.iconUxt.statusOff.bold {
+  @include iconUxt-bold(statusOff);
+}
+.iconUxt.statusOn.bold {
+  @include iconUxt-bold(statusOn);
+}
+.iconUxt.stop.bold {
+  @include iconUxt-bold(stop);
+}
+.iconUxt.stopwatch.bold {
+  @include iconUxt-bold(stopwatch);
+}
+.iconUxt.storage.bold {
+  @include iconUxt-bold(storage);
+}
+.iconUxt.strikethrough.bold {
+  @include iconUxt-bold(strikethrough);
+}
+.iconUxt.string.bold {
+  @include iconUxt-bold(string);
+}
+.iconUxt.stringList.bold {
+  @include iconUxt-bold(stringList);
+}
+.iconUxt.strong.bold {
+  @include iconUxt-bold(strong);
+}
+.iconUxt.subtenant.bold {
+  @include iconUxt-bold(subtenant);
+}
+.iconUxt.subtenant2.bold {
+  @include iconUxt-bold(subtenant2);
+}
+.iconUxt.subtenant3.bold {
+  @include iconUxt-bold(subtenant3);
+}
+.iconUxt.subtenantSmall.bold {
+  @include iconUxt-bold(subtenantSmall);
+}
+.iconUxt.sun.bold {
+  @include iconUxt-bold(sun);
+}
+.iconUxt.tableCreate.bold {
+  @include iconUxt-bold(tableCreate);
+}
+.iconUxt.tag.bold {
+  @include iconUxt-bold(tag);
+}
+.iconUxt.tagAlternative.bold {
+  @include iconUxt-bold(tagAlternative);
+}
+.iconUxt.temperature.bold {
+  @include iconUxt-bold(temperature);
+}
+.iconUxt.thermometer.bold {
+  @include iconUxt-bold(thermometer);
+}
+.iconUxt.thumbDown.bold {
+  @include iconUxt-bold(thumbDown);
+}
+.iconUxt.thumbUp.bold {
+  @include iconUxt-bold(thumbUp);
+}
+.iconUxt.ticket.bold {
+  @include iconUxt-bold(ticket);
+}
+.iconUxt.tile.bold {
+  @include iconUxt-bold(tile);
+}
+.iconUxt.timeZone.bold {
+  @include iconUxt-bold(timeZone);
+}
+.iconUxt.train.bold {
+  @include iconUxt-bold(train);
+}
+.iconUxt.types.bold {
+  @include iconUxt-bold(types);
+}
+.iconUxt.underline.bold {
+  @include iconUxt-bold(underline);
+}
+.iconUxt.undo.bold {
+  @include iconUxt-bold(undo);
+}
+.iconUxt.update.bold {
+  @include iconUxt-bold(update);
+}
+.iconUxt.updateGear.bold {
+  @include iconUxt-bold(updateGear);
+}
+.iconUxt.upload.bold {
+  @include iconUxt-bold(upload);
+}
+.iconUxt.variable.bold {
+  @include iconUxt-bold(variable);
+}
+.iconUxt.version.bold {
+  @include iconUxt-bold(version);
+}
+.iconUxt.virtualHidden.bold {
+  @include iconUxt-bold(virtualHidden);
+}
+.iconUxt.virtualShown.bold {
+  @include iconUxt-bold(virtualShown);
+}
+.iconUxt.visibilityHidden.bold {
+  @include iconUxt-bold(visibilityHidden);
+}
+.iconUxt.visibilityShown.bold {
+  @include iconUxt-bold(visibilityShown);
+}
+.iconUxt.voltage.bold {
+  @include iconUxt-bold(voltage);
+}
+.iconUxt.watch.bold {
+  @include iconUxt-bold(watch);
+}
+.iconUxt.weatherCloudy.bold {
+  @include iconUxt-bold(weatherCloudy);
+}
+.iconUxt.weatherPartlyCloudy.bold {
+  @include iconUxt-bold(weatherPartlyCloudy);
+}
+.iconUxt.weatherRain.bold {
+  @include iconUxt-bold(weatherRain);
+}
+.iconUxt.weatherSnow.bold {
+  @include iconUxt-bold(weatherSnow);
+}
+.iconUxt.weatherStorm.bold {
+  @include iconUxt-bold(weatherStorm);
+}
+.iconUxt.weatherSunny.bold {
+  @include iconUxt-bold(weatherSunny);
+}
+.iconUxt.weatherSunrise.bold {
+  @include iconUxt-bold(weatherSunrise);
+}
+.iconUxt.weatherSunset.bold {
+  @include iconUxt-bold(weatherSunset);
+}
+.iconUxt.weatherThunder.bold {
+  @include iconUxt-bold(weatherThunder);
+}
+.iconUxt.widget.bold {
+  @include iconUxt-bold(widget);
+}
+.iconUxt.zoomIn.bold {
+  @include iconUxt-bold(zoomIn);
+}
+.iconUxt.zoomOut.bold {
+  @include iconUxt-bold(zoomOut);
+}

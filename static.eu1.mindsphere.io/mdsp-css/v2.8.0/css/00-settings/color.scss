@@ -1,0 +1,185 @@
+
+
+/* =============================================================
+   IoT User Experience Toolkit colors colors
+   ========================================================== */
+    
+/* Base colors colors */
+    $base000: #000000;
+    $base200: #323232;
+    $base450: #595959;
+    $base600: #969696;
+    $base750: #BEBEBE;
+    $base800: #D2D2D2;
+    $base900: #F0F0F0;
+    $base950: #F6F6F6;
+    $base1000: #FFFFFF;
+    
+/* Primary color colors */
+    $primary-darker: #354C80;
+    $primary-dark: #005CBF;
+    $primary: #006FE6;
+    $primary-light: #009EFF;
+    $primary-lighter: #7FB7F2;
+    $primary-lightest: #CCE2FA;
+    
+/* Functional colors colors */
+    $info-dark: #235461;
+    $info: #006FE6;
+    $info-light: #BBD0D7;
+    $info-lighter: #D1E8F0;
+    $warning-dark: #665E48;
+    $warning: #FFC800;
+    $warning-light: #E6DBB7;
+    $warning-lighter: #FFEDB5;
+    $error-dark: #811211;
+    $error: #F62447;
+    $error-light: #D6B4B4;
+    $error-lighter: #FCD3D2;
+    $success-dark: #5E6919;
+    $success: #65C728;
+    $success-light: #C8D1BA;
+    $success-lighter: #E6EED1;
+    
+/* Charting colors colors */
+    $charting01: #08889E;
+    $charting02: #FFB900;
+    $charting03: #AAB414;
+    $charting04: #8068E7;
+    $charting05: #AF235F;
+    $charting06: #794934;
+    $charting07: #006FE6;
+    $charting08: #879BAA;
+    $charting09: #EB780A;
+    $charting10: #554A50;
+    $charting11: #647D2D;
+    $charting12: #50BED7;
+    $charting13: #B98F72;
+    $charting14: #C8C8B7;
+    $charting15: #A985A8;
+    $charting16: #FF9EBC;
+    $charting17: #530E00;
+    $charting18: #789CFF;
+    $charting19: #F62447;
+    $charting20: #FFC800;
+    $charting21: #65C728;
+    
+/* Danger Button colors */
+    $dangerPrimary: #F62447;
+    $dangerPrimary-hover: #FF254A;
+    $dangerPrimary-active: #DB203F;
+    $dangerSecondary: #F62447;
+    $dangerSecondary-hover: #FCD3D2;
+    $dangerSecondary-active: #F9C8D0;
+    
+/* OS Bar / Launchpad colors colors */
+    $firefly: #1E2832;
+    $aquaHaze: #DCE1E6;
+    
+
+
+ /* =============================================================
+    CSS variables for all colors
+    ========================================================== */
+:root {
+    /* Base colors colors */
+    --color-base000: 0,0,0;
+    --color-base200: 50,50,50;
+    --color-base450: 89,89,89;
+    --color-base600: 150,150,150;
+    --color-base750: 190,190,190;
+    --color-base800: 210,210,210;
+    --color-base900: 240,240,240;
+    --color-base950: 246,246,246;
+    --color-base1000: 255,255,255;
+       
+    /* Primary color colors */
+    --color-primary-darker: 53,76,128;
+    --color-primary-dark: 0,92,191;
+    --color-primary: 0,111,230;
+    --color-primary-light: 0,158,255;
+    --color-primary-lighter: 127,183,242;
+    --color-primary-lightest: 204,226,250;
+       
+    /* Functional colors colors */
+    --color-info-dark: 35,84,97;
+    --color-info: 0,111,230;
+    --color-info-light: 187,208,215;
+    --color-info-lighter: 209,232,240;
+    --color-warning-dark: 102,94,72;
+    --color-warning: 255,200,0;
+    --color-warning-light: 230,219,183;
+    --color-warning-lighter: 255,237,181;
+    --color-error-dark: 129,18,17;
+    --color-error: 246,36,71;
+    --color-error-light: 214,180,180;
+    --color-error-lighter: 252,211,210;
+    --color-success-dark: 94,105,25;
+    --color-success: 101,199,40;
+    --color-success-light: 200,209,186;
+    --color-success-lighter: 230,238,209;
+       
+    /* Charting colors colors */
+    --color-charting01: 8,136,158;
+    --color-charting02: 255,185,0;
+    --color-charting03: 170,180,20;
+    --color-charting04: 128,104,231;
+    --color-charting05: 175,35,95;
+    --color-charting06: 121,73,52;
+    --color-charting07: 0,111,230;
+    --color-charting08: 135,155,170;
+    --color-charting09: 235,120,10;
+    --color-charting10: 85,74,80;
+    --color-charting11: 100,125,45;
+    --color-charting12: 80,190,215;
+    --color-charting13: 185,143,114;
+    --color-charting14: 200,200,183;
+    --color-charting15: 169,133,168;
+    --color-charting16: 255,158,188;
+    --color-charting17: 83,14,0;
+    --color-charting18: 120,156,255;
+    --color-charting19: 246,36,71;
+    --color-charting20: 255,200,0;
+    --color-charting21: 101,199,40;
+       
+    /* Danger Button colors */
+    --color-dangerPrimary: 246,36,71;
+    --color-dangerPrimary-hover: 255,37,74;
+    --color-dangerPrimary-active: 219,32,63;
+    --color-dangerSecondary: 246,36,71;
+    --color-dangerSecondary-hover: 252,211,210;
+    --color-dangerSecondary-active: 249,200,208;
+       
+    /* OS Bar / Launchpad colors colors */
+    --color-firefly: 30,40,50;
+    --color-aquaHaze: 220,225,230;
+       
+
+    --color-shadow: var(--color-base000); // (box) shadows color
+    --color-overlay: var(--color-base200); // overlay background color
+    --color-interface: var(--color-base1000); // main interface color
+    --color-interface-secondary: var(--color-base950); // leading and context region
+    --color-interface-highlight: var(--color-base1000); // header sections, card, container etc
+    --color-interface-headerfooter: var(--color-base1000); // header and footers of dialogs, confirms
+    --color-border: var(--color-base800);
+    --color-disabled: var(--color-base600);
+    --color-disabled-contrast: var(--color-base1000);
+    --color-font: var(--color-base200); // color for main font (headlines and text)
+    --color-font-contrast-inverse: var( --color-font); // color for main font (headlines and text)
+    --color-font-contrast: var(--color-base1000); // contrast color for buttons
+    --color-font-secondary: var(--color-base600); // color for secondary font objects, e.g. descriptions and subheadlines
+    --color-font-disabled: var(--color-base600); // color for disabled elements' font / labels
+
+    --color-appBar-bg: var(--color-interface-secondary); // advanced App bar: background-color    
+    --color-appBar-color: var(--color-font); // advanced App bar: link / foreground color
+    --color-appBar-hover: var(--color-primary); // advanced App bar: hover link color for items    
+    --color-appBar-border: 232,232,232; // advanced App bar: border around second level items
+    --color-appBar--active-bg: var(--color-interface); // advanced App bar: background color for active items ("highlight")
+    --color-appBar--active-color: var(--color-primary); // advanced App bar: link color for active items
+    --color-appBar--active-indicator: var(--color-primary); // color for active indicator ("left border") of highlighted item
+    --color-appBar--badge: var(--color-error); //  background color for number badges of items
+
+    --color-appHeader-bg: var(--color-interface-secondary);
+    --color-appHeader-font: var(--color-primary);
+
+}
